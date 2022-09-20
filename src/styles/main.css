@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: whitesmoke;
+}
+
+/*App Header*/
+.color-app {
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.color-app_header {
+  display: flex;
+  align-items: center;
+  padding-bottom: 16px;
+}
+
+.color-app_header h2 {
+  font-weight: normal;
+  flex: 1;
+}
+
+.app-nav ul li {
+  display: inline-block;
+}
+
+.app-nav ul li a svg {
+  color: black;
+}
+
+/*Home Page*/
+.go-to-test {
+  padding: 16px 0;
+  text-align: center;
+}
+
+.go-to-test h2 {
+  font-weight: normal;
+}
+
+.go-to-test button {
+  margin-top: 16px;
+  border-radius: 20px;
+  border: 0;
+  background-color: lightblue;
+  font-family: "Inter", sans-serif;
+  font-weight: 550;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/*Footer*/
+footer {
+  text-align: center;
+}

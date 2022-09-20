@@ -1,0 +1,92 @@
+.color-app_header {
+  flex-direction: column;
+}
+
+@media screen and (max-width: 300px) {
+  /*Header*/
+  .app-nav ul li {
+    padding: 15px;
+  }
+  .app-nav ul li a svg {
+    font-size: 24px;
+  }
+  /*Home Page*/
+  .go-to-test h2 {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .go-to-test button {
+    margin-top: 16px;
+    color: rgb(48, 156, 192);
+    background-color: transparent;
+  }
+}
+
+@media screen and (min-width: 301px) {
+  /*Header*/
+  .app-nav ul li {
+    padding: 19px;
+  }
+  .app-nav ul li a svg {
+    font-size: 28px;
+    color: black;
+  }
+  /*Home Page*/
+  .go-to-test h2 {
+    font-size: 20px;
+    padding: 0 16px;
+  }
+
+  .go-to-test button {
+    width: 145px;
+    padding: 8px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  /*App Header*/
+  .color-app_header {
+    flex-direction: row;
+  }
+  .color-app_header h2 {
+    font-size: 24px;
+  }
+  .app-nav ul li {
+    padding: 10px;
+  }
+  .app-nav ul li a svg {
+    font-size: 24px;
+  }
+  /*Home Page*/
+  .go-to-test h2 {
+    font-size: 20px;
+  }
+
+  .go-to-test button {
+    width: 250px;
+    padding: 12px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  /*App Header*/
+  .color-app_header h2 {
+    font-size: 32px;
+  }
+  .app-nav ul li {
+    padding: 16px;
+  }
+  .app-nav ul li a svg {
+    font-size: 28px;
+  }
+  /*Home Page*/
+  .go-to-test h2 {
+    font-size: 24px;
+  }
+
+  .go-to-test button {
+    width: 290px;
+    padding: 16px;
+  }
+}
