@@ -1,5 +1,5 @@
-.color-app_header {
-  flex-direction: column;
+.test-type {
+  max-height: 300px;
 }
 
 @media screen and (max-width: 300px) {
@@ -15,7 +15,6 @@
     font-size: 16px;
     padding: 0 10px;
   }
-
   .go-to-test button {
     margin-top: 16px;
     color: rgb(48, 156, 192);
@@ -37,10 +36,28 @@
     font-size: 20px;
     padding: 0 16px;
   }
-
   .go-to-test button {
     width: 145px;
     padding: 8px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  /*Test Page*/
+  .test-instruction {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  /*Test Page*/
+  .instruction h3 {
+    font-weight: 550;
+    text-align: center;
+    font-size: 16px;
+  }
+  .instruction ul li {
+    font-size: 14px;
   }
 }
 
@@ -62,7 +79,6 @@
   .go-to-test h2 {
     font-size: 20px;
   }
-
   .go-to-test button {
     width: 250px;
     padding: 12px;
@@ -84,9 +100,15 @@
   .go-to-test h2 {
     font-size: 24px;
   }
-
   .go-to-test button {
     width: 290px;
     padding: 16px;
+  }
+  /*Test Page*/
+  .test-instruction {
+    width: 835px;
+  }
+  .choose-test {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }

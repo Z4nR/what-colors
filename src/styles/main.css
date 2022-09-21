@@ -19,6 +19,7 @@ body {
   display: flex;
   align-items: center;
   padding-bottom: 16px;
+  flex-direction: column;
 }
 
 .color-app_header h2 {
@@ -55,7 +56,88 @@ body {
   cursor: pointer;
 }
 
+/*Test Page*/
+.instruction-box {
+  margin: 0 auto;
+  padding: 8px 0;
+}
+
+.test-instruction,
+.instruction {
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.instruction {
+  background-color: khaki;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.instruction ul {
+  padding: 8px 32px;
+}
+
+.instruction h3 {
+  font-weight: 550;
+  text-align: center;
+}
+
+.choose-box {
+  padding: 8px 0;
+}
+
+.choose-test {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  max-width: 900px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.test-type {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0;
+  padding: 16px;
+  height: 100%;
+  border: 1px solid;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.test-type h4 {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: 8px 0;
+  font-family: "Inter", sans-serif;
+}
+
+.individual-test {
+  background-color: lightcoral;
+}
+.massal-test {
+  background-color: lightblue;
+}
+.room-join {
+  background-color: lightgoldenrodyellow;
+}
+
+.join-btn {
+  margin-top: auto;
+  padding: 8px;
+  width: 100%;
+  font-size: 16px;
+  background-color: white;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 /*Footer*/
 footer {
   text-align: center;
+  margin: 16px;
 }
