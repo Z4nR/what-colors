@@ -69,7 +69,7 @@ body {
 }
 
 .instruction {
-  background-color: khaki;
+  background-color: lightgoldenrodyellow;
   border-radius: 10px;
   padding: 16px;
 }
@@ -102,12 +102,15 @@ body {
   height: 100%;
   margin: 8px 0;
   padding: 16px;
-  border: 1px dashed;
+  border: 3px solid;
   border-radius: 8px;
-  align-items: center;
+  background-repeat: no-repeat;
+  background-size: 125%;
+  background-position-x: center;
+  transition: 0.4s ease-out;
 }
 
-.test-type h4 {
+.test-type h3 {
   display: block;
   text-align: center;
   width: 100%;
@@ -117,13 +120,21 @@ body {
 .test-type p {
   text-align: center;
   width: 100%;
-  margin: 8px 0;
+  font-weight: 600;
+  opacity: 0.8;
+  margin: auto 0;
 }
 
-.test-type input {
+.input-box {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0 16px 0;
+}
+
+.insert-code {
   text-align: center;
-  margin-top: auto;
   padding: 8px;
+  margin-bottom: 5px;
   width: 100%;
   font-size: 16px;
   background-color: white;
@@ -132,7 +143,6 @@ body {
 }
 
 .join-btn {
-  margin-top: auto;
   padding: 8px;
   width: 100%;
   font-size: 16px;
@@ -140,28 +150,37 @@ body {
   border: 0;
   border-radius: 4px;
   cursor: pointer;
+  transition: 0.4s ease-out;
 }
 
 .individual-test {
-  background-color: lightcoral;
+  border-color: lightcoral;
   background-image: url(../../public/img/Add\ color-bro.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode: soft-light;
 }
 .massal-test {
-  background-color: lightblue;
-  background-image: url(../../public/img/Meeting-bro.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode: soft-light;
+  border-color: lightblue;
+  background-image: url(../../public/img/Community-pana.svg);
 }
 .room-join {
-  background-color: lightgoldenrodyellow;
-  background-image: url(../../public/img/Add\ User-bro.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode: soft-light;
+  border-color: khaki;
+  background-image: url(../../public/img/Add\ User-cuate.svg);
+}
+.individual-btn:hover {
+  background-color: lightcoral;
+  transition: 0.4s ease-in;
+}
+.massal-btn:hover {
+  background-color: lightblue;
+  transition: 0.4s ease-in;
+}
+.room-btn:hover {
+  background-color: khaki;
+  transition: 0.4s ease-in;
+}
+.test-type:hover {
+  transition: 0.4s ease-in;
+  background-size: 150%;
+  font-size: large;
 }
 
 /*Footer*/
