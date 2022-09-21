@@ -99,10 +99,10 @@ body {
 .test-type {
   display: flex;
   flex-direction: column;
+  height: 100%;
   margin: 8px 0;
   padding: 16px;
-  height: 100%;
-  border: 1px solid;
+  border: 1px dashed;
   border-radius: 8px;
   align-items: center;
 }
@@ -112,17 +112,23 @@ body {
   text-align: center;
   width: 100%;
   margin: 8px 0;
-  font-family: "Inter", sans-serif;
 }
 
-.individual-test {
-  background-color: lightcoral;
+.test-type p {
+  text-align: center;
+  width: 100%;
+  margin: 8px 0;
 }
-.massal-test {
-  background-color: lightblue;
-}
-.room-join {
-  background-color: lightgoldenrodyellow;
+
+.test-type input {
+  text-align: center;
+  margin-top: auto;
+  padding: 8px;
+  width: 100%;
+  font-size: 16px;
+  background-color: white;
+  border: 0;
+  border-radius: 4px;
 }
 
 .join-btn {
@@ -134,6 +140,28 @@ body {
   border: 0;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.individual-test {
+  background-color: lightcoral;
+  background-image: url(../../public/img/Add\ color-bro.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: soft-light;
+}
+.massal-test {
+  background-color: lightblue;
+  background-image: url(../../public/img/Meeting-bro.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: soft-light;
+}
+.room-join {
+  background-color: lightgoldenrodyellow;
+  background-image: url(../../public/img/Add\ User-bro.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: soft-light;
 }
 
 /*Footer*/
