@@ -37,6 +37,12 @@
   }
 }
 
+@media screen and (max-width: 350px) {
+  .choose-test {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
 @media screen and (max-width: 450px) {
   /*Test Page*/
   .test-instruction {
@@ -83,6 +89,19 @@
   /*Test Page*/
   .choose-test {
     grid-template-columns: 1fr 1fr 1fr;
+    max-width: 900px;
+  }
+}
+
+@media screen and (max-width: 622px) and (min-width: 599px) {
+  .checkbox-admin label {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 749px) and (min-width: 622px) {
+  .checkbox-admin label {
+    font-size: 13px;
   }
 }
 

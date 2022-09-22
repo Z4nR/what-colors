@@ -107,7 +107,6 @@ section {
   display: grid;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -196,6 +195,35 @@ section {
   transition: 0.4s ease-in;
   background-size: 150%;
   font-size: large;
+}
+
+.checkbox-admin {
+  display: flex;
+  justify-content: center;
+}
+
+.checkbox-admin label {
+  font-size: 15px;
+  font-weight: lighter;
+  margin-left: 10px;
+}
+
+.icons {
+  margin: 0 auto;
+  height: 60px;
+  width: 60px;
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 10%);
+}
+.individual {
+  background-image: url("../../public/icons/individual.svg");
+}
+.group {
+  background-image: url("../../public/icons/group.svg");
+}
+.join {
+  background-image: url("../../public/icons/join.svg");
 }
 
 /*Footer*/

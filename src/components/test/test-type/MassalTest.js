@@ -1,7 +1,14 @@
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 
 function MassalTest() {
-  return (
+  const isMobile = useMediaQuery({
+    query: "(max-width: 350px)",
+  });
+
+  return isMobile ? (
+    <div className="group icons" />
+  ) : (
     <div className="test-type massal-test">
       <h3>Massal Test</h3>
       <p>Check potential color blindness level in your society</p>
