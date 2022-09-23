@@ -1,0 +1,42 @@
+.modal-box {
+  background-color: rgba(128, 128, 128, 0.335);
+}
+
+.individual-input {
+  background-color: khaki;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 8px;
+}
+
+.input-data-box {
+  display: flex;
+}
+
+.input-data {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.input-data input,
+.input-data select {
+  padding: 8px;
+  width: 100%;
+  font-size: 16px;
+  background-color: white;
+  border: 0.5px solid gray;
+  border-radius: 4px;
+}
+
+.input-data-box button {
+  margin-top: 16px;
+  padding: 8px;
+  width: 100%;
+  font-size: 16px;
+  background-color: white;
+  border: 0.5px solid gray;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.4s ease-out;
+}

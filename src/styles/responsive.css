@@ -16,6 +16,11 @@
     color: rgb(48, 156, 192);
     background-color: transparent;
   }
+  /*Test Page*/
+  .icons {
+    height: 48px;
+    width: 48px;
+  }
 }
 
 @media screen and (min-width: 301px) {
@@ -37,6 +42,13 @@
   }
 }
 
+@media screen and (min-width: 301px) and (max-width: 350px) {
+  .icons {
+    height: 60px;
+    width: 60px;
+  }
+}
+
 @media screen and (max-width: 350px) {
   .choose-test {
     grid-template-columns: 1fr 1fr 1fr;
@@ -45,8 +57,11 @@
 
 @media screen and (max-width: 450px) {
   /*Test Page*/
-  .test-instruction {
+  .instruction-box {
     display: none;
+  }
+  .test-type {
+    height: 200px;
   }
 }
 
@@ -64,6 +79,17 @@
     display: grid;
     grid-column-gap: 5px;
     grid-row-gap: 0px;
+  }
+  .individual-test {
+    background-size: 125% 125%;
+    background-position-y: -10px;
+  }
+  /*Modal*/
+  .input-data-box {
+    flex-direction: column;
+  }
+  .input-data {
+    margin: 6px 0;
   }
 }
 
@@ -90,6 +116,13 @@
   .choose-test {
     grid-template-columns: 1fr 1fr 1fr;
     max-width: 900px;
+  }
+  /*Modal*/
+  .input-data-box {
+    flex-direction: row;
+  }
+  .input-data {
+    padding: 8px;
   }
 }
 

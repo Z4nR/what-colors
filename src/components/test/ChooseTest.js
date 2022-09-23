@@ -1,5 +1,4 @@
 import React from "react";
-import IndividualJoin from "./test-modal/IndividualJoin";
 import IndividualTest from "./test-type/IndividualTest";
 import MassalTest from "./test-type/MassalTest";
 import RoomJoinTest from "./test-type/RoomJoin";
@@ -7,11 +6,11 @@ import RoomJoinTest from "./test-type/RoomJoin";
 function ChooseTest() {
   return (
     <div className="choose-box">
+      <h2>Choose Test You Want Try</h2>
       <div className="choose-test">
         <IndividualTest />
         <MassalTest />
         <RoomJoinTest />
-        <IndividualJoin />
       </div>
     </div>
   );

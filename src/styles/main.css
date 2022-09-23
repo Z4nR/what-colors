@@ -11,7 +11,7 @@ body {
 }
 
 section {
-  padding: 16px 0;
+  padding: 16px 4px;
 }
 
 /*App Header*/
@@ -101,6 +101,11 @@ section {
 
 .choose-box {
   padding: 8px;
+}
+
+.choose-box h2 {
+  text-align: center;
+  margin-bottom: 8px;
 }
 
 .choose-test {
@@ -210,8 +215,8 @@ section {
 
 .icons {
   margin: 0 auto;
-  height: 60px;
-  width: 60px;
+  height: 80px;
+  width: 80px;
   border-radius: 8px;
   background-repeat: no-repeat;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 10%);

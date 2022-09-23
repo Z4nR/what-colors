@@ -7,9 +7,13 @@ function IndividualJoin() {
   const [email, setEmail] = useInput("");
   const [device, setDevice] = useInput("");
 
+  async function onSubmitData(event) {
+    event.prevenDefault();
+  }
+
   return (
-    <section className="individual-modal">
-      <div className="individual-input">
+    <div className="individual-input">
+      <div className="input-data-box">
         <div className="input-data">
           <label htmlFor="firstname">First Name</label>
           <input
@@ -18,6 +22,8 @@ function IndividualJoin() {
             value={firstName}
             onChange={setFirstName}
           />
+        </div>
+        <div className="input-data">
           <label htmlFor="lastname">Last Name</label>
           <input
             type="text"
@@ -26,15 +32,28 @@ function IndividualJoin() {
             onChange={setLastName}
           />
         </div>
+      </div>
+      <div className="input-data-box">
         <div className="input-data">
           <label htmlFor="email">Email</label>
           <input
-            type="text"
+            type="email"
             placeholder="Input your email"
             value={email}
             onChange={setEmail}
           />
-          <label htmlFor="lastname">Device</label>
+        </div>
+        <div className="input-data">
+          <label htmlFor="gender">Gender</label>
+          <select name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+      </div>
+      <div className="input-data-box">
+        <div className="input-data">
+          <label htmlFor="device">Device</label>
           <input
             type="text"
             placeholder="Input your test device"
@@ -42,8 +61,20 @@ function IndividualJoin() {
             onChange={setDevice}
           />
         </div>
+        <div className="input-data">
+          <label htmlFor="method">Method</label>
+          <select name="method">
+            <option value="fm85">Fransworth Munsell-85 Hue</option>
+            <option value="fm40">Fransworth Munsell-40 Hue</option>
+            <option value="hrr">HRR</option>
+            <option value="ishihara">Ishihara</option>
+          </select>
+        </div>
+        <button type="button" onClick={onSubmitData}>
+          Submit Data
+        </button>
       </div>
-    </section>
+    </div>
   );
 }
 
