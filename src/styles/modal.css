@@ -3,7 +3,8 @@
 }
 
 .individual-input {
-  background-color: khaki;
+  border: 2px dashed lightcoral;
+  background-color: whitesmoke;
   padding: 8px;
   margin: 8px;
   border-radius: 8px;
@@ -29,7 +30,7 @@
   border-radius: 4px;
 }
 
-.input-data-box button {
+.input-data button {
   margin-top: 16px;
   padding: 8px;
   width: 100%;

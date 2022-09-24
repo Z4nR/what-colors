@@ -11,7 +11,7 @@ body {
 }
 
 section {
-  padding: 16px 4px;
+  background-color: whitesmoke;
 }
 
 /*App Header*/
@@ -105,7 +105,8 @@ section {
 
 .choose-box h2 {
   text-align: center;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+  font-weight: 600;
 }
 
 .choose-test {
@@ -124,7 +125,7 @@ section {
   border: 3px solid;
   border-radius: 8px;
   background-repeat: no-repeat;
-  background-size: 125% 100%;
+  background-size: 125%;
   background-position-x: center;
   transition: 0.4s ease-out;
 }
@@ -139,8 +140,6 @@ section {
 .test-type p {
   text-align: center;
   width: 100%;
-  font-weight: 600;
-  opacity: 0.8;
   margin: auto 0;
 }
 
@@ -186,14 +185,17 @@ section {
 }
 .individual-btn:hover {
   background-color: lightcoral;
+  border: 1px solid white;
   transition: 0.4s ease-in;
 }
 .massal-btn:hover {
   background-color: lightblue;
+  border: 1px solid white;
   transition: 0.4s ease-in;
 }
 .room-btn:hover {
   background-color: khaki;
+  border: 1px solid white;
   transition: 0.4s ease-in;
 }
 .test-type:hover {

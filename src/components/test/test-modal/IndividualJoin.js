@@ -56,7 +56,7 @@ function IndividualJoin() {
           <label htmlFor="device">Device</label>
           <input
             type="text"
-            placeholder="Input your test device"
+            placeholder="Input your type of test device"
             value={device}
             onChange={setDevice}
           />
@@ -70,9 +70,13 @@ function IndividualJoin() {
             <option value="ishihara">Ishihara</option>
           </select>
         </div>
-        <button type="button" onClick={onSubmitData}>
-          Submit Data
-        </button>
+      </div>
+      <div className="input-data-box">
+        <div className="input-data">
+          <button type="button" onClick={onSubmitData}>
+            Submit Data
+          </button>
+        </div>
       </div>
     </div>
   );
