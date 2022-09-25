@@ -1,14 +1,21 @@
 import React from "react";
 import useInput from "../../../customhooks/useInput";
+//import { login } from "../../../utils/data-api";
+import { genderType, testType } from "../../../utils/data-local";
 
 function IndividualJoin() {
   const [firstName, setFirstName] = useInput("");
   const [lastName, setLastName] = useInput("");
   const [email, setEmail] = useInput("");
   const [device, setDevice] = useInput("");
+  const [gender, setGender] = useInput("");
+  const [test, setTestType] = useInput("");
 
   async function onSubmitData(event) {
     event.prevenDefault();
+
+    const data = (firstName, lastName, email, device, gender);
+    localStorage.setItem("data", data);
   }
 
   return (
@@ -45,9 +52,12 @@ function IndividualJoin() {
         </div>
         <div className="input-data">
           <label htmlFor="gender">Gender</label>
-          <select name="gender">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+          <select name="gender" value={gender} onChange={setGender}>
+            {genderType.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
           </select>
         </div>
       </div>
@@ -63,11 +73,12 @@ function IndividualJoin() {
         </div>
         <div className="input-data">
           <label htmlFor="method">Method</label>
-          <select name="method">
-            <option value="fm85">Fransworth Munsell-85 Hue</option>
-            <option value="fm40">Fransworth Munsell-40 Hue</option>
-            <option value="hrr">HRR</option>
-            <option value="ishihara">Ishihara</option>
+          <select name="method" value={test} onChange={setTestType}>
+            {testType.map((option) => (
+              <option key={option.type} value={option.type}>
+                {option.label}
+              </option>
+            ))}
           </select>
         </div>
       </div>
