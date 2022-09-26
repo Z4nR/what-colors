@@ -1,7 +1,7 @@
 import React from "react";
 import useInput from "../../../customhooks/useInput";
 //import { login } from "../../../utils/data-api";
-import { genderType, testType } from "../../../utils/data-local";
+import { createArray, genderType, testType } from "../../../utils/data-local";
 
 function IndividualJoin() {
   const [firstName, setFirstName] = useInput("");
@@ -14,7 +14,9 @@ function IndividualJoin() {
   async function onSubmitData(event) {
     event.prevenDefault();
 
-    const data = (firstName, lastName, email, device, gender);
+    createArray();
+
+    const data = (firstName, lastName, email, device, gender, test);
     localStorage.setItem("data", data);
   }
 
