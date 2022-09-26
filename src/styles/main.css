@@ -216,20 +216,21 @@ section {
 }
 
 .icons {
-  margin: 0 auto;
-  height: 80px;
-  width: 80px;
+  margin: auto 8px;
+  padding: 4px;
   border-radius: 8px;
-  background-repeat: no-repeat;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 10%);
 }
 .individual {
+  background-repeat: no-repeat;
   background-image: url("../../public/icons/individual.svg");
 }
 .group {
+  background-repeat: no-repeat;
   background-image: url("../../public/icons/group.svg");
 }
 .join {
+  background-repeat: no-repeat;
   background-image: url("../../public/icons/join.svg");
 }
 

@@ -7,7 +7,9 @@ function IndividualTest() {
   });
 
   return isMobile ? (
-    <div className="individual icons" />
+    <div className="icons">
+      <div className="individual"></div>
+    </div>
   ) : (
     <div className="test-type individual-test">
       <h3>Individual Test</h3>

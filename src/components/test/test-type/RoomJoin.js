@@ -7,7 +7,9 @@ function RoomJoinTest() {
   });
 
   return isMobile ? (
-    <div className="join icons" />
+    <div className="icons">
+      <div className="join"></div>
+    </div>
   ) : (
     <div className="test-type room-join">
       <h3>Join Test</h3>

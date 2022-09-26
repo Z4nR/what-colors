@@ -7,7 +7,9 @@ function MassalTest() {
   });
 
   return isMobile ? (
-    <div className="group icons" />
+    <div className="icons">
+      <div className="group"></div>
+    </div>
   ) : (
     <div className="test-type massal-test">
       <h3>Massal Test</h3>
