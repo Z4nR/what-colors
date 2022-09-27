@@ -11,13 +11,11 @@ function IndividualJoin() {
   const [gender, setGender] = useInput("");
   const [test, setTestType] = useInput("");
 
-  async function onSubmitData(event) {
-    event.prevenDefault();
-
-    createArray();
-
-    const data = (firstName, lastName, email, device, gender, test);
+  function onSubmitData() {
+    const data = { firstName, lastName, email, device, gender, test };
     localStorage.setItem("data", data);
+    console.log(data);
+    createArray(test);
   }
 
   return (
@@ -26,6 +24,7 @@ function IndividualJoin() {
         <div className="input-data">
           <label htmlFor="firstname">First Name</label>
           <input
+            id="firstname"
             type="text"
             placeholder="Input your first name"
             value={firstName}
@@ -35,6 +34,7 @@ function IndividualJoin() {
         <div className="input-data">
           <label htmlFor="lastname">Last Name</label>
           <input
+            id="lastname"
             type="text"
             placeholder="Input your last name"
             value={lastName}
@@ -46,6 +46,7 @@ function IndividualJoin() {
         <div className="input-data">
           <label htmlFor="email">Email</label>
           <input
+            id="email"
             type="email"
             placeholder="Input your email"
             value={email}
@@ -54,7 +55,7 @@ function IndividualJoin() {
         </div>
         <div className="input-data">
           <label htmlFor="gender">Gender</label>
-          <select name="gender" value={gender} onChange={setGender}>
+          <select id="gender" value={gender} onChange={setGender}>
             {genderType.map((option) => (
               <option key={option.value} value={option.value}>
                 {option.label}
@@ -67,6 +68,7 @@ function IndividualJoin() {
         <div className="input-data">
           <label htmlFor="device">Device</label>
           <input
+            id="device"
             type="text"
             placeholder="Input your type of test device"
             value={device}
@@ -75,7 +77,7 @@ function IndividualJoin() {
         </div>
         <div className="input-data">
           <label htmlFor="method">Method</label>
-          <select name="method" value={test} onChange={setTestType}>
+          <select id="method" value={test} onChange={setTestType}>
             {testType.map((option) => (
               <option key={option.type} value={option.type}>
                 {option.label}
@@ -86,7 +88,13 @@ function IndividualJoin() {
       </div>
       <div className="input-data-box">
         <div className="input-data">
-          <button type="button" onClick={onSubmitData}>
+          <button
+            type="button"
+            onClick={(event) => {
+              event.preventDefault();
+              onSubmitData();
+            }}
+          >
             Submit Data
           </button>
         </div>
