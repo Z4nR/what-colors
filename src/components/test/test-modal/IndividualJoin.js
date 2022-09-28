@@ -3,7 +3,7 @@ import useInput from "../../../customhooks/useInput";
 //import { login } from "../../../utils/data-api";
 import { createArray, genderType, testType } from "../../../utils/data-local";
 
-function IndividualJoin() {
+export default function IndividualJoin() {
   const [firstName, setFirstName] = useInput("");
   const [lastName, setLastName] = useInput("");
   const [email, setEmail] = useInput("");
@@ -101,5 +101,3 @@ function IndividualJoin() {
     </div>
   );
 }
-
-export default IndividualJoin;

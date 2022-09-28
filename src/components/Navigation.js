@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FiHome } from "react-icons/fi";
 import { useMediaQuery } from "react-responsive";
 
-function AppNav() {
+export default function AppNav() {
   const isDesktop = useMediaQuery({
     query: "(min-width: 350px)",
   });
@@ -27,5 +27,3 @@ function AppNav() {
     </nav>
   );
 }
-
-export default AppNav;

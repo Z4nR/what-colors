@@ -6,7 +6,7 @@ import ArticlePage from "./pages/ArticlePage";
 import HomePage from "./pages/HomePage";
 import TestPage from "./pages/TestPage";
 
-function ColorApp() {
+export default function ColorApp() {
   return (
     <div className="color-app">
       <header className="color-app_header">
@@ -27,5 +27,3 @@ function ColorApp() {
     </div>
   );
 }
-
-export default ColorApp;

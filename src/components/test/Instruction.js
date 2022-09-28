@@ -1,6 +1,6 @@
 import React from "react";
 
-function InstructionTest() {
+export default function InstructionTest() {
   return (
     <div className="instruction-box">
       <div className="test-instruction">
@@ -23,5 +23,3 @@ function InstructionTest() {
     </div>
   );
 }
-
-export default InstructionTest;

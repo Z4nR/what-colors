@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function HomePage() {
+export default function HomePage() {
   const navigate = useNavigate();
 
   function goTest() {
@@ -24,5 +24,3 @@ function HomePage() {
     </section>
   );
 }
-
-export default HomePage;

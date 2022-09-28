@@ -1,7 +1,7 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 
-function RoomJoinTest() {
+export default function RoomJoinTest() {
   const isMobile = useMediaQuery({
     query: "(max-width: 350px)",
   });
@@ -18,5 +18,3 @@ function RoomJoinTest() {
     </div>
   );
 }
-
-export default RoomJoinTest;
