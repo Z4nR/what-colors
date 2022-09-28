@@ -6,15 +6,26 @@ import { createArray, genderType, testType } from "../../../utils/data-local";
 export default function IndividualJoin() {
   const [firstName, setFirstName] = useInput("");
   const [lastName, setLastName] = useInput("");
-  const [email, setEmail] = useInput("");
+  const [age, setAge] = useInput(0);
   const [device, setDevice] = useInput("");
   const [gender, setGender] = useInput("female");
   const [test, setTestType] = useInput("fm85");
 
   function onSubmitData() {
-    const data = { firstName, lastName, email, device, gender, test };
+    const date = new Date().toISOString();
+    const value = createArray(test);
+    const data = {
+      date,
+      firstName,
+      lastName,
+      age,
+      device,
+      gender,
+      test,
+      value,
+    };
     localStorage.setItem("data", data);
-    createArray(test);
+    console.log(data);
   }
 
   return (
@@ -43,13 +54,13 @@ export default function IndividualJoin() {
       </div>
       <div className="input-data-box">
         <div className="input-data">
-          <label htmlFor="email">Email</label>
+          <label htmlFor="age">Age (in Year)</label>
           <input
-            id="email"
-            type="email"
-            placeholder="Input your email"
-            value={email}
-            onChange={setEmail}
+            id="age"
+            type="number"
+            placeholder="Input your age"
+            value={age}
+            onChange={setAge}
           />
         </div>
         <div className="input-data">
