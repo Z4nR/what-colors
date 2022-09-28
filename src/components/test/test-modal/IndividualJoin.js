@@ -8,13 +8,12 @@ function IndividualJoin() {
   const [lastName, setLastName] = useInput("");
   const [email, setEmail] = useInput("");
   const [device, setDevice] = useInput("");
-  const [gender, setGender] = useInput("");
-  const [test, setTestType] = useInput("");
+  const [gender, setGender] = useInput("female");
+  const [test, setTestType] = useInput("fm85");
 
   function onSubmitData() {
     const data = { firstName, lastName, email, device, gender, test };
     localStorage.setItem("data", data);
-    console.log(data);
     createArray(test);
   }
 

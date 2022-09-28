@@ -14,7 +14,6 @@ const testType = [
 
 function createArray(type) {
   const test = testType.find((test) => test.type === type);
-  console.log(test);
   const value = test.value;
   return value;
 }
