@@ -14,7 +14,7 @@ export default function IndividualJoin() {
   function onSubmitData() {
     const date = new Date().toISOString();
     const value = createArray(test);
-    const data = {
+    const dataInput = {
       date,
       firstName,
       lastName,
@@ -24,8 +24,8 @@ export default function IndividualJoin() {
       test,
       value,
     };
-    localStorage.setItem("data", data);
-    console.log(data);
+    localStorage.setItem("data", dataInput);
+    console.log(dataInput);
   }
 
   return (
