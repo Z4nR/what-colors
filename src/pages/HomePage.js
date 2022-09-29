@@ -10,16 +10,18 @@ export default function HomePage() {
 
   return (
     <section>
-      <div className="go-to-test">
-        <h2>Want Check Your Color Blindness?</h2>
-        <button
-          onClick={(event) => {
-            event.preventDefault();
-            goTest();
-          }}
-        >
-          Take Test
-        </button>
+      <div className="page">
+        <div className="go-to-test">
+          <h2>Want Check Your Color Blindness?</h2>
+          <button
+            onClick={(event) => {
+              event.preventDefault();
+              goTest();
+            }}
+          >
+            Take Test
+          </button>
+        </div>
       </div>
     </section>
   );

@@ -73,11 +73,16 @@
 }
 
 @media screen and (max-width: 450px) {
+  /*Test Page*/
   .instruction-box {
     display: none;
   }
   .test-type {
     height: 200px;
+  }
+  /*Modal*/
+  .icon-delete {
+    font-size: 24px;
   }
 }
 
@@ -131,6 +136,10 @@
     max-width: 900px;
   }
   /*Modal*/
+  .modal-center {
+    max-width: 900px;
+    margin: 1.75rem auto;
+  }
   .input-data-box {
     flex-direction: row;
   }

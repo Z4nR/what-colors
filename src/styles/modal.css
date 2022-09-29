@@ -1,17 +1,48 @@
 .modal-box {
-  background-color: rgba(128, 128, 128, 0.335);
+  z-index: 100;
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(128, 128, 128, 0.637);
+}
+
+.modal-center {
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - 1rem);
+}
+
+.modal-input {
+  position: relative;
+  width: 100%;
+  background-color: whitesmoke;
+  padding: 8px;
+  margin: 16px;
+  border-radius: 8px;
 }
 
 .individual-input {
   border: 2px dashed lightcoral;
-  background-color: whitesmoke;
-  padding: 8px;
-  margin: 8px;
-  border-radius: 8px;
 }
 
-.input-data-box {
+.input-data-box,
+.header-input-data {
   display: flex;
+}
+
+.header-input-data {
+  flex-direction: row;
+}
+
+.icon-delete {
+  font-size: 28px;
+}
+
+.font-header {
+  flex: 1;
 }
 
 .input-data {
