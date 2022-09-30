@@ -1,31 +1,30 @@
 import React, { useState } from "react";
 import ChooseTest from "../components/test/ChooseTest";
 import InstructionTest from "../components/test/Instruction";
-import IndividualJoin from "../components/test/test-modal/IndividualJoin";
 import TestSheet from "../components/test/TestSheet";
+import ModalBox from "../components/test/test-modal/ModalBox";
 
 export default function TestPage() {
   const [isModalShowed, setModalShowed] = useState(false);
-  const [isModalClosed, setModalClose] = useState(true);
+  const [isIDModal, setIDModal] = useState(0);
 
-  function openModal() {
+  function openModal(id) {
     setModalShowed(true);
+    setIDModal(id);
   }
 
   function closeModal() {
-    setModalClose(false);
+    setModalShowed(false);
   }
 
   return (
     <section>
-      {isModalShowed && <IndividualJoin closeModal={closeModal} />}
-      {isModalClosed && (
-        <div className="page">
-          <InstructionTest />
-          <ChooseTest openModal={openModal} />
-          <TestSheet />
-        </div>
-      )}
+      {isModalShowed && <ModalBox closeModal={closeModal} id={isIDModal} />}
+      <div className="page">
+        <InstructionTest />
+        <ChooseTest openModal={openModal} />
+        <TestSheet />
+      </div>
     </section>
   );
 }

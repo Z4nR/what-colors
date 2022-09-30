@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function TestSheet() {
-  const localData = useState(localStorage.getItem("data") || null);
-  console.log(localData);
+  const [getData, setGetData] = useState(null);
+
+  useEffect(() => {
+    const dataInput = localStorage.getItem("data");
+    setGetData(JSON.parse(dataInput));
+    console.log(getData.value);
+  }, []);
 
   return <p>Hello</p>;
 }

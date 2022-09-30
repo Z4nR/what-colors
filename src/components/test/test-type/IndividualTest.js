@@ -18,7 +18,7 @@ export default function IndividualTest({ openModal }) {
         className="join-btn individual-btn"
         onClick={(event) => {
           event.preventDefault();
-          openModal();
+          openModal(1);
         }}
       >
         Take Test

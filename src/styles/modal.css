@@ -39,6 +39,7 @@
 
 .icon-delete {
   font-size: 28px;
+  cursor: pointer;
 }
 
 .font-header {
