@@ -18,4 +18,10 @@ function createArray(type) {
   return value;
 }
 
-export { genderType, testType, createArray };
+function shuffleArray(type) {
+  const arrayList = createArray(type);
+  console.log(arrayList);
+  return arrayList;
+}
+
+export { genderType, testType, createArray, shuffleArray };

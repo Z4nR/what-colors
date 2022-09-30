@@ -6,8 +6,7 @@ export default function TestSheet() {
   useEffect(() => {
     const dataInput = localStorage.getItem("data");
     setGetData(JSON.parse(dataInput));
-    console.log(getData.value);
   }, []);
 
-  return <p>Hello</p>;
+  return <p>{getData.firstName}</p>;
 }
