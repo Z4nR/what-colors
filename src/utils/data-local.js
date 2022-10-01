@@ -18,8 +18,16 @@ function createArray(type) {
   return value;
 }
 
+function selectedRows(row) {
+  const shuffleItem = row.map((item) => item.value);
+  return shuffleItem;
+}
+
 function shuffleArray(array) {
-  let nowArray = array.length;
+  const rows = selectedRows(array);
+  console.log(rows);
+
+  let nowArray = rows.length;
 
   while (0 !== nowArray) {
     let shuffle = Math.floor(Math.random() * nowArray);

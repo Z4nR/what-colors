@@ -115,6 +115,7 @@ export default function IndividualModal({ closeModal }) {
             onClick={(event) => {
               event.preventDefault();
               onSubmitData();
+              closeModal();
             }}
           >
             Submit Data
