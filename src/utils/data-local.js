@@ -18,10 +18,19 @@ function createArray(type) {
   return value;
 }
 
-function shuffleArray(type) {
-  const arrayList = createArray(type);
-  console.log(arrayList);
-  return arrayList;
+function shuffleArray(array) {
+  let nowArray = array.length;
+
+  while (0 !== nowArray) {
+    let shuffle = Math.floor(Math.random() * nowArray);
+    nowArray -= 1;
+
+    let tmp = array[nowArray];
+    array[nowArray] = array[shuffle];
+    array[shuffle] = tmp;
+  }
+
+  return array;
 }
 
 export { genderType, testType, createArray, shuffleArray };

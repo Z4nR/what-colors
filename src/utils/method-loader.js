@@ -2,7 +2,7 @@ const fm85 = [
   {
     row: "row1",
     value: [
-      { number: 1, status: "key", color: "#b2766f" },
+      { number: 1, status: "first", color: "#b2766f" },
       { number: 2, status: "removable", color: "#b1746a" },
       { number: 3, status: "removable", color: "#b17466" },
       { number: 4, status: "removable", color: "#b07464" },
@@ -23,13 +23,13 @@ const fm85 = [
       { number: 19, status: "removable", color: "#9d8e48" },
       { number: 20, status: "removable", color: "#9b8f49" },
       { number: 21, status: "removable", color: "#97914b" },
-      { number: 22, status: "key", color: "#91924d" },
+      { number: 22, status: "last", color: "#91924d" },
     ],
   },
   {
     row: "row2",
     value: [
-      { number: 22, status: "key", color: "#91924d" },
+      { number: 22, status: "first", color: "#91924d" },
       { number: 23, status: "removable", color: "#8d9352" },
       { number: 24, status: "removable", color: "#899557" },
       { number: 25, status: "removable", color: "#86955c" },
@@ -50,13 +50,13 @@ const fm85 = [
       { number: 40, status: "removable", color: "#559584" },
       { number: 41, status: "removable", color: "#529687" },
       { number: 42, status: "removable", color: "#519688" },
-      { number: 43, status: "key", color: "#4e9689" },
+      { number: 43, status: "last", color: "#4e9689" },
     ],
   },
   {
     row: "row3",
     value: [
-      { number: 43, status: "key", color: "#4e9689" },
+      { number: 43, status: "first", color: "#4e9689" },
       { number: 44, status: "removable", color: "#4c968e" },
       { number: 45, status: "removable", color: "#4c9691" },
       { number: 46, status: "removable", color: "#4a9794" },
@@ -77,13 +77,13 @@ const fm85 = [
       { number: 61, status: "removable", color: "#7489a7" },
       { number: 62, status: "removable", color: "#7686a6" },
       { number: 63, status: "removable", color: "#7b84a3" },
-      { number: 64, status: "key", color: "#8084a3" },
+      { number: 64, status: "last", color: "#8084a3" },
     ],
   },
   {
     row: "row4",
     value: [
-      { number: 64, status: "key", color: "#8084a3" },
+      { number: 64, status: "first", color: "#8084a3" },
       { number: 65, status: "removable", color: "#8484a3" },
       { number: 66, status: "removable", color: "#8a86a6" },
       { number: 67, status: "removable", color: "#8d85a3" },
@@ -104,7 +104,7 @@ const fm85 = [
       { number: 82, status: "removable", color: "#b3747c" },
       { number: 83, status: "removable", color: "#b3757a" },
       { number: 84, status: "removable", color: "#b37576" },
-      { number: 85, status: "key", color: "#b37673" },
+      { number: 85, status: "last", color: "#b37673" },
     ],
   },
 ];

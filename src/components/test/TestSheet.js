@@ -8,5 +8,11 @@ export default function TestSheet() {
     setGetData(JSON.parse(dataInput));
   }, []);
 
-  return <p>{getData.firstName}</p>;
+  return (
+    <div className="test-sheet">
+      <p>
+        {getData?.firstName} {getData?.lastName}
+      </p>
+    </div>
+  );
 }

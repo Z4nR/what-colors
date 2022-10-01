@@ -2,11 +2,11 @@ import React from "react";
 import { FiHome } from "react-icons/fi";
 import useInput from "../../../../customhooks/useInput";
 import {
+  createArray,
   genderType,
   shuffleArray,
   testType,
 } from "../../../../utils/data-local";
-//import { login } from "../../../utils/data-api";;
 
 export default function IndividualModal({ closeModal }) {
   const [firstName, setFirstName] = useInput("");
@@ -18,7 +18,8 @@ export default function IndividualModal({ closeModal }) {
 
   function onSubmitData() {
     const date = new Date().toISOString();
-    const value = shuffleArray(test);
+    const value = createArray(test);
+    const shuffle = shuffleArray(value);
     const dataInput = {
       date,
       firstName,
@@ -27,7 +28,7 @@ export default function IndividualModal({ closeModal }) {
       device,
       gender,
       test,
-      value,
+      shuffle,
     };
     localStorage.setItem("data", JSON.stringify(dataInput));
     console.log(dataInput);
