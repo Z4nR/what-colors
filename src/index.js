@@ -4,8 +4,6 @@ import { BrowserRouter } from "react-router-dom";
 import ColorApp from "./App";
 
 import "./styles/main.css";
-import "./styles/responsive.css";
-import "./styles/modal.css";
 
 const root = createRoot(document.getElementById("root"));
 root.render(

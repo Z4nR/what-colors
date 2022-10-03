@@ -8,7 +8,7 @@ const fm85 = [
       { number: 4, status: "removable", color: "#b07464" },
       { number: 5, status: "removable", color: "#ae725f" },
       { number: 6, status: "removable", color: "#aa725b" },
-      { number: 7, status: "removable", color: "a8745a" },
+      { number: 7, status: "removable", color: "#a8745a" },
       { number: 8, status: "removable", color: "#a87456" },
       { number: 9, status: "removable", color: "#a87452" },
       { number: 10, status: "removable", color: "#a97650" },

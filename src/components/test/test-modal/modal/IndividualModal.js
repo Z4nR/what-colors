@@ -4,7 +4,6 @@ import useInput from "../../../../customhooks/useInput";
 import {
   createArray,
   genderType,
-  shuffleArray,
   testType,
 } from "../../../../utils/data-local";
 
@@ -19,7 +18,6 @@ export default function IndividualModal({ closeModal }) {
   function onSubmitData() {
     const date = new Date().toISOString();
     const value = createArray(test);
-    const shuffle = shuffleArray(value);
     const dataInput = {
       date,
       firstName,
@@ -28,10 +26,9 @@ export default function IndividualModal({ closeModal }) {
       device,
       gender,
       test,
-      shuffle,
+      value,
     };
     localStorage.setItem("data", JSON.stringify(dataInput));
-    console.log(dataInput);
   }
 
   return (
