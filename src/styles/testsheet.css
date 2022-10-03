@@ -11,9 +11,16 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
 }
 
 .row-value {
+  margin: 4px;
+  min-height: 35px;
+  min-width: 35px;
   flex: 1;
+}
+
+.ghostbox {
+  visibility: hidden;
+  cursor: none;
 }

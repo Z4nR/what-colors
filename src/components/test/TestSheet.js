@@ -31,6 +31,18 @@ export default function TestSheet() {
     setRemovableList(shuffled);
   }, [getData]);
 
+  const handleListChange = (row, newState) => {
+    const newRemovable = removableList.map((removable) => {
+      if (removable.row === row) {
+        removable.value = newState;
+      }
+
+      return removable;
+    });
+
+    setRemovableList(newRemovable);
+  };
+
   return (
     <section className="test-section">
       <div className="test-sheet">
@@ -38,16 +50,21 @@ export default function TestSheet() {
           {getData?.firstName} {getData?.lastName}
         </p>
         {removableList?.map((data) => (
-          <div className="row-box" key={data.row}>
-            <ReactSortable list={removableList} setList={setRemovableList}>
+          <div key={data.row}>
+            <ReactSortable
+              className="row-box"
+              group="valueByRow"
+              animation={200}
+              ghostClass="ghostbox"
+              list={data.value}
+              setList={(newState) => handleListChange(data.row, newState)}
+            >
               {data.value.map((item) => (
-                <p
+                <div
                   className="row-value"
                   key={item.number}
-                  style={{ color: item.color }}
-                >
-                  {item.number}
-                </p>
+                  style={{ backgroundColor: item.color }}
+                />
               ))}
             </ReactSortable>
           </div>
