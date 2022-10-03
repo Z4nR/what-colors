@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { ReactSortable } from "react-sortablejs";
 import { shuffleArray } from "../../utils/data-local";
 
 export default function TestSheet() {
@@ -10,16 +11,17 @@ export default function TestSheet() {
   }, []);
 
   const shuffleData = useMemo(() => {
-    console.log(getData);
-    return getData.value.map((item) => {
+    return getData?.value.map((item) => {
       const arrayValue = item.value;
-      const filterFirst = arrayValue.filter((val) => val.status === "first");
       const filterRemovable = arrayValue.filter(
         (val) => val.status === "removable"
       );
-      const filterLast = arrayValue.filter((val) => val.status === "last");
       const shuffle = shuffleArray(filterRemovable);
-      const newArrayValue = [filterFirst, ...shuffle, filterLast];
+      const newArrayValue = [
+        arrayValue[0],
+        ...shuffle,
+        arrayValue[arrayValue.length - 1],
+      ];
       return {
         row: item.row,
         value: newArrayValue,
@@ -27,17 +29,27 @@ export default function TestSheet() {
     });
   }, [getData]);
 
+  const [removableList, setRemovableList] = useState(null);
+
   return (
     <section className="test-section">
       <div className="test-sheet">
         <p>
-          {getData.firstName} {getData.lastName}
+          {getData?.firstName} {getData?.lastName}
         </p>
-        {shuffleData.map((data) => (
+        {shuffleData?.map((data) => (
           <div className="row-box" id={data.row}>
-            {data.value.map((item) => (
-              <p>{item.number}</p>
-            ))}
+            <ReactSortable list={removableList} setList={setRemovableList}>
+              {data.value.map((item) => (
+                <p
+                  className="row-value"
+                  key={item.status}
+                  style={{ color: item.color }}
+                >
+                  {item.number}
+                </p>
+              ))}
+            </ReactSortable>
           </div>
         ))}
       </div>
