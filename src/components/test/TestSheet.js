@@ -1,17 +1,18 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ReactSortable } from "react-sortablejs";
 import { shuffleArray } from "../../utils/data-local";
 
 export default function TestSheet() {
   const [getData, setGetData] = useState(null);
+  const [removableList, setRemovableList] = useState(null);
 
   useEffect(() => {
     const dataInput = localStorage.getItem("data");
     setGetData(JSON.parse(dataInput));
   }, []);
 
-  const shuffleData = useMemo(() => {
-    return getData?.value.map((item) => {
+  useEffect(() => {
+    const shuffled = getData?.value.map((item) => {
       const arrayValue = item.value;
       const filterRemovable = arrayValue.filter(
         (val) => val.status === "removable"
@@ -27,9 +28,8 @@ export default function TestSheet() {
         value: newArrayValue,
       };
     });
+    setRemovableList(shuffled);
   }, [getData]);
-
-  const [removableList, setRemovableList] = useState(null);
 
   return (
     <section className="test-section">
@@ -37,13 +37,13 @@ export default function TestSheet() {
         <p>
           {getData?.firstName} {getData?.lastName}
         </p>
-        {shuffleData?.map((data) => (
-          <div className="row-box" id={data.row}>
+        {removableList?.map((data) => (
+          <div className="row-box" key={data.row}>
             <ReactSortable list={removableList} setList={setRemovableList}>
               {data.value.map((item) => (
                 <p
                   className="row-value"
-                  key={item.status}
+                  key={item.number}
                   style={{ color: item.color }}
                 >
                   {item.number}
