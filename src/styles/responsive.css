@@ -33,6 +33,9 @@
     height: 25px;
     width: 25px;
   }
+  .row-point-explainer {
+    font-size: 50%;
+  }
 }
 
 @media screen and (min-width: 301px) {
@@ -123,6 +126,10 @@
   .input-data {
     margin: 6px 0;
   }
+  /*Test Sheet*/
+  .row-point-explainer {
+    font-size: 60%;
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -166,6 +173,9 @@
   .row-value {
     height: 30px;
     width: 30px;
+  }
+  .row-point-explainer {
+    font-size: 75%;
   }
 }
 
