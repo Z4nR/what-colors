@@ -26,6 +26,13 @@
     font-weight: 200;
     font-size: 16px;
   }
+  /*Test Sheet*/
+  .start-row,
+  .end-row,
+  .row-value {
+    height: 25px;
+    width: 25px;
+  }
 }
 
 @media screen and (min-width: 301px) {
@@ -44,6 +51,13 @@
   .go-to-test button {
     width: 145px;
     padding: 8px;
+  }
+  /*Test Sheet*/
+  .start-row,
+  .end-row,
+  .row-value {
+    height: 28px;
+    width: 28px;
   }
 }
 
@@ -146,6 +160,13 @@
   .input-data {
     padding: 8px;
   }
+  /*Test Sheet*/
+  .start-row,
+  .end-row,
+  .row-value {
+    height: 30px;
+    width: 30px;
+  }
 }
 
 @media screen and (max-width: 622px) and (min-width: 599px) {
@@ -178,5 +199,24 @@
   .go-to-test button {
     width: 290px;
     padding: 16px;
+  }
+}
+
+@media screen and (min-width: 775px) {
+  /*Test Sheet*/
+  .start-row,
+  .end-row,
+  .row-value {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .start-row,
+  .end-row,
+  .row-value {
+    height: 45px;
+    width: 45px;
   }
 }

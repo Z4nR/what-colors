@@ -5,21 +5,47 @@
 .test-sheet {
   max-width: 1200px;
   margin: 0 auto;
+  width: fit-content;
 }
 
-.row-box {
+.row-box,
+.row-sheet {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
+}
+
+.row-sheet {
+  margin: 16px auto;
+}
+
+.row-start-box {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  margin: 4px 16px 4px 1px;
+}
+
+.row-end-box {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin: 4px 1px 4px 16px;
 }
 
 .row-value {
   margin: 4px 1px;
-  min-height: 35px;
-  min-width: 35px;
   border: 1px solid #000;
   cursor: pointer;
-  flex: 1;
+}
+
+.row-point-explainer {
+  color: whitesmoke;
+  background-color: transparent;
+  font-size: 75%;
+  opacity: 0.7;
+  text-align: center;
 }
 
 .ghostbox {

@@ -64,7 +64,12 @@ export default function TestSheet() {
           {getData?.firstName} {getData?.lastName}
         </p>
         {valueList?.map((data) => (
-          <div key={data.row}>
+          <div className="row-sheet" key={data.row}>
+            <div className="row-start-box">
+              <div className="start-row" style={{ backgroundColor: "#000" }}>
+                <p className="row-point-explainer">Start</p>
+              </div>
+            </div>
             <ReactSortable
               className="row-box"
               group={{ name: "valueByRow", put: false }}
@@ -81,6 +86,11 @@ export default function TestSheet() {
                 />
               ))}
             </ReactSortable>
+            <div className="row-end-box">
+              <div className="end-row" style={{ backgroundColor: "#000" }}>
+                <p className="row-point-explainer">End</p>
+              </div>
+            </div>
           </div>
         ))}
       </div>
