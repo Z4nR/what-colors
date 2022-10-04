@@ -1,5 +1,5 @@
 .test-section {
-  margin: 8px;
+  margin: 16px;
 }
 
 .test-sheet {
@@ -14,9 +14,11 @@
 }
 
 .row-value {
-  margin: 4px;
+  margin: 4px 1px;
   min-height: 35px;
   min-width: 35px;
+  border: 1px solid #000;
+  cursor: pointer;
   flex: 1;
 }
 
