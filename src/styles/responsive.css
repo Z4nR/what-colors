@@ -36,6 +36,10 @@
   .row-point-explainer {
     font-size: 50%;
   }
+  .start-row,
+  .end-row {
+    padding-top: 7px;
+  }
 }
 
 @media screen and (min-width: 301px) {
@@ -61,6 +65,14 @@
   .row-value {
     height: 28px;
     width: 28px;
+  }
+  /*Test Sheet*/
+  .row-point-explainer {
+    font-size: 60%;
+  }
+  .start-row,
+  .end-row {
+    padding-top: 7px;
   }
 }
 
@@ -126,10 +138,6 @@
   .input-data {
     margin: 6px 0;
   }
-  /*Test Sheet*/
-  .row-point-explainer {
-    font-size: 60%;
-  }
 }
 
 @media screen and (min-width: 600px) {
@@ -177,6 +185,10 @@
   .row-point-explainer {
     font-size: 75%;
   }
+  .start-row,
+  .end-row {
+    padding-top: 7px;
+  }
 }
 
 @media screen and (max-width: 622px) and (min-width: 599px) {
@@ -219,6 +231,10 @@
   .row-value {
     height: 40px;
     width: 40px;
+  }
+  .start-row,
+  .end-row {
+    padding-top: 14px;
   }
 }
 
