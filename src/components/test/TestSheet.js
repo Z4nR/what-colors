@@ -23,10 +23,6 @@ export default function TestSheet() {
     return valueList;
   }
 
-  const compareArray = (initiate, result) => {
-    console.log(initiate, result);
-  };
-
   useEffect(() => {
     const dataInput = localStorage.getItem("data");
     setGetData(JSON.parse(dataInput));
@@ -66,8 +62,13 @@ export default function TestSheet() {
         value: reuniteArrayValue,
       };
     });
-    console.log(reunite);
     return reunite;
+  };
+
+  const compareArray = () => {
+    const initiate = getData?.value;
+    const result = reuniteArray();
+    console.log(initiate, result);
   };
 
   return (
@@ -125,7 +126,7 @@ export default function TestSheet() {
           onClick={(event) => {
             event.preventDefault();
             onSubmitArray();
-            compareArray(getData?.value, reuniteArray());
+            compareArray();
           }}
         >
           Submit Result
