@@ -1,8 +1,8 @@
 import { fm40, fm85 } from "./method-loader";
 
 const genderType = [
-  { value: "female", label: "Female" },
-  { value: "male", label: "Male" },
+  { value: "Female", label: "Female" },
+  { value: "Male", label: "Male" },
 ];
 
 const testType = [
@@ -33,4 +33,14 @@ function shuffleArray(array) {
   return array;
 }
 
-export { genderType, testType, createArray, shuffleArray };
+const showFormattedDateEN = (date) => {
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  return new Date(date).toLocaleDateString("en-EN", options);
+};
+
+export { genderType, testType, createArray, shuffleArray, showFormattedDateEN };

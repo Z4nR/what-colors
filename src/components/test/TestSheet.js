@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ReactSortable } from "react-sortablejs";
-import { shuffleArray } from "../../utils/data-local";
+import { showFormattedDateEN, shuffleArray } from "../../utils/data-local";
 
 export default function TestSheet() {
   const [getData, setGetData] = useState(null);
@@ -18,55 +18,60 @@ export default function TestSheet() {
     setRemovableList(newRemovable);
   };
 
+  const compareArray = (concept, result, status) => {
+    if (concept === result) {
+      status = true;
+    } else {
+      status = false;
+    }
+    return status;
+  };
+
   useEffect(() => {
     const dataInput = localStorage.getItem("data");
     setGetData(JSON.parse(dataInput));
   }, []);
 
   useEffect(() => {
-    const first = getData?.value.map((item) => {
-      const arrayValue = item.value;
-      const filterFirst = arrayValue.find((val) => val.status === "first");
-      return {
-        row: item.row,
-        value: filterFirst,
-      };
-    });
-    console.log(first);
     const shuffled = getData?.value.map((item) => {
       const arrayValue = item.value;
       const filterRemovable = arrayValue.filter(
         (val) => val.status === "removable"
       );
+      const firstArray = arrayValue[0];
       const shuffle = shuffleArray(filterRemovable);
+      const lastArray = arrayValue[arrayValue.length - 1];
       const newArrayValue = [...shuffle];
       return {
         row: item.row,
         value: newArrayValue,
+        first: firstArray,
+        last: lastArray,
       };
     });
-    const last = getData?.value.map((item) => {
-      const arrayValue = item.value;
-      const filterLast = arrayValue.find((val) => val.status === "last");
-      return {
-        row: item.row,
-        value: filterLast,
-      };
-    });
-    console.log(last);
     setRemovableList(shuffled);
   }, [getData]);
 
   return (
     <section className="test-section">
       <div className="test-sheet">
-        <p>
-          {getData?.firstName} {getData?.lastName}
-        </p>
+        <div className="biodata-testing">
+          <p>{showFormattedDateEN(getData?.date)}</p>
+          <p>
+            Name : {getData?.firstName} {getData?.lastName}
+          </p>
+          <p>Age : {getData?.age}</p>
+          <p>Gender : {getData?.gender}</p>
+          <p>Gender : {getData?.device}</p>
+        </div>
         {valueList?.map((data) => (
           <div className="row-sheet" key={data.row}>
             <div className="row-start-box">
-              <div className="start-row" style={{ backgroundColor: "#000" }}>
+              <div
+                className="start-row"
+                key={data.first}
+                style={{ backgroundColor: data.first.color }}
+              >
                 <p className="row-point-explainer">Start</p>
               </div>
             </div>
@@ -87,12 +92,24 @@ export default function TestSheet() {
               ))}
             </ReactSortable>
             <div className="row-end-box">
-              <div className="end-row" style={{ backgroundColor: "#000" }}>
+              <div
+                className="end-row"
+                key={data.last}
+                style={{ backgroundColor: data.last.color }}
+              >
                 <p className="row-point-explainer">End</p>
               </div>
             </div>
           </div>
         ))}
+        <button
+          type="submit"
+          onClick={(event) => {
+            event.preventDefault();
+          }}
+        >
+          Submit Result
+        </button>
       </div>
     </section>
   );

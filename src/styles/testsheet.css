@@ -3,9 +3,29 @@
 }
 
 .test-sheet {
+  display: flex;
+  flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
   width: fit-content;
+}
+
+.biodata-testing {
+  margin-bottom: 8px;
+}
+
+.test-sheet button {
+  margin: 8px auto 0 auto;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+  border: 0;
+  background-color: lightblue;
+  font-family: "Inter", sans-serif;
+  font-weight: 550;
+  text-transform: uppercase;
+  cursor: pointer;
+  max-width: fit-content;
 }
 
 .row-box,
@@ -16,21 +36,21 @@
 }
 
 .row-sheet {
-  margin: 16px auto;
+  margin: 8px auto;
 }
 
 .row-start-box {
   flex: 1;
   display: flex;
   justify-content: flex-start;
-  margin: 4px 16px 4px 1px;
+  margin: 4px 8px 4px 1px;
 }
 
 .row-end-box {
   flex: 1;
   display: flex;
   justify-content: flex-end;
-  margin: 4px 1px 4px 16px;
+  margin: 4px 1px 4px 8px;
 }
 
 .row-value {
@@ -42,7 +62,7 @@
 .row-point-explainer {
   color: whitesmoke;
   background-color: transparent;
-  opacity: 0.7;
+  opacity: 0.8;
   text-align: center;
 }
 

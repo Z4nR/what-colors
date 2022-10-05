@@ -12,7 +12,7 @@ export default function IndividualModal({ closeModal }) {
   const [lastName, setLastName] = useInput("");
   const [age, setAge] = useInput(0);
   const [device, setDevice] = useInput("");
-  const [gender, setGender] = useInput("female");
+  const [gender, setGender] = useInput("Female");
   const [test, setTestType] = useInput("fm85");
 
   function onSubmitData() {

@@ -183,7 +183,7 @@
     width: 30px;
   }
   .row-point-explainer {
-    font-size: 75%;
+    font-size: 60%;
   }
   .start-row,
   .end-row {
@@ -235,6 +235,9 @@
   .start-row,
   .end-row {
     padding-top: 14px;
+  }
+  .row-point-explainer {
+    font-size: 75%;
   }
 }
 
