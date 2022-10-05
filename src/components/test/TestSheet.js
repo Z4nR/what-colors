@@ -18,13 +18,13 @@ export default function TestSheet() {
     setRemovableList(newRemovable);
   };
 
-  const compareArray = (concept, result, status) => {
-    if (concept === result) {
-      status = true;
-    } else {
-      status = false;
-    }
-    return status;
+  function onSubmitArray() {
+    console.log(valueList);
+    return valueList;
+  }
+
+  const compareArray = (initiate, result) => {
+    console.log(initiate, result);
   };
 
   useEffect(() => {
@@ -51,6 +51,24 @@ export default function TestSheet() {
     });
     setRemovableList(shuffled);
   }, [getData]);
+
+  const reuniteArray = () => {
+    const reunite = valueList?.map((item) => {
+      const firstArray = item.first;
+      const arrayValue = item.value;
+      const filterRemovable = arrayValue.filter(
+        (val) => val.status === "removable"
+      );
+      const lastArray = item.last;
+      const reuniteArrayValue = [firstArray, ...filterRemovable, lastArray];
+      return {
+        row: item.row,
+        value: reuniteArrayValue,
+      };
+    });
+    console.log(reunite);
+    return reunite;
+  };
 
   return (
     <section className="test-section">
@@ -106,6 +124,8 @@ export default function TestSheet() {
           type="submit"
           onClick={(event) => {
             event.preventDefault();
+            onSubmitArray();
+            compareArray(getData?.value, reuniteArray());
           }}
         >
           Submit Result
