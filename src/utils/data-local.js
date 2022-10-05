@@ -6,8 +6,16 @@ const genderType = [
 ];
 
 const testType = [
-  { type: "fm85", label: "Fransworth Munsell-85 Hue", value: fm85 },
-  { type: "fm40", label: "Fransworth Munsell-40 Hue", value: fm40 },
+  {
+    type: "Fransworth Munsell-85 Hue",
+    label: "Fransworth Munsell-85 Hue",
+    value: fm85,
+  },
+  {
+    type: "Fransworth Munsell-40 Hue",
+    label: "Fransworth Munsell-40 Hue",
+    value: fm40,
+  },
   //{ type: "hrr", label: "Hardy Rand Rittler" },
   //{ type: "ishihara", label: "Ishihara" },
 ];

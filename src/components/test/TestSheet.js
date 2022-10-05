@@ -19,7 +19,6 @@ export default function TestSheet() {
   };
 
   function onSubmitArray() {
-    console.log(valueList);
     return valueList;
   }
 
@@ -81,7 +80,8 @@ export default function TestSheet() {
           </p>
           <p>Age : {getData?.age}</p>
           <p>Gender : {getData?.gender}</p>
-          <p>Gender : {getData?.device}</p>
+          <p>Device : {getData?.device}</p>
+          <p>Test Type : {getData?.test}</p>
         </div>
         {valueList?.map((data) => (
           <div className="row-sheet" key={data.row}>
@@ -127,6 +127,7 @@ export default function TestSheet() {
             event.preventDefault();
             onSubmitArray();
             compareArray();
+            window.location.reload();
           }}
         >
           Submit Result

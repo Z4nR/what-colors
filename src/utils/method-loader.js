@@ -109,6 +109,67 @@ const fm85 = [
   },
 ];
 
-const fm40 = [];
+const fm40 = [
+  {
+    row: "row1",
+    value: [
+      { number: 40, status: "first", color: "#b2766f" },
+      { number: 1, status: "removable", color: "#b17466" },
+      { number: 2, status: "removable", color: "#ae725f" },
+      { number: 3, status: "removable", color: "#a8745a" },
+      { number: 4, status: "removable", color: "#a87452" },
+      { number: 5, status: "removable", color: "#a8794e" },
+      { number: 6, status: "removable", color: "#a97e4c" },
+      { number: 7, status: "removable", color: "#a78244" },
+      { number: 8, status: "removable", color: "#a28946" },
+      { number: 9, status: "last", color: "#9d8e48" },
+    ],
+  },
+  {
+    row: "row2",
+    value: [
+      { number: 10, status: "first", color: "#97914b" },
+      { number: 11, status: "removable", color: "#8d9352" },
+      { number: 12, status: "removable", color: "#86955c" },
+      { number: 13, status: "removable", color: "#7e9760" },
+      { number: 14, status: "removable", color: "#7c9567" },
+      { number: 15, status: "removable", color: "#699a71" },
+      { number: 16, status: "removable", color: "#649a76" },
+      { number: 17, status: "removable", color: "#5b947a" },
+      { number: 18, status: "removable", color: "#589480" },
+      { number: 19, status: "last", color: "#529687" },
+    ],
+  },
+  {
+    row: "row3",
+    value: [
+      { number: 20, status: "first", color: "#4e9689" },
+      { number: 21, status: "removable", color: "#4c9691" },
+      { number: 22, status: "removable", color: "#4a9696" },
+      { number: 23, status: "removable", color: "#4a9698" },
+      { number: 24, status: "removable", color: "#52949f" },
+      { number: 25, status: "removable", color: "#6090a5" },
+      { number: 26, status: "removable", color: "#688fa7" },
+      { number: 27, status: "removable", color: "#6c8aa6" },
+      { number: 28, status: "removable", color: "#7489a7" },
+      { number: 29, status: "last", color: "#7b84a3" },
+    ],
+  },
+  {
+    row: "row4",
+    value: [
+      { number: 30, status: "first", color: "#8484a3" },
+      { number: 31, status: "removable", color: "#8d85a3" },
+      { number: 32, status: "removable", color: "#9483a0" },
+      { number: 33, status: "removable", color: "#99819d" },
+      { number: 34, status: "removable", color: "#9f7f98" },
+      { number: 35, status: "removable", color: "#a9798b" },
+      { number: 36, status: "removable", color: "#ae7787" },
+      { number: 37, status: "removable", color: "#b1757f" },
+      { number: 38, status: "removable", color: "#b3757a" },
+      { number: 39, status: "last", color: "#b37673" },
+    ],
+  },
+];
 
 export { fm85, fm40 };

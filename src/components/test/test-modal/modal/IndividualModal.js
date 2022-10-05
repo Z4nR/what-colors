@@ -13,7 +13,7 @@ export default function IndividualModal({ closeModal }) {
   const [age, setAge] = useInput(0);
   const [device, setDevice] = useInput("");
   const [gender, setGender] = useInput("Female");
-  const [test, setTestType] = useInput("fm85");
+  const [test, setTestType] = useInput("Fransworth Munsell-85 Hue");
 
   function onSubmitData() {
     const date = new Date().toISOString();
@@ -113,6 +113,7 @@ export default function IndividualModal({ closeModal }) {
               event.preventDefault();
               onSubmitData();
               closeModal();
+              window.location.reload();
             }}
           >
             Submit Data
