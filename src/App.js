@@ -5,6 +5,7 @@ import AboutPage from "./pages/AboutPage";
 import ArticlePage from "./pages/ArticlePage";
 import HomePage from "./pages/HomePage";
 import TestPage from "./pages/TestPage";
+import TestSheet from "./pages/TestSheet";
 
 export default function ColorApp() {
   return (
@@ -19,6 +20,7 @@ export default function ColorApp() {
           <Route path="/test" element={<TestPage />} />
           <Route path="/article" element={<ArticlePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/test/test-sheet" element={<TestSheet />} />
         </Routes>
       </main>
       <footer>

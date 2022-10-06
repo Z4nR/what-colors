@@ -7,7 +7,7 @@ import {
   testType,
 } from "../../../../utils/data-local";
 
-export default function IndividualModal({ closeModal }) {
+export default function IndividualModal({ closeModal, openTestSheet }) {
   const [firstName, setFirstName] = useInput("");
   const [lastName, setLastName] = useInput("");
   const [age, setAge] = useInput(0);
@@ -111,9 +111,9 @@ export default function IndividualModal({ closeModal }) {
             type="button"
             onClick={(event) => {
               event.preventDefault();
+              openTestSheet();
               onSubmitData();
               closeModal();
-              window.location.reload();
             }}
           >
             Submit Data

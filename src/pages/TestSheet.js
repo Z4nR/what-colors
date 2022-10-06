@@ -1,26 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { ReactSortable } from "react-sortablejs";
-import { showFormattedDateEN, shuffleArray } from "../../utils/data-local";
+import { showFormattedDateEN, shuffleArray } from "../utils/data-local";
 
 export default function TestSheet() {
   const [getData, setGetData] = useState(null);
-  const [valueList, setRemovableList] = useState(null);
-
-  const handleListChange = (row, newState) => {
-    const newRemovable = valueList.map((removable) => {
-      if (removable.row === row) {
-        removable.value = newState;
-      }
-
-      return removable;
-    });
-
-    setRemovableList(newRemovable);
-  };
-
-  function onSubmitArray() {
-    return valueList;
-  }
+  const [valueList, setValueList] = useState(null);
 
   useEffect(() => {
     const dataInput = localStorage.getItem("data");
@@ -44,31 +28,54 @@ export default function TestSheet() {
         last: lastArray,
       };
     });
-    setRemovableList(shuffled);
+    setValueList(shuffled);
   }, [getData]);
+
+  const handleListChange = (row, newState) => {
+    const newRemovable = valueList.map((removable) => {
+      if (removable.row === row) {
+        removable.value = newState;
+      }
+
+      return removable;
+    });
+
+    setValueList(newRemovable);
+  };
 
   const reuniteArray = () => {
     const reunite = valueList?.map((item) => {
-      const firstArray = item.first;
-      const arrayValue = item.value;
-      const filterRemovable = arrayValue.filter(
-        (val) => val.status === "removable"
-      );
-      const lastArray = item.last;
-      const reuniteArrayValue = [firstArray, ...filterRemovable, lastArray];
       return {
         row: item.row,
-        value: reuniteArrayValue,
+        value: [item.first, ...item.value, item.last],
       };
     });
     return reunite;
   };
 
-  const compareArray = () => {
-    const initiate = getData?.value;
-    const result = reuniteArray();
-    console.log(initiate, result);
+  const compareArray = (result, initial) => {
+    return result.map((item, rowIndex) => {
+      const res = [];
+      const initialRow = initial[rowIndex];
+
+      for (let i = 0; 1 < item.value.length; i++) {
+        const resultValue = item.value[i];
+        const initialValue = initialRow.value[i];
+        res.push(resultValue === initialValue);
+      }
+
+      return {
+        row: item.row,
+        result: res,
+      };
+    });
   };
+
+  function onSubmitArray() {
+    const resultArray = reuniteArray();
+    const compareResult = compareArray(resultArray, getData?.value);
+    console.log(compareResult);
+  }
 
   return (
     <section className="test-section">
@@ -126,8 +133,6 @@ export default function TestSheet() {
           onClick={(event) => {
             event.preventDefault();
             onSubmitArray();
-            compareArray();
-            window.location.reload();
           }}
         >
           Submit Result
