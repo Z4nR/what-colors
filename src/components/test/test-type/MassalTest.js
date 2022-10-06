@@ -2,6 +2,8 @@ import React from "react";
 import { useMediaQuery } from "react-responsive";
 
 export default function MassalTest({ openModal }) {
+  const ID = 2;
+
   const isMobile = useMediaQuery({
     query: "(max-width: 350px)",
   });
@@ -18,7 +20,7 @@ export default function MassalTest({ openModal }) {
         className="join-btn massal-btn"
         onClick={(event) => {
           event.preventDefault();
-          openModal(2);
+          openModal(ID);
         }}
       >
         Create Room

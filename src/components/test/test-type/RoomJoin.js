@@ -2,6 +2,8 @@ import React from "react";
 import { useMediaQuery } from "react-responsive";
 
 export default function RoomJoinTest({ openModal }) {
+  const ID = 3;
+
   const isMobile = useMediaQuery({
     query: "(max-width: 350px)",
   });
@@ -18,7 +20,7 @@ export default function RoomJoinTest({ openModal }) {
         className="join-btn room-btn"
         onClick={(event) => {
           event.preventDefault();
-          openModal(3);
+          openModal(ID);
         }}
       >
         Join Room

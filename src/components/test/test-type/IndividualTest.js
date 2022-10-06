@@ -2,6 +2,8 @@ import React from "react";
 import { useMediaQuery } from "react-responsive";
 
 export default function IndividualTest({ openModal }) {
+  const ID = 1;
+
   const isMobile = useMediaQuery({
     query: "(max-width: 350px)",
   });
@@ -18,7 +20,7 @@ export default function IndividualTest({ openModal }) {
         className="join-btn individual-btn"
         onClick={(event) => {
           event.preventDefault();
-          openModal(1);
+          openModal(ID);
         }}
       >
         Take Test
