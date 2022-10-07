@@ -11,7 +11,36 @@
 }
 
 .biodata-testing {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 8px;
+}
+
+.header-testing {
+  text-align: center;
+}
+
+.header-testing::after {
+  align-self: center;
+  content: "";
+  width: 50%;
+  margin: 16px auto;
+  display: block;
+  border-bottom: 2px solid black;
+}
+
+.testing-status {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon-close {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.testing-status p {
+  flex: 1;
 }
 
 .test-sheet button {

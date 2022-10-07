@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { FiHome } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 import { ReactSortable } from "react-sortablejs";
 import { showFormattedDateEN, shuffleArray } from "../utils/data-local";
 
 export default function TestSheet() {
   const [getData, setGetData] = useState(null);
   const [valueList, setValueList] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const dataInput = localStorage.getItem("data");
@@ -58,7 +61,7 @@ export default function TestSheet() {
       const res = [];
       const initialRow = initial[rowIndex];
 
-      for (let i = 0; 1 < item.value.length; i++) {
+      for (let i = 0; i < item.value.length; i++) {
         const resultValue = item.value[i];
         const initialValue = initialRow.value[i];
         res.push(resultValue === initialValue);
@@ -71,7 +74,12 @@ export default function TestSheet() {
     });
   };
 
+  function closeTest() {
+    navigate("/test");
+  }
+
   function onSubmitArray() {
+    navigate("/test/result");
     const resultArray = reuniteArray();
     const compareResult = compareArray(resultArray, getData?.value);
     console.log(compareResult);
@@ -81,14 +89,24 @@ export default function TestSheet() {
     <section className="test-section">
       <div className="test-sheet">
         <div className="biodata-testing">
-          <p>{showFormattedDateEN(getData?.date)}</p>
+          <h4 className="header-testing">{getData?.test} Test</h4>
+          <div className="testing-status">
+            <p>{showFormattedDateEN(getData?.date)}</p>
+            <div className="icon-close">
+              <FiHome
+                onClick={(event) => {
+                  event.preventDefault();
+                  closeTest();
+                }}
+              />
+            </div>
+          </div>
           <p>
             Name : {getData?.firstName} {getData?.lastName}
           </p>
           <p>Age : {getData?.age}</p>
           <p>Gender : {getData?.gender}</p>
           <p>Device : {getData?.device}</p>
-          <p>Test Type : {getData?.test}</p>
         </div>
         {valueList?.map((data) => (
           <div className="row-sheet" key={data.row}>

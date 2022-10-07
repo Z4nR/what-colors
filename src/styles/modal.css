@@ -37,12 +37,12 @@
   flex-direction: row;
 }
 
-.icon-delete {
+.icon-close {
   font-size: 28px;
   cursor: pointer;
 }
 
-.font-header {
+.header-input-data {
   flex: 1;
 }
 

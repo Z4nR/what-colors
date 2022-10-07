@@ -34,8 +34,8 @@ export default function IndividualModal({ closeModal, openTestSheet }) {
   return (
     <div className="modal-input individual-input">
       <div className="header-input-data">
-        <h3 className="font-header">Individual Data</h3>
-        <div className="icon-delete">
+        <h3>Individual Data</h3>
+        <div className="icon-close">
           <FiHome onClick={closeModal} />
         </div>
       </div>

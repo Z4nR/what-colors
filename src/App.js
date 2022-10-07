@@ -4,6 +4,7 @@ import AppNav from "./components/Navigation";
 import AboutPage from "./pages/AboutPage";
 import ArticlePage from "./pages/ArticlePage";
 import HomePage from "./pages/HomePage";
+import ResultPage from "./pages/ResultPage";
 import TestPage from "./pages/TestPage";
 import TestSheet from "./pages/TestSheet";
 
@@ -21,6 +22,7 @@ export default function ColorApp() {
           <Route path="/article" element={<ArticlePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/test/test-sheet" element={<TestSheet />} />
+          <Route path="/test/result" element={<ResultPage />} />
         </Routes>
       </main>
       <footer>
