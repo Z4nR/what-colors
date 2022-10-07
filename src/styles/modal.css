@@ -42,7 +42,7 @@
   cursor: pointer;
 }
 
-.header-input-data {
+.header-input-data h3 {
   flex: 1;
 }
 

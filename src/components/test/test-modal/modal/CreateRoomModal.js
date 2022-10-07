@@ -6,7 +6,6 @@ import {
   genderType,
   testType,
 } from "../../../../utils/data-local";
-//import { login } from "../../../utils/data-api";
 
 export default function CreateRoomModal({ closeModal }) {
   const [firstName, setFirstName] = useInput("");
@@ -36,8 +35,8 @@ export default function CreateRoomModal({ closeModal }) {
   return (
     <div className="modal-input individual-input">
       <div className="header-input-data">
-        <h3 className="font-header">Room Setting</h3>
-        <div className="icon-delete">
+        <h3>Room Setting</h3>
+        <div className="icon-close">
           <FiHome onClick={closeModal} />
         </div>
       </div>

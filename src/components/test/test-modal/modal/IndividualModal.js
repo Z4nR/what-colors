@@ -15,19 +15,20 @@ export default function IndividualModal({ closeModal, openTestSheet }) {
   const [gender, setGender] = useInput("Female");
   const [test, setTestType] = useInput("Fransworth Munsell-85 Hue");
 
+  const date = new Date().toISOString();
+  const value = createArray(test);
+  const dataInput = {
+    date,
+    firstName,
+    lastName,
+    age,
+    device,
+    gender,
+    test,
+    value,
+  };
+
   function onSubmitData() {
-    const date = new Date().toISOString();
-    const value = createArray(test);
-    const dataInput = {
-      date,
-      firstName,
-      lastName,
-      age,
-      device,
-      gender,
-      test,
-      value,
-    };
     localStorage.setItem("data", JSON.stringify(dataInput));
   }
 

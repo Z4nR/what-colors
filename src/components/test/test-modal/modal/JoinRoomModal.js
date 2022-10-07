@@ -6,7 +6,6 @@ import {
   genderType,
   testType,
 } from "../../../../utils/data-local";
-//import { login } from "../../../utils/data-api";
 
 export default function JoinRoomModal({ closeModal }) {
   const [firstName, setFirstName] = useInput("");
@@ -36,8 +35,8 @@ export default function JoinRoomModal({ closeModal }) {
   return (
     <div className="modal-input individual-input">
       <div className="header-input-data">
-        <h3 className="font-header">Join Test Room</h3>
-        <div className="icon-delete">
+        <h3>Join Test Room</h3>
+        <div className="icon-close">
           <FiHome onClick={closeModal} />
         </div>
       </div>

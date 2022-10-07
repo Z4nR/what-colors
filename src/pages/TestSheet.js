@@ -92,7 +92,7 @@ export default function TestSheet() {
           <h4 className="header-testing">{getData?.test} Test</h4>
           <div className="testing-status">
             <p>{showFormattedDateEN(getData?.date)}</p>
-            <div className="icon-close">
+            <div className="icon-close-test">
               <FiHome
                 onClick={(event) => {
                   event.preventDefault();
