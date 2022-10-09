@@ -63,6 +63,10 @@ export default function TestSheet() {
 
       for (let i = 0; i < item.value.length; i++) {
         const resultValue = item.value[i];
+        if (resultValue.status !== "removable") {
+          continue;
+        }
+
         const initialValue = initialRow.value[i];
         res.push(resultValue === initialValue);
       }
@@ -81,6 +85,10 @@ export default function TestSheet() {
 
       for (let i = 0; i < item.value.length; i++) {
         const resultValue = item.value[i];
+        if (resultValue.status !== "removable") {
+          continue;
+        }
+
         const resultNumber = resultValue.number;
 
         const initialValue = initialRow.value[i];
@@ -102,14 +110,14 @@ export default function TestSheet() {
   };
 
   const methodCalculation = (result) => {
-    console.log(result);
     return result.map((item) => {
-      console.log(item);
-
       const res = [];
 
       for (let i = 0; i < item.value.length; i++) {
         const iCap = item.value[i];
+        if (iCap.status !== "removable") {
+          continue;
+        }
         const capNumber = iCap.number;
 
         const beforeCap = item.value[i - 1];
@@ -120,14 +128,16 @@ export default function TestSheet() {
 
         const beforeCapCount = capNumber - capBefore;
         const afterCapCount = capAfter - capNumber;
-        const countingMethod = (beforeCapCount + afterCapCount) % 2;
+        const totalCapError = beforeCapCount + afterCapCount;
+        const countingMethod = Math.abs(totalCapError - 2);
 
         res.push(countingMethod);
       }
 
+      const result = res.reduce((sum, cap) => sum + cap);
+
       return {
-        row: item.row,
-        result: res,
+        result: result,
       };
     });
   };
@@ -146,6 +156,10 @@ export default function TestSheet() {
     localStorage.setItem(
       "discirminantResult",
       JSON.stringify(discriminantResult)
+    );
+    localStorage.setItem(
+      "methodResult",
+      JSON.stringify(methodCalculationResult)
     );
 
     console.log(compareResult);
