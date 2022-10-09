@@ -74,15 +74,83 @@ export default function TestSheet() {
     });
   };
 
-  function closeTest() {
-    navigate("/test");
-  }
+  const discriminantValue = (result, initial) => {
+    return result.map((item, rowIndex) => {
+      const res = [];
+      const initialRow = initial[rowIndex];
+
+      for (let i = 0; i < item.value.length; i++) {
+        const resultValue = item.value[i];
+        const resultNumber = resultValue.number;
+
+        const initialValue = initialRow.value[i];
+        const initialNumber = initialValue.number;
+
+        const countingDiscriminant =
+          resultNumber >= initialNumber
+            ? resultNumber - initialNumber
+            : initialNumber - resultNumber;
+
+        res.push(countingDiscriminant);
+      }
+
+      return {
+        row: item.row,
+        result: res,
+      };
+    });
+  };
+
+  const methodCalculation = (result) => {
+    console.log(result);
+    return result.map((item) => {
+      console.log(item);
+
+      const res = [];
+
+      for (let i = 0; i < item.value.length; i++) {
+        const iCap = item.value[i];
+        const capNumber = iCap.number;
+
+        const beforeCap = item.value[i - 1];
+        const capBefore = beforeCap.number;
+
+        const afterCap = item.value[i + 1];
+        const capAfter = afterCap.number;
+
+        const beforeCapCount = capNumber - capBefore;
+        const afterCapCount = capAfter - capNumber;
+        const countingMethod = (beforeCapCount + afterCapCount) % 2;
+
+        res.push(countingMethod);
+      }
+
+      return {
+        row: item.row,
+        result: res,
+      };
+    });
+  };
 
   function onSubmitArray() {
     navigate("/test/result");
+
     const resultArray = reuniteArray();
-    const compareResult = compareArray(resultArray, getData?.value);
+    const initial = getData?.value;
+
+    const compareResult = compareArray(resultArray, initial);
+    const discriminantResult = discriminantValue(resultArray, initial);
+    const methodCalculationResult = methodCalculation(resultArray);
+
+    localStorage.setItem("compareArray", JSON.stringify(compareResult));
+    localStorage.setItem(
+      "discirminantResult",
+      JSON.stringify(discriminantResult)
+    );
+
     console.log(compareResult);
+    console.log(methodCalculationResult);
+    console.log(discriminantResult);
   }
 
   return (
@@ -96,7 +164,7 @@ export default function TestSheet() {
               <FiHome
                 onClick={(event) => {
                   event.preventDefault();
-                  closeTest();
+                  navigate("/test");
                 }}
               />
             </div>
@@ -130,7 +198,7 @@ export default function TestSheet() {
               {data.value.map((item) => (
                 <div
                   className="row-value"
-                  key={item.number}
+                  key={item.color}
                   style={{ backgroundColor: item.color }}
                 />
               ))}
