@@ -3,22 +3,33 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 export default function ResultPage() {
-  const [getResult, setGetResult] = useState(null);
+  const [getMethod, setMethod] = useState(null);
+  const [getCompare, setCompare] = useState(null);
+  const [getDiscriminant, setDiscriminant] = useState(null);
 
   useEffect(() => {
-    const discriminantResult = localStorage.getItem("discriminantResult");
-    const compareArray = localStorage.getItem("compareArray");
     const methodResult = localStorage.getItem("methodResult");
-    setGetResult(
-      JSON.parse(discriminantResult),
-      JSON.parse(compareArray),
-      JSON.parse(methodResult)
-    );
+    const compareArray = localStorage.getItem("compareArray");
+    const discriminantResult = localStorage.getItem("discriminantResult");
+
+    setMethod(JSON.parse(methodResult));
+    setCompare(JSON.parse(compareArray));
+    setDiscriminant(JSON.parse(discriminantResult));
   }, []);
+
+  useEffect(() => {
+    const compare = getCompare?.map((item) => item.result);
+    console.log(compare);
+  }, [getCompare]);
+
+  useEffect(() => {
+    const discriminant = getDiscriminant?.map((item) => item.result);
+    console.log(discriminant);
+  }, [getDiscriminant]);
 
   return (
     <section>
-      <p>Result Page</p>
+      <p>{getMethod}</p>
     </section>
   );
 }

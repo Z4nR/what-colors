@@ -110,7 +110,7 @@ export default function TestSheet() {
   };
 
   const methodCalculation = (result) => {
-    return result.map((item) => {
+    const method = result.map((item) => {
       const res = [];
 
       for (let i = 0; i < item.value.length; i++) {
@@ -140,6 +140,11 @@ export default function TestSheet() {
         result: result,
       };
     });
+
+    const methodMapping = method.map((item) => item.result);
+    const totalErrorScore = methodMapping.reduce((sum, cap) => sum + cap, 0);
+
+    return totalErrorScore;
   };
 
   function onSubmitArray() {
@@ -154,7 +159,7 @@ export default function TestSheet() {
 
     localStorage.setItem("compareArray", JSON.stringify(compareResult));
     localStorage.setItem(
-      "discirminantResult",
+      "discriminantResult",
       JSON.stringify(discriminantResult)
     );
     localStorage.setItem(
