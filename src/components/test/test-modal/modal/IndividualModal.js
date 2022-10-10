@@ -49,6 +49,7 @@ export default function IndividualModal({ closeModal, openTestSheet }) {
             placeholder="Input your first name"
             value={firstName}
             onChange={setFirstName}
+            required
           />
         </div>
         <div className="input-data">
@@ -59,6 +60,7 @@ export default function IndividualModal({ closeModal, openTestSheet }) {
             placeholder="Input your last name"
             value={lastName}
             onChange={setLastName}
+            required
           />
         </div>
       </div>
@@ -71,11 +73,12 @@ export default function IndividualModal({ closeModal, openTestSheet }) {
             placeholder="Input your age"
             value={age}
             onChange={setAge}
+            required
           />
         </div>
         <div className="input-data">
           <label htmlFor="gender">Gender</label>
-          <select id="gender" value={gender} onChange={setGender}>
+          <select id="gender" value={gender} onChange={setGender} required>
             {genderType.map((option) => (
               <option key={option.value} value={option.value}>
                 {option.label}
@@ -93,11 +96,12 @@ export default function IndividualModal({ closeModal, openTestSheet }) {
             placeholder="Input your type of test device"
             value={device}
             onChange={setDevice}
+            required
           />
         </div>
         <div className="input-data">
           <label htmlFor="method">Method</label>
-          <select id="method" value={test} onChange={setTestType}>
+          <select id="method" value={test} onChange={setTestType} required>
             {testType.map((option) => (
               <option key={option.type} value={option.type}>
                 {option.label}

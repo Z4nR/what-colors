@@ -134,7 +134,7 @@ export default function TestSheet() {
         res.push(countingMethod);
       }
 
-      const result = res.reduce((sum, cap) => sum + cap);
+      const result = res.reduce((sum, cap) => sum + cap, 0);
 
       return {
         result: result,
