@@ -18,14 +18,9 @@ export default function ResultPage() {
   }, []);
 
   useEffect(() => {
-    const compare = getCompare?.map((item) => item.result);
+    const compare = getCompare?.map((item) => item.booleanResult);
     console.log(compare);
   }, [getCompare]);
-
-  useEffect(() => {
-    const discriminant = getDiscriminant?.map((item) => item.result);
-    console.log(discriminant);
-  }, [getDiscriminant]);
 
   return (
     <section>

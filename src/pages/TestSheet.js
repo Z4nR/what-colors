@@ -73,23 +73,23 @@ export default function TestSheet() {
 
       return {
         row: item.row,
-        result: res,
+        booleanResult: res,
       };
     });
   };
 
   const discriminantValue = (result, initial) => {
-    return result.map((item, rowIndex) => {
+    const discriminant = result.map((item, rowIndex) => {
       const res = [];
       const initialRow = initial[rowIndex];
 
       for (let i = 0; i < item.value.length; i++) {
         const resultValue = item.value[i];
+        const resultNumber = resultValue.number;
+
         if (resultValue.status !== "removable") {
           continue;
         }
-
-        const resultNumber = resultValue.number;
 
         const initialValue = initialRow.value[i];
         const initialNumber = initialValue.number;
@@ -102,11 +102,20 @@ export default function TestSheet() {
         res.push(countingDiscriminant);
       }
 
-      return {
-        row: item.row,
-        result: res,
-      };
+      return res;
     });
+
+    const discriminantResult = discriminant.flat(1);
+
+    const number = [];
+    for (let i = 0; i < discriminantResult.length; i++) {
+      number.push(i + 1);
+    }
+
+    return {
+      number: number,
+      value: discriminantResult,
+    };
   };
 
   const methodCalculation = (result) => {
