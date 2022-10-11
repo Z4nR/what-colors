@@ -22,6 +22,13 @@ export default function ResultPage() {
     console.log(compare);
   }, [getCompare]);
 
+  useEffect(() => {
+    const discriminant = getDiscriminant?.map(
+      (item) => item.discriminantResult
+    );
+    console.log(discriminant);
+  }, [getDiscriminant]);
+
   return (
     <section>
       <p>{getMethod}</p>

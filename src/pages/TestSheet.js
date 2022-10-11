@@ -57,7 +57,7 @@ export default function TestSheet() {
   };
 
   const compareArray = (result, initial) => {
-    return result.map((item, rowIndex) => {
+    const compare = result.map((item, rowIndex) => {
       const res = [];
       const initialRow = initial[rowIndex];
 
@@ -71,11 +71,17 @@ export default function TestSheet() {
         res.push(resultValue === initialValue);
       }
 
-      return {
-        row: item.row,
-        booleanResult: res,
-      };
+      return res;
     });
+
+    const comparisonResult = compare.flat(1);
+
+    const value = [];
+    for (let i = 0; i < comparisonResult.length; i++) {
+      value.push({ number: i + 1, value: comparisonResult[i] });
+    }
+
+    return { comparisonResult: value };
   };
 
   const discriminantValue = (result, initial) => {
@@ -112,9 +118,10 @@ export default function TestSheet() {
       number.push(i + 1);
     }
 
+    const discriminantValue = [number, discriminantResult];
+
     return {
-      number: number,
-      value: discriminantResult,
+      value: discriminantValue,
     };
   };
 
