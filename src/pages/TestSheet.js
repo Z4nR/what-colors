@@ -78,7 +78,7 @@ export default function TestSheet() {
 
     const value = [];
     for (let i = 0; i < comparisonResult.length; i++) {
-      value.push({ number: i + 1, value: comparisonResult[i] });
+      value.push({ number: i + 1, comparison: comparisonResult[i] });
     }
 
     return { comparisonResult: value };
@@ -118,10 +118,15 @@ export default function TestSheet() {
       number.push(i + 1);
     }
 
-    const discriminantValue = [number, discriminantResult];
+    const value = [];
+    for (let i = 0; i < discriminantResult.length; i++) {
+      value.push({ number: number[i], discriminant: discriminantResult[i] });
+    }
 
     return {
-      value: discriminantValue,
+      number: number,
+      result: discriminantResult,
+      value: value,
     };
   };
 

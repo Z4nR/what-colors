@@ -18,14 +18,12 @@ export default function ResultPage() {
   }, []);
 
   useEffect(() => {
-    const compare = getCompare?.map((item) => item.booleanResult);
+    const compare = getCompare?.comparisonResult;
     console.log(compare);
   }, [getCompare]);
 
   useEffect(() => {
-    const discriminant = getDiscriminant?.map(
-      (item) => item.discriminantResult
-    );
+    const discriminant = getDiscriminant?.number;
     console.log(discriminant);
   }, [getDiscriminant]);
 
