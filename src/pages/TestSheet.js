@@ -187,10 +187,6 @@ export default function TestSheet() {
       "methodResult",
       JSON.stringify(methodCalculationResult)
     );
-
-    console.log(compareResult);
-    console.log(methodCalculationResult);
-    console.log(discriminantResult);
   }
 
   return (
