@@ -47,6 +47,7 @@ export default function IndividualModal({ closeModal, openTestSheet }) {
             id="firstname"
             type="text"
             placeholder="Input your first name"
+            autoComplete="off"
             value={firstName}
             onChange={setFirstName}
             required
@@ -58,6 +59,7 @@ export default function IndividualModal({ closeModal, openTestSheet }) {
             id="lastname"
             type="text"
             placeholder="Input your last name"
+            autoComplete="off"
             value={lastName}
             onChange={setLastName}
             required
@@ -71,6 +73,7 @@ export default function IndividualModal({ closeModal, openTestSheet }) {
             id="age"
             type="number"
             placeholder="Input your age"
+            autoComplete="off"
             value={age}
             onChange={setAge}
             required
@@ -94,6 +97,7 @@ export default function IndividualModal({ closeModal, openTestSheet }) {
             id="device"
             type="text"
             placeholder="Input your type of test device"
+            autoComplete="off"
             value={device}
             onChange={setDevice}
             required
