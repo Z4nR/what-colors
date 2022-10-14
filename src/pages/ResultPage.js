@@ -58,7 +58,8 @@ export default function ResultPage() {
   };
 
   useEffect(() => {
-    new Chart(document.getElementById("radar-chart"), config);
+    new Chart("radar-chart", config);
+    console.log(config);
   }, []);
 
   useEffect(() => {
