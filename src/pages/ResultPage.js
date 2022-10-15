@@ -73,13 +73,14 @@ export default function ResultPage() {
 
   useEffect(() => {
     if (getDiscriminant !== null) {
-      new Chart("radar-chart", config);
+      const radar = new Chart("radar-chart", config);
+      console.log(radar);
     }
   }, []);
 
   return (
     <section>
-      <p>{getMethod}</p>
+      <p>Total Error Score: {getMethod}</p>
       <div className="chartCard">
         <div className="chartBox">
           <canvas id="radar-chart"></canvas>

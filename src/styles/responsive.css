@@ -119,6 +119,10 @@
   section {
     padding: 8px 0;
   }
+  /*App Header*/
+  .color-app_header {
+    flex-direction: column;
+  }
   /*Test Page*/
   .instruction h3 {
     font-weight: 550;
