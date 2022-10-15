@@ -115,13 +115,16 @@ export default function TestSheet() {
 
     const number = [];
     for (let i = 0; i < discriminantResult.length; i++) {
-      number.push(`Cap ${i + 1}`);
+      number.push(i + 1);
     }
 
     const value = [];
     for (let i = 0; i < discriminantResult.length; i++) {
       value.push({ number: number[i], discriminant: discriminantResult[i] });
     }
+
+    discriminantResult.reverse();
+    number.reverse();
 
     return {
       number: number,

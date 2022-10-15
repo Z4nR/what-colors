@@ -23,11 +23,11 @@ export default function ResultPage() {
   console.log(data);
 
   const chartData = {
-    labels: getDiscriminant?.number,
+    labels: label,
     datasets: [
       {
-        label: "Discriminant value",
-        data: getDiscriminant?.result,
+        label: "Hue Discriminant",
+        data: data,
         fill: true,
         backgroundColor: "rgba(255, 99, 132, 0.2)",
         borderColor: "rgb(255, 99, 132)",
@@ -65,14 +65,16 @@ export default function ResultPage() {
       plugins: {
         title: {
           display: true,
-          text: "Chart.js Radar Chart",
+          text: "Discriminant Value Test Result",
         },
       },
     },
   };
 
   useEffect(() => {
-    new Chart("radar-chart", config);
+    if (getDiscriminant !== null) {
+      new Chart("radar-chart", config);
+    }
   }, []);
 
   return (
