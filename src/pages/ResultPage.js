@@ -5,8 +5,22 @@ export default function ResultPage() {
   const [getMethod, setMethod] = useState(null);
   const [getCompare, setCompare] = useState(null);
   const [getDiscriminant, setDiscriminant] = useState(null);
-  const number = getDiscriminant?.number;
-  console.log(number);
+
+  useEffect(() => {
+    const methodResult = localStorage.getItem("methodResult");
+    const compareArray = localStorage.getItem("compareArray");
+    const discriminantResult = localStorage.getItem("discriminantResult");
+
+    setMethod(JSON.parse(methodResult));
+    setCompare(JSON.parse(compareArray));
+    setDiscriminant(JSON.parse(discriminantResult));
+  }, []);
+
+  const label = getDiscriminant?.number;
+  const data = getDiscriminant?.result;
+
+  console.log(label);
+  console.log(data);
 
   const chartData = {
     labels: getDiscriminant?.number,
@@ -59,17 +73,6 @@ export default function ResultPage() {
 
   useEffect(() => {
     new Chart("radar-chart", config);
-    console.log(config);
-  }, []);
-
-  useEffect(() => {
-    const methodResult = localStorage.getItem("methodResult");
-    const compareArray = localStorage.getItem("compareArray");
-    const discriminantResult = localStorage.getItem("discriminantResult");
-
-    setMethod(JSON.parse(methodResult));
-    setCompare(JSON.parse(compareArray));
-    setDiscriminant(JSON.parse(discriminantResult));
   }, []);
 
   return (
