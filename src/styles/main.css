@@ -247,7 +247,7 @@ section {
   justify-content: center;
 }
 .chartBox {
-  width: 700px;
+  width: 500px;
   padding: 20px;
   border-radius: 20px;
   border: solid 3px rgba(255, 26, 104, 1);
