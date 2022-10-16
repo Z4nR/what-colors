@@ -2,15 +2,18 @@ import React, { useEffect, useState } from "react";
 import Chart from "chart.js/auto";
 
 export default function ResultPage() {
+  const [getBiodata, setBiodata] = useState(null);
   const [getMethod, setMethod] = useState(null);
   const [getCompare, setCompare] = useState(null);
   const [getDiscriminant, setDiscriminant] = useState(null);
 
   useEffect(() => {
+    const biodata = localStorage.getItem("data");
     const methodResult = localStorage.getItem("methodResult");
     const compareArray = localStorage.getItem("compareArray");
     const discriminantResult = localStorage.getItem("discriminantResult");
 
+    setBiodata(JSON.parse(biodata));
     setMethod(JSON.parse(methodResult));
     setCompare(JSON.parse(compareArray));
     setDiscriminant(JSON.parse(discriminantResult));
@@ -19,6 +22,9 @@ export default function ResultPage() {
   useEffect(() => {
     const label = getDiscriminant?.number;
     const data = getDiscriminant?.result;
+
+    const maxResult = Math.max(data);
+    console.log(maxResult);
 
     const chartData = {
       labels: label,
@@ -49,12 +55,12 @@ export default function ResultPage() {
         scales: {
           r: {
             pointLabels: {
-              color: "red",
+              color: "black",
             },
             suggestedMin: 0,
             suggestedMax: 20,
             ticks: {
-              color: "red",
+              color: "blue",
               stepSize: 2,
             },
           },
@@ -63,24 +69,32 @@ export default function ResultPage() {
         plugins: {
           title: {
             display: true,
-            text: "Discriminant Value Test Result",
+            text: "Discriminant Cap Value Test Result",
           },
         },
       },
     };
 
     if (getDiscriminant !== null) {
-      const radar = new Chart("radar-chart", config);
-      console.log(radar);
+      new Chart("radar-chart", config);
     }
   }, [getDiscriminant]);
 
   return (
     <section>
-      <p>Total Error Score: {getMethod}</p>
-      <div className="chartCard">
-        <div className="chartBox">
-          <canvas id="radar-chart"></canvas>
+      <div className="result-box">
+        <div className="biodata-box">
+          <p>
+            Name : {getBiodata?.firstName} {getBiodata?.lastName}
+          </p>
+        </div>
+        <div className="result-data">
+          <p>Total Error Score: {getMethod}</p>
+        </div>
+        <div className="chart-box">
+          <div className="chart-card">
+            <canvas id="radar-chart"></canvas>
+          </div>
         </div>
       </div>
     </section>

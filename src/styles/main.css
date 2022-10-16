@@ -240,17 +240,17 @@ section {
 }
 
 /*Result*/
-.chartCard {
+.chart-box {
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.chartBox {
+.chart-card {
   width: 500px;
-  padding: 20px;
+  padding: 10px;
   border-radius: 20px;
-  border: solid 3px rgba(255, 26, 104, 1);
+  border: solid 3px khaki;
   background: white;
 }
 

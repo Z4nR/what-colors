@@ -208,12 +208,6 @@ export default function TestSheet() {
               />
             </div>
           </div>
-          <p>
-            Name : {getData?.firstName} {getData?.lastName}
-          </p>
-          <p>Age : {getData?.age}</p>
-          <p>Gender : {getData?.gender}</p>
-          <p>Device : {getData?.device}</p>
         </div>
         {valueList?.map((data) => (
           <div className="row-sheet" key={data.row}>
