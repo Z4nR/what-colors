@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Chart from "chart.js/auto";
 
 export default function ResultPage() {
@@ -19,12 +19,15 @@ export default function ResultPage() {
     setDiscriminant(JSON.parse(discriminantResult));
   }, []);
 
+  const maxResult = useMemo(() => {
+    if (getDiscriminant !== null) {
+      Math.max(...getDiscriminant?.result);
+    }
+  }, [getDiscriminant]);
+
   useEffect(() => {
     const label = getDiscriminant?.number;
     const data = getDiscriminant?.result;
-
-    const maxResult = Math.max(data);
-    console.log(maxResult);
 
     const chartData = {
       labels: label,
@@ -58,7 +61,7 @@ export default function ResultPage() {
               color: "black",
             },
             suggestedMin: 0,
-            suggestedMax: 20,
+            suggestedMax: maxResult,
             ticks: {
               color: "blue",
               stepSize: 2,
