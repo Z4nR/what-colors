@@ -1,33 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { FiHome } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-import useInput from "../../../../customhooks/useInput";
-import {
-  createArray,
-  genderType,
-  testType,
-} from "../../../../utils/data-local";
+import { createArray, testType } from "../../../../utils/data-local";
 
 export default function IndividualModal({ closeModal }) {
-  const [gender, setGender] = useInput("Female");
-  const [test, setTestType] = useInput("Fransworth Munsell-85 Hue");
-
   const navigate = useNavigate();
-
-  const date = new Date().toISOString();
-  const value = createArray(test);
 
   const {
     handleSubmit,
     register,
+    watch,
     formState: { errors },
-  } = useForm();
+    setValue,
+  } = useForm({
+    defaultValues: {
+      date: new Date().toISOString(),
+      firstName: "",
+      lastName: "",
+      age: 0,
+      device: "",
+      gender: "Female",
+      test: "Fransworth Munsell-85 Hue",
+      value: createArray(test),
+    },
+  });
+
+  const testValue = watch("test");
+
+  useEffect(() => {
+    setValue("value", createArray(testValue));
+  }, [testValue]);
 
   function onSubmit(data) {
-    const dataInput = { date, data, gender, test, value };
     navigate("/test/test-sheet");
-    localStorage.setItem("data", JSON.stringify(dataInput));
+    localStorage.setItem("data", JSON.stringify(data));
   }
 
   return (
@@ -116,7 +123,12 @@ export default function IndividualModal({ closeModal }) {
           </div>
           <div className="input-data">
             <label htmlFor="method">Method</label>
-            <select id="method" value={test} onChange={setTestType} required>
+            <select
+              id="method"
+              {...register("test", {
+                required: true,
+              })}
+            >
               {testType.map((option) => (
                 <option key={option.type} value={option.type}>
                   {option.type}

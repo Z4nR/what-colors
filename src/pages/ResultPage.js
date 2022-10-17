@@ -81,7 +81,7 @@ export default function ResultPage() {
     if (getDiscriminant !== null) {
       new Chart("radar-chart", config);
     }
-  }, [getDiscriminant]);
+  }, [getDiscriminant, maxResult]);
 
   return (
     <section>
