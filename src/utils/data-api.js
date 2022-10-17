@@ -1,24 +1,39 @@
 const BASE_URL = "localhost:5000/v1";
 
-async function login({ firstName, lastName, email, gender, device, testType }) {
-  const response = await fetch(`${BASE_URL}/new-user-individual`, {
+async function user({
+  date,
+  firstName,
+  lastName,
+  age,
+  gender,
+  device,
+  testType,
+  totalErrorScore,
+  comparisonResult,
+  discriminantResult,
+}) {
+  const response = await fetch(`${BASE_URL}/new-user`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
+      date,
       firstName,
       lastName,
-      email,
+      age,
       gender,
       device,
       testType,
+      totalErrorScore,
+      comparisonResult,
+      discriminantResult,
     }),
   });
 
   const responseJson = await response.json();
 
-  if (responseJson.status !== "success") {
+  if (responseJson.status !== 200) {
     alert(responseJson.message);
     return { error: true };
   }
@@ -26,4 +41,4 @@ async function login({ firstName, lastName, email, gender, device, testType }) {
   return { error: false };
 }
 
-export { login };
+export { user };
