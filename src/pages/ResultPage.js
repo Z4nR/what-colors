@@ -19,6 +19,8 @@ export default function ResultPage() {
     setDiscriminant(JSON.parse(discriminantResult));
   }, []);
 
+  console.log(getCompare);
+
   const maxResult = useMemo(() => {
     if (getDiscriminant !== null) {
       Math.max(...getDiscriminant?.result);
@@ -69,12 +71,6 @@ export default function ResultPage() {
           },
         },
         spanGaps: true,
-        plugins: {
-          title: {
-            display: true,
-            text: "Discriminant Cap Value Test Result",
-          },
-        },
       },
     };
 
@@ -85,17 +81,60 @@ export default function ResultPage() {
 
   return (
     <section>
-      <div className="result-box">
-        <div className="biodata-box">
-          <p>
-            Name : {getBiodata?.firstname} {getBiodata?.lastname}
-          </p>
-        </div>
-        <div className="result-data">
-          <p>Total Error Score: {getMethod}</p>
+      <div className="result">
+        <div className="data-box">
+          <div className="biodata-box">
+            <h3>Test Taker</h3>
+            <div className="info-biodata">
+              <p className="intro">
+                Thanks for taking the test about your colorblindness prediction.
+                After taking time to count the test, we will show test result
+                taken by:
+              </p>
+              <div className="data-type-box">
+                <div className="data-type">
+                  <p>Name </p>
+                  <p>Age </p>
+                  <p>Gender </p>
+                  <p>Device </p>
+                </div>
+                <div className="data-info">
+                  <p>
+                    : {getBiodata?.firstname} {getBiodata?.lastname}
+                  </p>
+                  <p> : {getBiodata?.age}</p>
+                  <p> : {getBiodata?.gender}</p>
+                  <p> : {getBiodata?.device}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="result-box">
+            <h3>Test Result</h3>
+            <div className="info-result">
+              <p>Total Error Score : {getMethod}</p>
+              <table>
+                <thead>
+                  <th>No.</th>
+                  <th>Value</th>
+                </thead>
+                <tbody>
+                  <td>
+                    <tr>1</tr>
+                    <tr>2</tr>
+                  </td>
+                  <td>
+                    <tr>testing</tr>
+                    <tr>tested</tr>
+                  </td>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
         <div className="chart-box">
           <div className="chart-card">
+            <h3>Discriminant Result</h3>
             <canvas id="radar-chart"></canvas>
           </div>
         </div>

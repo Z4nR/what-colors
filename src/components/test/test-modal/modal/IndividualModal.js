@@ -20,7 +20,7 @@ export default function IndividualModal({ closeModal }) {
       lastName: "",
       age: 0,
       device: "",
-      gender: "Female",
+      gender: "Male",
       test: "Fransworth Munsell-85 Hue",
       value: {},
     },

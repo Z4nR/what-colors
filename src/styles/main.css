@@ -240,18 +240,63 @@ section {
 }
 
 /*Result*/
-.chart-box {
-  width: 100vw;
+.result {
   display: flex;
-  align-items: center;
+  border-radius: 15px;
+  margin: 16px;
+  padding: 8px;
+  background-color: white;
+}
+.data-box {
+  flex: 6;
+}
+.biodata-box h3,
+.result-box h3 {
+  padding: 4px;
+  text-align: center;
+}
+.info-biodata,
+.info-result {
+  margin: 8px;
+}
+.intro {
+  margin: 16px auto;
+  text-align: justify;
+}
+.data-type-box {
+  display: flex;
+  justify-content: center;
+}
+.data-type,
+.data-info {
+  padding: 8px;
+}
+.data-box,
+.chart-box {
+  padding: 4px;
+}
+.biodata-box,
+.result-box {
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 15px;
+  border: solid 2px grey;
+}
+.chart-box {
+  flex: 3;
+  display: flex;
   justify-content: center;
 }
 .chart-card {
   width: 500px;
   padding: 10px;
   border-radius: 20px;
-  border: solid 3px khaki;
+  border: solid 2px grey;
   background: white;
+}
+.chart-card h3 {
+  text-align: center;
+  padding: 8px;
 }
 
 /*Footer*/
