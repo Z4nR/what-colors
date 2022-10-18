@@ -115,18 +115,18 @@ export default function ResultPage() {
               <p>Total Error Score : {getMethod}</p>
               <table>
                 <thead>
-                  <th>No.</th>
-                  <th>Value</th>
+                  <tr>
+                    <th>No.</th>
+                    <th className="table-value">Value</th>
+                  </tr>
                 </thead>
                 <tbody>
-                  <td>
-                    <tr>1</tr>
-                    <tr>2</tr>
-                  </td>
-                  <td>
-                    <tr>testing</tr>
-                    <tr>tested</tr>
-                  </td>
+                  {getCompare?.map((cap) => (
+                    <tr className="cap-data" key={cap.number}>
+                      <td>{cap.number}</td>
+                      <td>{cap.comparison}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

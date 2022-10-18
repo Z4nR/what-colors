@@ -78,10 +78,10 @@ export default function TestSheet() {
 
     const value = [];
     for (let i = 0; i < comparisonResult.length; i++) {
-      value.push({ number: i + 1, comparison: comparisonResult[i] });
+      value.push({ number: i + 1, comparison: `${comparisonResult[i]}` });
     }
 
-    return { comparisonResult: value };
+    return value;
   };
 
   const discriminantValue = (result, initial) => {

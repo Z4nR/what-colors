@@ -247,34 +247,47 @@ section {
   padding: 8px;
   background-color: white;
 }
+
 .data-box {
   flex: 6;
 }
+
 .biodata-box h3,
 .result-box h3 {
   padding: 4px;
   text-align: center;
 }
+
 .info-biodata,
 .info-result {
   margin: 8px;
 }
+
+.info-result {
+  height: 250px;
+  overflow-y: scroll;
+}
+
 .intro {
   margin: 16px auto;
   text-align: justify;
 }
+
 .data-type-box {
   display: flex;
   justify-content: center;
 }
+
 .data-type,
 .data-info {
   padding: 8px;
 }
+
 .data-box,
 .chart-box {
   padding: 4px;
 }
+
 .biodata-box,
 .result-box {
   margin-bottom: 8px;
@@ -282,11 +295,13 @@ section {
   border-radius: 15px;
   border: solid 2px grey;
 }
+
 .chart-box {
   flex: 3;
   display: flex;
   justify-content: center;
 }
+
 .chart-card {
   width: 500px;
   padding: 10px;
@@ -294,9 +309,27 @@ section {
   border: solid 2px grey;
   background: white;
 }
+
 .chart-card h3 {
   text-align: center;
   padding: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+tr {
+  border-bottom: 1px solid #ddd;
+}
+.cap-data:hover {
+  background-color: #d6eeee;
+}
+td {
+  text-align: center;
+}
+.table-value {
+  width: 80%;
 }
 
 /*Footer*/
