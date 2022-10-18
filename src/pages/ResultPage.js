@@ -88,7 +88,7 @@ export default function ResultPage() {
       <div className="result-box">
         <div className="biodata-box">
           <p>
-            Name : {getBiodata?.firstName} {getBiodata?.lastName}
+            Name : {getBiodata?.firstname} {getBiodata?.lastname}
           </p>
         </div>
         <div className="result-data">

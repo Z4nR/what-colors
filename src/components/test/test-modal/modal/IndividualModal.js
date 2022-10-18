@@ -22,7 +22,7 @@ export default function IndividualModal({ closeModal }) {
       device: "",
       gender: "Female",
       test: "Fransworth Munsell-85 Hue",
-      value: createArray(test),
+      value: {},
     },
   });
 
@@ -30,7 +30,7 @@ export default function IndividualModal({ closeModal }) {
 
   useEffect(() => {
     setValue("value", createArray(testValue));
-  }, [testValue]);
+  }, [setValue, testValue]);
 
   function onSubmit(data) {
     navigate("/test/test-sheet");
@@ -119,7 +119,9 @@ export default function IndividualModal({ closeModal }) {
               autoComplete="off"
               {...register("device", { required: true })}
             />
-            {errors.device && <p style={{ color: "red" }}>Wajib diisi</p>}
+            {errors.device && (
+              <p style={{ color: "red" }}>Wajib dipilih salah satu</p>
+            )}
           </div>
           <div className="input-data">
             <label htmlFor="method">Method</label>
@@ -135,6 +137,9 @@ export default function IndividualModal({ closeModal }) {
                 </option>
               ))}
             </select>
+            {errors.test && (
+              <p style={{ color: "red" }}>Wajib dipilih salah satu</p>
+            )}
           </div>
         </div>
         <div className="input-data-box">
