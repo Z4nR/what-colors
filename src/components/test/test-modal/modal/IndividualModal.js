@@ -18,7 +18,6 @@ export default function IndividualModal({ closeModal }) {
       date: new Date().toISOString(),
       firstname: "",
       lastname: "",
-      age: 0,
       device: "",
       gender: "",
       test: "Fransworth Munsell-85 Hue",

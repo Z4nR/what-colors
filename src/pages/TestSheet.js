@@ -15,6 +15,14 @@ export default function TestSheet() {
     setGetData(JSON.parse(dataInput));
   }, []);
 
+  const date = getData?.date;
+  const testType = getData?.test;
+  const first = getData?.firstname;
+  const last = getData?.lastname;
+  const age = getData?.age;
+  const gender = getData?.gender;
+  const device = getData?.device;
+
   useEffect(() => {
     const shuffled = getData?.value.map((item) => {
       const arrayValue = item.value;
@@ -186,6 +194,21 @@ export default function TestSheet() {
     const discriminantResult = discriminantValue(resultArray, initial);
     const methodCalculationResult = methodCalculation(resultArray);
 
+    const data = {
+      date,
+      first,
+      last,
+      age,
+      gender,
+      device,
+      testType,
+      methodCalculationResult,
+      compareResult,
+      discriminantResult,
+    };
+
+    const user = onAddDataUser(data);
+
     localStorage.setItem("compareArray", JSON.stringify(compareResult));
     localStorage.setItem(
       "discriminantResult",
@@ -201,9 +224,9 @@ export default function TestSheet() {
     <section className="test-section">
       <div className="test-sheet">
         <div className="biodata-testing">
-          <h4 className="header-testing">{getData?.test} Test</h4>
+          <h4 className="header-testing">{testType} Test</h4>
           <div className="testing-status">
-            <p>{showFormattedDateEN(getData?.date)}</p>
+            <p>{showFormattedDateEN(date)}</p>
             <div className="icon-close-test">
               <FiHome
                 onClick={(event) => {
@@ -214,11 +237,11 @@ export default function TestSheet() {
             </div>
           </div>
           <p>
-            Name : {getData?.firstname} {getData?.lastname}
+            Name : {first} {last}
           </p>
-          <p>Age : {getData?.age}</p>
-          <p>Gender : {getData?.gender}</p>
-          <p>Device : {getData?.device}</p>
+          <p>Age : {age}</p>
+          <p>Gender : {gender}</p>
+          <p>Device : {device}</p>
         </div>
         {valueList?.map((data) => (
           <div className="row-sheet" key={data.row}>

@@ -35,10 +35,10 @@ async function addUserData({
 
   if (responseJson.status !== 200) {
     alert(responseJson.message);
-    return { error: true };
+    return { error: true, data: null };
   }
 
-  return { error: false };
+  return { error: false, data: responseJson };
 }
 
 export { addUserData };

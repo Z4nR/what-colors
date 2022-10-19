@@ -19,8 +19,6 @@ export default function ResultPage() {
     setDiscriminant(JSON.parse(discriminantResult));
   }, []);
 
-  console.log(getCompare);
-
   const maxResult = useMemo(() => {
     if (getDiscriminant !== null) {
       Math.max(...getDiscriminant?.result);
