@@ -142,6 +142,11 @@
   .input-data {
     margin: 6px 0;
   }
+  /*Result*/
+  .result {
+    border-radius: 15px;
+    padding: 8px;
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -228,6 +233,14 @@
   }
 }
 
+@media screen and (max-width: 775px) {
+  /*Result*/
+  .result {
+    margin-top: 8px;
+    padding: 8px;
+  }
+}
+
 @media screen and (min-width: 775px) {
   /*Test Sheet*/
   .start-row,
@@ -242,6 +255,19 @@
   }
   .row-point-explainer {
     font-size: 75%;
+  }
+  /*Result*/
+  .result {
+    border-radius: 15px;
+    margin: 16px;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  /*Result*/
+  .result {
+    flex-direction: column;
   }
 }
 

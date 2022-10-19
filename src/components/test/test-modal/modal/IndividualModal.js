@@ -16,11 +16,11 @@ export default function IndividualModal({ closeModal }) {
   } = useForm({
     defaultValues: {
       date: new Date().toISOString(),
-      firstName: "",
-      lastName: "",
+      firstname: "",
+      lastname: "",
       age: 0,
       device: "",
-      gender: "Male",
+      gender: "",
       test: "Fransworth Munsell-85 Hue",
       value: {},
     },
@@ -106,7 +106,9 @@ export default function IndividualModal({ closeModal }) {
                 <label htmlFor="female">Female</label>
               </div>
             </div>
-            {errors.gender && <p style={{ color: "red" }}>Wajib diisi</p>}
+            {errors.gender && (
+              <p style={{ color: "red" }}>Wajib dipilih salah satu</p>
+            )}
           </div>
         </div>
         <div className="input-data-box">
@@ -119,9 +121,7 @@ export default function IndividualModal({ closeModal }) {
               autoComplete="off"
               {...register("device", { required: true })}
             />
-            {errors.device && (
-              <p style={{ color: "red" }}>Wajib dipilih salah satu</p>
-            )}
+            {errors.device && <p style={{ color: "red" }}>Wajib diisi</p>}
           </div>
           <div className="input-data">
             <label htmlFor="method">Method</label>

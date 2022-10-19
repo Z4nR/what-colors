@@ -10,7 +10,7 @@ export default function HomePage() {
 
   return (
     <section>
-      <div className="page">
+      <div className="go-to-box">
         <div className="go-to-test">
           <h2>Want Check Your Color Blindness?</h2>
           <button

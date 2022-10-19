@@ -84,7 +84,7 @@ export default function ResultPage() {
       <div className="result">
         <div className="data-box">
           <div className="biodata-box">
-            <h3>Test Taker</h3>
+            <h3>Tester Biodata</h3>
             <div className="info-biodata">
               <p className="intro">
                 Thanks for taking the test about your colorblindness prediction.
@@ -113,6 +113,7 @@ export default function ResultPage() {
             <h3>Test Result</h3>
             <div className="info-result">
               <p>Total Error Score : {getMethod}</p>
+              <p>Table of Test Result (True/False) : </p>
               <table>
                 <thead>
                   <tr>
@@ -120,15 +121,19 @@ export default function ResultPage() {
                     <th className="table-value">Value</th>
                   </tr>
                 </thead>
-                <tbody>
-                  {getCompare?.map((cap) => (
-                    <tr className="cap-data" key={cap.number}>
-                      <td>{cap.number}</td>
-                      <td>{cap.comparison}</td>
-                    </tr>
-                  ))}
-                </tbody>
               </table>
+              <div className="table-data">
+                <table>
+                  <tbody>
+                    {getCompare?.map((cap) => (
+                      <tr className="cap-data" key={cap.number}>
+                        <td>{cap.number}</td>
+                        <td className="table-value">{cap.comparison}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
