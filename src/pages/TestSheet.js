@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FiHome } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { ReactSortable } from "react-sortablejs";
+import { addUserData } from "../utils/data-api";
 import { showFormattedDateEN, shuffleArray } from "../utils/data-local";
 
 export default function TestSheet() {
@@ -170,6 +171,10 @@ export default function TestSheet() {
 
     return totalErrorScore;
   };
+
+  async function onAddDataUser(data) {
+    await addUserData(data);
+  }
 
   function onSubmitArray() {
     navigate("/test/result");

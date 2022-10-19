@@ -1,6 +1,6 @@
 const BASE_URL = "localhost:5000/v1";
 
-async function user({
+async function addUserData({
   date,
   firstName,
   lastName,
@@ -41,4 +41,4 @@ async function user({
   return { error: false };
 }
 
-export { user };
+export { addUserData };
