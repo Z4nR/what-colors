@@ -16,9 +16,9 @@ export default function TestSheet() {
   }, []);
 
   const date = getData?.date;
-  const testType = getData?.test;
-  const first = getData?.firstname;
-  const last = getData?.lastname;
+  const testType = getData?.testType;
+  const firstName = getData?.firstName;
+  const lastName = getData?.lastName;
   const age = getData?.age;
   const gender = getData?.gender;
   const device = getData?.device;
@@ -190,34 +190,32 @@ export default function TestSheet() {
     const resultArray = reuniteArray();
     const initial = getData?.value;
 
-    const compareResult = compareArray(resultArray, initial);
-    const discriminantResult = discriminantValue(resultArray, initial);
-    const methodCalculationResult = methodCalculation(resultArray);
+    const comparisonResults = compareArray(resultArray, initial);
+    const discriminant = discriminantValue(resultArray, initial);
+    const totalErrorScore = methodCalculation(resultArray);
+
+    const discriminantResults = discriminant.value;
 
     const data = {
       date,
-      first,
-      last,
+      firstName,
+      lastName,
       age,
       gender,
       device,
       testType,
-      methodCalculationResult,
-      compareResult,
-      discriminantResult,
+      totalErrorScore,
+      comparisonResults,
+      discriminantResults,
     };
 
-    const user = onAddDataUser(data);
+    console.log(data);
 
-    localStorage.setItem("compareArray", JSON.stringify(compareResult));
-    localStorage.setItem(
-      "discriminantResult",
-      JSON.stringify(discriminantResult)
-    );
-    localStorage.setItem(
-      "methodResult",
-      JSON.stringify(methodCalculationResult)
-    );
+    onAddDataUser(data);
+
+    localStorage.setItem("compareArray", JSON.stringify(comparisonResults));
+    localStorage.setItem("discriminantResult", JSON.stringify(discriminant));
+    localStorage.setItem("methodResult", JSON.stringify(totalErrorScore));
   }
 
   return (
@@ -237,7 +235,7 @@ export default function TestSheet() {
             </div>
           </div>
           <p>
-            Name : {first} {last}
+            Name : {firstName} {lastName}
           </p>
           <p>Age : {age}</p>
           <p>Gender : {gender}</p>

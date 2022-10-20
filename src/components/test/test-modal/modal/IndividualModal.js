@@ -16,16 +16,16 @@ export default function IndividualModal({ closeModal }) {
   } = useForm({
     defaultValues: {
       date: new Date().toISOString(),
-      firstname: "",
-      lastname: "",
+      firstName: "",
+      lastName: "",
       device: "",
       gender: "",
-      test: "Fransworth Munsell-85 Hue",
+      testType: "Fransworth Munsell-85 Hue",
       value: {},
     },
   });
 
-  const testValue = watch("test");
+  const testValue = watch("testType");
 
   useEffect(() => {
     setValue("value", createArray(testValue));
@@ -53,9 +53,9 @@ export default function IndividualModal({ closeModal }) {
               type="text"
               placeholder="Input your first name"
               autoComplete="off"
-              {...register("firstname", { required: true })}
+              {...register("firstName", { required: true })}
             />
-            {errors.firstname && <p style={{ color: "red" }}>Wajib diisi</p>}
+            {errors.firstName && <p style={{ color: "red" }}>Wajib diisi</p>}
           </div>
           <div className="input-data">
             <label htmlFor="lastname">Last Name</label>
@@ -64,9 +64,9 @@ export default function IndividualModal({ closeModal }) {
               type="text"
               placeholder="Input your last name"
               autoComplete="off"
-              {...register("lastname", { required: true })}
+              {...register("lastName", { required: true })}
             />
-            {errors.lastname && <p style={{ color: "red" }}>Wajib diisi</p>}
+            {errors.lastName && <p style={{ color: "red" }}>Wajib diisi</p>}
           </div>
         </div>
         <div className="input-data-box">
@@ -126,7 +126,7 @@ export default function IndividualModal({ closeModal }) {
             <label htmlFor="method">Method</label>
             <select
               id="method"
-              {...register("test", {
+              {...register("testType", {
                 required: true,
               })}
             >

@@ -98,7 +98,7 @@ export default function ResultPage() {
                 </div>
                 <div className="data-info">
                   <p>
-                    : {getBiodata?.firstname} {getBiodata?.lastname}
+                    : {getBiodata?.firstName} {getBiodata?.lastName}
                   </p>
                   <p> : {getBiodata?.age}</p>
                   <p> : {getBiodata?.gender}</p>
