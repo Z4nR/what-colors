@@ -52,8 +52,7 @@
   flex-direction: column;
 }
 
-.input-data input#firstname,
-.input-data input#lastname,
+.input-data input#fullname,
 .input-data input#age,
 .input-data input#device,
 .input-data select {

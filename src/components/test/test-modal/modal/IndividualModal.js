@@ -16,8 +16,7 @@ export default function IndividualModal({ closeModal }) {
   } = useForm({
     defaultValues: {
       date: new Date().toISOString(),
-      firstName: "",
-      lastName: "",
+      fullName: "",
       device: "",
       gender: "",
       testType: "Fransworth Munsell-85 Hue",
@@ -47,26 +46,15 @@ export default function IndividualModal({ closeModal }) {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="input-data-box">
           <div className="input-data">
-            <label htmlFor="firstname">First Name</label>
+            <label htmlFor="fullname">Full Name</label>
             <input
-              id="firstname"
+              id="fullname"
               type="text"
-              placeholder="Input your first name"
+              placeholder="Input your full name"
               autoComplete="off"
-              {...register("firstName", { required: true })}
+              {...register("fullName", { required: true })}
             />
-            {errors.firstName && <p style={{ color: "red" }}>Wajib diisi</p>}
-          </div>
-          <div className="input-data">
-            <label htmlFor="lastname">Last Name</label>
-            <input
-              id="lastname"
-              type="text"
-              placeholder="Input your last name"
-              autoComplete="off"
-              {...register("lastName", { required: true })}
-            />
-            {errors.lastName && <p style={{ color: "red" }}>Wajib diisi</p>}
+            {errors.fullName && <p style={{ color: "red" }}>Wajib diisi</p>}
           </div>
         </div>
         <div className="input-data-box">

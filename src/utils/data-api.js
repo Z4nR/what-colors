@@ -2,8 +2,7 @@ const BASE_URL = "http://localhost:5000/v1";
 
 async function addUserData({
   date,
-  firstName,
-  lastName,
+  fullName,
   age,
   gender,
   device,
@@ -14,8 +13,7 @@ async function addUserData({
 }) {
   const data = JSON.stringify({
     date,
-    firstName,
-    lastName,
+    fullName,
     age,
     gender,
     device,

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ChooseTest from "../components/test/ChooseTest";
-import InstructionTest from "../components/test/Instruction";
+import InstructionTest from "../components/test-time/Instruction";
 import ModalBox from "../components/test/test-modal/ModalBox";
 
 export default function TestPage() {

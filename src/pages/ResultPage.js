@@ -97,9 +97,7 @@ export default function ResultPage() {
                   <p>Device </p>
                 </div>
                 <div className="data-info">
-                  <p>
-                    : {getBiodata?.firstName} {getBiodata?.lastName}
-                  </p>
+                  <p>: {getBiodata?.fullName}</p>
                   <p> : {getBiodata?.age}</p>
                   <p> : {getBiodata?.gender}</p>
                   <p> : {getBiodata?.device}</p>

@@ -4,10 +4,6 @@ import { useNavigate } from "react-router-dom";
 export default function HomePage() {
   const navigate = useNavigate();
 
-  function goTest() {
-    navigate("/test");
-  }
-
   return (
     <section>
       <div className="go-to-box">
@@ -16,7 +12,7 @@ export default function HomePage() {
           <button
             onClick={(event) => {
               event.preventDefault();
-              goTest();
+              navigate("/test");
             }}
           >
             Take Test
