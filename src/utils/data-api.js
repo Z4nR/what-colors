@@ -25,8 +25,6 @@ async function addUserData({
     discriminantResults,
   });
 
-  console.log(data);
-
   const response = await fetch(`${BASE_URL}/new-user`, {
     method: "POST",
     headers: {
@@ -35,6 +33,20 @@ async function addUserData({
     body: data,
   });
 
+  const responseJson = await response.json();
+
+  localStorage.setItem("id", responseJson);
+
+  if (response.status !== 201) {
+    alert(response.message);
+    return { error: true, data: null };
+  }
+
+  return { error: false, data: response };
+}
+
+async function getUserData(id) {
+  const response = await fetch(`${BASE_URL}/user-data/${id}`);
   await response.json();
 
   if (response.status !== 201) {

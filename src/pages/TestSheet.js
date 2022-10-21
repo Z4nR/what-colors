@@ -185,7 +185,7 @@ export default function TestSheet() {
   }
 
   function onSubmitArray() {
-    navigate("/test/result");
+    navigate("/countdown");
 
     const resultArray = reuniteArray();
     const initial = getData?.value;

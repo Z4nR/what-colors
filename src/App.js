@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import AppNav from "./components/Navigation";
 import AboutPage from "./pages/AboutPage";
 import ArticlePage from "./pages/ArticlePage";
+import CountDownPage from "./pages/CountDownPage";
 import HomePage from "./pages/HomePage";
 import ResultPage from "./pages/ResultPage";
 import TestPage from "./pages/TestPage";
@@ -22,7 +23,8 @@ export default function ColorApp() {
           <Route path="/article" element={<ArticlePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/test/test-sheet" element={<TestSheet />} />
-          <Route path="/test/result" element={<ResultPage />} />
+          <Route path="/result/:id" element={<ResultPage />} />
+          <Route path="/countdown" element={<CountDownPage />} />
         </Routes>
       </main>
       <footer>
