@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 export default function CountDownPage() {
   const navigate = useNavigate();
   const [timer, setTimer] = useState(10);
+  const id = localStorage.getItem("id");
 
   useEffect(() => {
     if (timer === 0) return;
@@ -20,7 +21,7 @@ export default function CountDownPage() {
         <button
           onClick={(event) => {
             event.preventDefault();
-            navigate("/result/:id");
+            navigate(`/result/${id}`);
           }}
         >
           Show My Result

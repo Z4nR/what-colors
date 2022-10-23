@@ -1,23 +1,24 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Chart from "chart.js/auto";
+import { getUserData } from "../utils/data-api";
 
 export default function ResultPage() {
-  const [getBiodata, setBiodata] = useState(null);
-  const [getMethod, setMethod] = useState(null);
-  const [getCompare, setCompare] = useState(null);
+  const [result, setResult] = useState(null);
   const [getDiscriminant, setDiscriminant] = useState(null);
 
   useEffect(() => {
-    const biodata = localStorage.getItem("data");
-    const methodResult = localStorage.getItem("methodResult");
-    const compareArray = localStorage.getItem("compareArray");
     const discriminantResult = localStorage.getItem("discriminantResult");
-
-    setBiodata(JSON.parse(biodata));
-    setMethod(JSON.parse(methodResult));
-    setCompare(JSON.parse(compareArray));
     setDiscriminant(JSON.parse(discriminantResult));
+
+    const id = localStorage.getItem("id");
+
+    getUserData(id).then((data) => {
+      console.log(data.data);
+      setResult(data.data);
+    });
   }, []);
+
+  console.log(result);
 
   const maxResult = useMemo(() => {
     if (getDiscriminant !== null) {
@@ -97,10 +98,10 @@ export default function ResultPage() {
                   <p>Device </p>
                 </div>
                 <div className="data-info">
-                  <p>: {getBiodata?.fullName}</p>
-                  <p> : {getBiodata?.age}</p>
-                  <p> : {getBiodata?.gender}</p>
-                  <p> : {getBiodata?.device}</p>
+                  <p>: {result?.fullName}</p>
+                  <p> : {result?.age}</p>
+                  <p> : {result?.gender}</p>
+                  <p> : {result?.device}</p>
                 </div>
               </div>
             </div>
@@ -108,7 +109,7 @@ export default function ResultPage() {
           <div className="result-box">
             <h3>Test Result</h3>
             <div className="info-result">
-              <p>Total Error Score : {getMethod}</p>
+              <p>Total Error Score : {result?.totalErrorScore}</p>
               <p>Table of Test Result (True/False) : </p>
               <table>
                 <thead>
@@ -121,7 +122,7 @@ export default function ResultPage() {
               <div className="table-data">
                 <table>
                   <tbody>
-                    {getCompare?.map((cap) => (
+                    {result?.comparisonResults?.map((cap) => (
                       <tr className="cap-data" key={cap.number}>
                         <td>{cap.number}</td>
                         <td className="table-value">{cap.comparison}</td>

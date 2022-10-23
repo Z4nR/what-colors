@@ -33,7 +33,7 @@ async function addUserData({
 
   const responseJson = await response.json();
 
-  localStorage.setItem("id", responseJson);
+  localStorage.setItem("id", responseJson._id);
 
   if (response.status !== 201) {
     alert(response.message);
@@ -45,14 +45,14 @@ async function addUserData({
 
 async function getUserData(id) {
   const response = await fetch(`${BASE_URL}/user-data/${id}`);
-  await response.json();
+  const responseJson = await response.json();
 
-  if (response.status !== 201) {
+  if (response.status !== 200) {
     alert(response.message);
     return { error: true, data: null };
   }
 
-  return { error: false, data: response };
+  return { error: false, data: responseJson };
 }
 
-export { addUserData };
+export { addUserData, getUserData };
