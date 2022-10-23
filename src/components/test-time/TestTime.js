@@ -86,7 +86,9 @@ export default function TestTime() {
 
     const value = [];
     for (let i = 0; i < comparisonResult.length; i++) {
-      value.push({ number: i + 1, comparison: `${comparisonResult[i]}` });
+      const compare = `${comparisonResult[i]}`;
+      const upperCompare = compare.toUpperCase();
+      value.push({ number: i + 1, comparison: upperCompare });
     }
 
     return value;
