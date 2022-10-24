@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import AnnouncementTest from "../components/test/Announce";
 import ChooseTest from "../components/test/ChooseTest";
-import InstructionTest from "../components/test-time/Instruction";
 import ModalBox from "../components/test/test-modal/ModalBox";
 
 export default function TestPage() {
@@ -20,7 +20,7 @@ export default function TestPage() {
     <section>
       {isModalShowed && <ModalBox closeModal={closeModal} id={isIDModal} />}
       <div className="page">
-        <InstructionTest />
+        <AnnouncementTest />
         <ChooseTest openModal={openModal} />
       </div>
     </section>

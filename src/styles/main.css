@@ -68,7 +68,6 @@ section {
   margin-top: 16px;
   border-radius: 20px;
   border: 0;
-  background-color: lightblue;
   font-family: "Inter", sans-serif;
   font-weight: 550;
   text-transform: uppercase;
@@ -76,18 +75,22 @@ section {
 }
 
 /*Test Page*/
-.instruction-box {
+.instruction-box,
+.announcement-box {
   margin: 0 auto;
   padding: 8px 0;
 }
 
 .test-instruction,
-.instruction {
+.test-announcement,
+.instruction,
+.announcement {
   padding: 0 16px;
   margin: 0 auto;
 }
 
-.instruction {
+.instruction,
+.announcement {
   max-width: 835px;
   background-color: lightgoldenrodyellow;
   border-radius: 10px;
@@ -99,9 +102,14 @@ section {
   padding: 8px 32px;
 }
 
-.instruction h3 {
-  font-weight: 550;
+.instruction h3,
+.announcement h4,
+.announcement h5 {
   text-align: center;
+}
+
+.announcement h5 {
+  margin-top: 8px;
 }
 
 .choose-box {
@@ -221,20 +229,41 @@ section {
 }
 
 .icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   margin: auto 8px;
   padding: 4px;
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 10%);
 }
+.item-body {
+  margin-left: 8px;
+  padding-left: 8px;
+  border-left: 2px dashed #aaa;
+  flex: 1;
+  text-align: center;
+}
+.item-body h5 {
+  padding: 4px 0;
+}
+.item-body p {
+  font-weight: lighter;
+  font-size: 10px;
+  padding: 4px 0;
+}
 .individual {
+  width: 32px;
   background-repeat: no-repeat;
   background-image: url("../../public/icons/individual.svg");
 }
 .group {
+  width: 32px;
   background-repeat: no-repeat;
   background-image: url("../../public/icons/group.svg");
 }
 .join {
+  width: 32px;
   background-repeat: no-repeat;
   background-image: url("../../public/icons/join.svg");
 }
@@ -346,6 +375,7 @@ footer {
   margin-top: auto;
   text-align: center;
   padding: 16px;
+  bottom: 0;
 }
 
 /*Web Util*/

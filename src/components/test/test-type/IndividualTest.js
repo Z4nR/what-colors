@@ -10,7 +10,11 @@ export default function IndividualTest({ openModal }) {
 
   return isMobile ? (
     <div className="icons">
-      <div className="individual"></div>
+      <div className="individual" />
+      <div className="item-body">
+        <h5>Individual Test</h5>
+        <p>Challenge yourself to know your eye look the color</p>
+      </div>
     </div>
   ) : (
     <div className="test-type individual-test">

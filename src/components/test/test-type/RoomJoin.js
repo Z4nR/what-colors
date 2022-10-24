@@ -10,7 +10,11 @@ export default function RoomJoinTest({ openModal }) {
 
   return isMobile ? (
     <div className="icons">
-      <div className="join"></div>
+      <div className="join" />
+      <div className="item-body">
+        <h5>Join Test</h5>
+        <p>Join room to take color blidness test</p>
+      </div>
     </div>
   ) : (
     <div className="test-type room-join">
