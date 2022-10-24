@@ -11,21 +11,27 @@ export default function CountDownPage() {
     setTimeout(() => setTimer(timer - 1), 1000);
   }, [timer]);
 
-  return (
+  return timer === 0 ? (
     <section>
       <div className="countdown-box">
-        <h2>Yeeeeeaaayyy You Already Finish The Test</h2>
-        <h4>
-          Please until your result ready in <span>{timer}</span> second
-        </h4>
+        <p>Ready to watch your result?</p>
         <button
           onClick={(event) => {
             event.preventDefault();
             navigate(`/result/${id}`);
           }}
         >
-          Show My Result
+          <u>Show My Result</u>
         </button>
+      </div>
+    </section>
+  ) : (
+    <section>
+      <div className="countdown-box">
+        <h2>Yeeeeeaaayyy You Already Finish The Test</h2>
+        <h4>
+          Please until your result ready in <span>{timer}</span> second
+        </h4>
       </div>
     </section>
   );

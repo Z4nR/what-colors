@@ -11,15 +11,12 @@
 body {
   font-family: "Inter", sans-serif;
   background-color: whitesmoke;
-  min-height: 100vh;
 }
 
 section {
+  margin-top: 8px;
   background-color: whitesmoke;
-}
-
-.go-to-box {
-  margin-top: 32px;
+  min-height: 80vh;
 }
 
 /*App Header*/
@@ -266,6 +263,39 @@ section {
   width: 32px;
   background-repeat: no-repeat;
   background-image: url("../../public/icons/join.svg");
+}
+
+/*Countdown*/
+.countdown-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  padding: 16px;
+  background-image: url(../../public/img/Happy\ student-rafiki.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  transition: 0.4s ease-out;
+}
+
+.countdown-box p {
+  font-size: 28px;
+}
+
+.countdown-box button {
+  margin: 0 auto;
+  text-align: center;
+  padding: 8px;
+  border: 0;
+  background-color: transparent;
+  color: black;
+  font-family: "Inter", sans-serif;
+  font-weight: 550;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  max-width: fit-content;
 }
 
 /*Result*/
