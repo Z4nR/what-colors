@@ -1,10 +1,15 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Chart from "chart.js/auto";
 import { getUserData } from "../utils/data-api";
+import { useMediaQuery } from "react-responsive";
 
 export default function ResultPage() {
   const [result, setResult] = useState(null);
   const [getDiscriminant, setDiscriminant] = useState(null);
+
+  const isDesktop = useMediaQuery({
+    query: "(min-width: 450px)",
+  });
 
   useEffect(() => {
     const discriminantResult = localStorage.getItem("discriminantResult");
@@ -13,12 +18,9 @@ export default function ResultPage() {
     const id = localStorage.getItem("id");
 
     getUserData(id).then((data) => {
-      console.log(data.data);
       setResult(data.data);
     });
   }, []);
-
-  console.log(result);
 
   const maxResult = useMemo(() => {
     if (getDiscriminant !== null) {
@@ -74,9 +76,11 @@ export default function ResultPage() {
     };
 
     if (getDiscriminant !== null) {
-      new Chart("radar-chart", config);
+      if (isDesktop) {
+        new Chart("radar-chart", config);
+      }
     }
-  }, [getDiscriminant, maxResult]);
+  }, [getDiscriminant, maxResult, isDesktop]);
 
   return (
     <section>
@@ -110,7 +114,7 @@ export default function ResultPage() {
             <h3>Test Result</h3>
             <div className="info-result">
               <p>Total Error Score : {result?.totalErrorScore}</p>
-              <p>Table of Test Result (True/False) : </p>
+              <p>Comparison Result : </p>
               <table>
                 <thead>
                   <tr>
@@ -119,7 +123,7 @@ export default function ResultPage() {
                   </tr>
                 </thead>
               </table>
-              <div className="table-data">
+              <div className="table-compare">
                 <table>
                   <tbody>
                     {result?.comparisonResults?.map((cap) => (
@@ -136,8 +140,36 @@ export default function ResultPage() {
         </div>
         <div className="chart-box">
           <div className="chart-card">
-            <h3>Discriminant Result</h3>
-            <canvas id="radar-chart"></canvas>
+            {isDesktop ? (
+              <div>
+                <h3>Discriminant Result</h3>
+                <canvas id="radar-chart"></canvas>
+              </div>
+            ) : (
+              <div className="info-result">
+                <p>Discriminant Result : </p>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>No.</th>
+                      <th className="table-value">Value</th>
+                    </tr>
+                  </thead>
+                </table>
+                <div className="table-discriminant">
+                  <table>
+                    <tbody>
+                      {result?.discriminantResults?.map((cap) => (
+                        <tr className="cap-data" key={cap.number}>
+                          <td>{cap.number}</td>
+                          <td className="table-value">{cap.discriminant}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
