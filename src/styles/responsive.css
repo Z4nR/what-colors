@@ -121,6 +121,13 @@
   }
 }
 
+@media screen and (max-width: 560px) {
+  /*Test Page*/
+  .instruction-box {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 599px) {
   section {
     padding: 8px 0;

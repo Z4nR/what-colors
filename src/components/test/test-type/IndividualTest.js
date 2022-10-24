@@ -9,7 +9,13 @@ export default function IndividualTest({ openModal }) {
   });
 
   return isMobile ? (
-    <div className="icons">
+    <div
+      className="icons"
+      onClick={(event) => {
+        event.preventDefault();
+        openModal(ID);
+      }}
+    >
       <div className="individual" />
       <div className="item-body">
         <h5>Individual Test</h5>

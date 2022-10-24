@@ -273,20 +273,30 @@ section {
   min-height: 80vh;
   text-align: center;
   padding: 16px;
+}
+
+.image-result {
+  background-image: url(../../public/img/People\ search-bro.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+.image-congrats {
   background-image: url(../../public/img/Happy\ student-rafiki.svg);
   background-repeat: no-repeat;
   background-position-x: center;
-  transition: 0.4s ease-out;
 }
 
 .countdown-box p {
+  padding: 28px;
   font-size: 28px;
+  flex: 1;
 }
 
 .countdown-box button {
   margin: 0 auto;
   text-align: center;
-  padding: 8px;
+  padding: 16px;
   border: 0;
   background-color: transparent;
   color: black;
@@ -295,7 +305,15 @@ section {
   font-size: 20px;
   text-transform: uppercase;
   cursor: pointer;
-  max-width: fit-content;
+}
+
+.countdown-box h2 {
+  padding: 16px;
+  flex: 1;
+}
+
+.countdown-box h4 {
+  padding: 16px;
 }
 
 /*Result*/

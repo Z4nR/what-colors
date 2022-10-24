@@ -9,7 +9,13 @@ export default function MassalTest({ openModal }) {
   });
 
   return isMobile ? (
-    <div className="icons">
+    <div
+      className="icons"
+      onClick={(event) => {
+        event.preventDefault();
+        openModal(ID);
+      }}
+    >
       <div className="group" />
       <div className="item-body">
         <h5>Party Test</h5>
