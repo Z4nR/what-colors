@@ -1,35 +1,32 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import { FiHome } from "react-icons/fi";
 import useInput from "../../../../customhooks/useInput";
-import {
-  createArray,
-  genderType,
-  testType,
-} from "../../../../utils/data-local";
+import { testType } from "../../../../utils/data-local";
 
 export default function CreateRoomModal({ closeModal }) {
-  const [firstName, setFirstName] = useInput("");
-  const [lastName, setLastName] = useInput("");
-  const [age, setAge] = useInput(0);
   const [device, setDevice] = useInput("");
-  const [gender, setGender] = useInput("female");
   const [test, setTestType] = useInput("fm85");
 
-  function onSubmitData() {
-    const date = new Date().toISOString();
-    const value = createArray(test);
-    const dataInput = {
-      date,
-      firstName,
-      lastName,
-      age,
-      device,
-      gender,
-      test,
-      value,
-    };
-    localStorage.setItem("data", dataInput);
-    console.log(dataInput);
+  const {
+    handleSubmit,
+    register,
+    watch,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      date: new Date().toISOString(),
+      roomName: "",
+      roomInitial: "",
+      adminName: "",
+      adminEmail: "",
+      device: "",
+      testType: "Fransworth Munsell-85 Hue",
+    },
+  });
+
+  function onSubmit(data) {
+    localStorage.setItem("data", JSON.stringify(data));
   }
 
   return (
@@ -40,85 +37,98 @@ export default function CreateRoomModal({ closeModal }) {
           <FiHome onClick={closeModal} />
         </div>
       </div>
-      <div className="input-data-box">
-        <div className="input-data">
-          <label htmlFor="firstname">First Name</label>
-          <input
-            id="firstname"
-            type="text"
-            placeholder="Input your first name"
-            value={firstName}
-            onChange={setFirstName}
-          />
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="input-data-box">
+          <div className="input-data">
+            <label htmlFor="roomname">Room Name</label>
+            <input
+              id="roomname"
+              type="text"
+              placeholder="Input test room name"
+              {...register("roomName", { required: true })}
+            />
+            {errors.roomName && <p style={{ color: "red" }}>Wajib diisi</p>}
+          </div>
+          <div className="input-data">
+            <label htmlFor="roominitial">Room Initial</label>
+            <input
+              id="roominitial"
+              type="text"
+              placeholder="Input your room initial"
+              {...register("roomInitial", { required: true })}
+            />
+            {errors.roomInitial && <p style={{ color: "red" }}>Wajib diisi</p>}
+          </div>
         </div>
-        <div className="input-data">
-          <label htmlFor="lastname">Last Name</label>
-          <input
-            id="lastname"
-            type="text"
-            placeholder="Input your last name"
-            value={lastName}
-            onChange={setLastName}
-          />
+        <div className="input-data-box">
+          <div className="input-data">
+            <label htmlFor="adminname">Admin Name</label>
+            <input
+              id="adminname"
+              type="text"
+              placeholder="Input your admin name"
+              autoComplete="off"
+              {...register("adminName", { required: true })}
+            />
+            {errors.adminName && <p style={{ color: "red" }}>Wajib diisi</p>}
+          </div>
+          <div className="input-data">
+            <label htmlFor="adminemail">Admin Email</label>
+            <input
+              id="adminemail"
+              type="email"
+              placeholder="Input your@email.xxx"
+              autoComplete="off"
+              {...register("adminEmail", { required: true })}
+            />
+            {errors.adminEmail && <p style={{ color: "red" }}>Wajib diisi</p>}
+          </div>
         </div>
-      </div>
-      <div className="input-data-box">
-        <div className="input-data">
-          <label htmlFor="age">Age (in Year)</label>
-          <input
-            id="age"
-            type="number"
-            placeholder="Input your age"
-            value={age}
-            onChange={setAge}
-          />
+        <div className="input-data-box">
+          <div className="input-data">
+            <label htmlFor="device">Device</label>
+            <input
+              id="device"
+              type="text"
+              placeholder="Input your type of test device"
+              value={device}
+              onChange={setDevice}
+            />
+            <div className="checkbox-device">
+              <input
+                type="checkbox"
+                id="samedevice"
+                name="samedevice"
+                value="SameDevice"
+              />
+              <label for="samedevice"> Client Use Same Device</label>
+            </div>
+          </div>
+          <div className="input-data">
+            <label htmlFor="method">Method</label>
+            <select
+              id="method"
+              {...register("testType", {
+                required: true,
+              })}
+            >
+              {testType.map((option) => (
+                <option key={option.type} value={option.type}>
+                  {option.type}
+                </option>
+              ))}
+            </select>
+            {errors.test && (
+              <p style={{ color: "red" }}>Wajib dipilih salah satu</p>
+            )}
+          </div>
         </div>
-        <div className="input-data">
-          <label htmlFor="gender">Gender</label>
-          <select id="gender" value={gender} onChange={setGender}>
-            {genderType.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
+        <div className="input-data-box">
+          <div className="input-data">
+            <button type="submit">Create Test Room</button>
+          </div>
         </div>
-      </div>
-      <div className="input-data-box">
-        <div className="input-data">
-          <label htmlFor="device">Device</label>
-          <input
-            id="device"
-            type="text"
-            placeholder="Input your type of test device"
-            value={device}
-            onChange={setDevice}
-          />
-        </div>
-        <div className="input-data">
-          <label htmlFor="method">Method</label>
-          <select id="method" value={test} onChange={setTestType}>
-            {testType.map((option) => (
-              <option key={option.type} value={option.type}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-      <div className="input-data-box">
-        <div className="input-data">
-          <button
-            type="button"
-            onClick={(event) => {
-              event.preventDefault();
-              onSubmitData();
-            }}
-          >
-            Submit Data
-          </button>
-        </div>
-      </div>
+      </form>
     </div>
   );
 }

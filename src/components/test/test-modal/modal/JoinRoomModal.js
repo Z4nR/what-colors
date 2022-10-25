@@ -8,8 +8,7 @@ import {
 } from "../../../../utils/data-local";
 
 export default function JoinRoomModal({ closeModal }) {
-  const [firstName, setFirstName] = useInput("");
-  const [lastName, setLastName] = useInput("");
+  const [fullName, setFullName] = useInput("");
   const [age, setAge] = useInput(0);
   const [device, setDevice] = useInput("");
   const [gender, setGender] = useInput("female");
@@ -20,8 +19,7 @@ export default function JoinRoomModal({ closeModal }) {
     const value = createArray(test);
     const dataInput = {
       date,
-      firstName,
-      lastName,
+      fullName,
       age,
       device,
       gender,
@@ -42,23 +40,14 @@ export default function JoinRoomModal({ closeModal }) {
       </div>
       <div className="input-data-box">
         <div className="input-data">
-          <label htmlFor="firstname">First Name</label>
+          <label htmlFor="fullname">Full Name</label>
           <input
-            id="firstname"
+            id="fullname"
             type="text"
-            placeholder="Input your first name"
-            value={firstName}
-            onChange={setFirstName}
-          />
-        </div>
-        <div className="input-data">
-          <label htmlFor="lastname">Last Name</label>
-          <input
-            id="lastname"
-            type="text"
-            placeholder="Input your last name"
-            value={lastName}
-            onChange={setLastName}
+            placeholder="Input your full name"
+            autoComplete="off"
+            value={fullName}
+            onChange={setFullName}
           />
         </div>
       </div>
@@ -69,19 +58,23 @@ export default function JoinRoomModal({ closeModal }) {
             id="age"
             type="number"
             placeholder="Input your age"
+            autoComplete="off"
             value={age}
             onChange={setAge}
           />
         </div>
         <div className="input-data">
           <label htmlFor="gender">Gender</label>
-          <select id="gender" value={gender} onChange={setGender}>
-            {genderType.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
+          <div className="gender-box">
+            <div className="male-box">
+              <input type="radio" id="male" name="gender" value="Male" />
+              <label htmlFor="male">Male</label>
+            </div>
+            <div className="female-box">
+              <input type="radio" id="female" name="gender" value="Female" />
+              <label htmlFor="female">Female</label>
+            </div>
+          </div>
         </div>
       </div>
       <div className="input-data-box">
@@ -104,6 +97,18 @@ export default function JoinRoomModal({ closeModal }) {
               </option>
             ))}
           </select>
+        </div>
+      </div>
+      <div className="input-data-box">
+        <div className="input-data">
+          <label htmlFor="room">Room Code</label>
+          <input
+            id="room"
+            type="text"
+            placeholder="Input your room code"
+            value={device}
+            onChange={setDevice}
+          />
         </div>
       </div>
       <div className="input-data-box">

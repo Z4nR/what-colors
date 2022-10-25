@@ -52,9 +52,14 @@
   flex-direction: column;
 }
 
+.input-data input#adminname,
+.input-data input#adminemail,
+.input-data input#roomname,
+.input-data input#roominitial,
 .input-data input#fullname,
 .input-data input#age,
 .input-data input#device,
+.input-data input#room,
 .input-data select {
   padding: 8px;
   width: 100%;
@@ -91,4 +96,14 @@
   width: 100%;
   font-size: 16px;
   text-align: center;
+}
+
+.checkbox-device {
+  margin-top: 6px;
+  display: flex;
+}
+
+.checkbox-device label {
+  font-size: 14px;
+  padding-left: 4px;
 }
