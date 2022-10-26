@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FiHome } from "react-icons/fi";
 import useInput from "../../../../customhooks/useInput";
+import { createTestRoom } from "../../../../utils/data-api";
 import { testType } from "../../../../utils/data-local";
 
 export default function CreateRoomModal({ closeModal }) {
@@ -20,12 +21,16 @@ export default function CreateRoomModal({ closeModal }) {
       roomInitial: "",
       adminName: "",
       adminEmail: "",
-      device: "",
       testType: "Fransworth Munsell-85 Hue",
     },
   });
 
+  async function onCreateRoom(data) {
+    await createTestRoom(data);
+  }
+
   function onSubmit(data) {
+    onCreateRoom(data);
     localStorage.setItem("group", JSON.stringify(data));
   }
 
@@ -108,7 +113,7 @@ export default function CreateRoomModal({ closeModal }) {
                 name="samedevice"
                 value="SameDevice"
               />
-              <label for="samedevice"> Client Use Same Device</label>
+              <label htmlFor="samedevice"> Client Use Same Device</label>
             </div>
           </div>
           <div className="input-data">
@@ -120,11 +125,10 @@ export default function CreateRoomModal({ closeModal }) {
                   type="range"
                   min="0"
                   max="50"
-                  onChange={(e) => setTestRange(e.target.value)}
-                  {...register("maxValue", { required: true })}
+                  {...register("maxTES", { required: true })}
                 />
-                <p>Max. TES : {testRange}</p>
-                {errors.maxValue && (
+                <p>Max. TES : 100</p>
+                {errors.maxTES && (
                   <p style={{ color: "red" }}>
                     Wajib menentukan nilai maks. error
                   </p>

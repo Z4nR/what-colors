@@ -55,4 +55,43 @@ async function getUserData(id) {
   return { error: false, data: responseJson };
 }
 
-export { addUserData, getUserData };
+async function createTestRoom({
+  date,
+  roomName,
+  adminName,
+  adminEmail,
+  testPurpose,
+  maxTES,
+  roomInitial,
+  testType,
+}) {
+  const data = JSON.stringify({
+    date,
+    roomName,
+    adminName,
+    adminEmail,
+    testPurpose,
+    maxTES,
+    roomInitial,
+    testType,
+  });
+
+  const response = await fetch(`${BASE_URL}/create-room`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: data,
+  });
+
+  await response.json();
+
+  if (response.status !== 201) {
+    alert(response.message);
+    return { error: true, data: null };
+  }
+
+  return { error: false, data: response };
+}
+
+export { addUserData, getUserData, createTestRoom };
