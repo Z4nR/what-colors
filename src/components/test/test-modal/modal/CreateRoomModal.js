@@ -1,19 +1,16 @@
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import React from "react";
+import { Controller, useForm } from "react-hook-form";
 import { FiHome } from "react-icons/fi";
-import useInput from "../../../../customhooks/useInput";
 import { createTestRoom } from "../../../../utils/data-api";
 import { testType } from "../../../../utils/data-local";
 
 export default function CreateRoomModal({ closeModal }) {
-  const [device, setDevice] = useInput("");
-  const [testRange, setTestRange] = useState(0);
-
   const {
     handleSubmit,
     register,
     watch,
     formState: { errors },
+    control,
   } = useForm({
     defaultValues: {
       date: new Date().toISOString(),
@@ -22,6 +19,8 @@ export default function CreateRoomModal({ closeModal }) {
       adminName: "",
       adminEmail: "",
       testType: "Fransworth Munsell-85 Hue",
+      device: "",
+      sameDevice: false,
     },
   });
 
@@ -31,7 +30,14 @@ export default function CreateRoomModal({ closeModal }) {
 
   function onSubmit(data) {
     onCreateRoom(data);
-    localStorage.setItem("group", JSON.stringify(data));
+
+    localStorage.setItem(
+      "group",
+      JSON.stringify({
+        device: data.device,
+        testType: data.testType,
+      })
+    );
   }
 
   return (
@@ -98,20 +104,20 @@ export default function CreateRoomModal({ closeModal }) {
         </div>
         <div className="input-data-box">
           <div className="input-data">
-            <label htmlFor="device">Device</label>
+            <label htmlFor="device">Device (Optional)</label>
             <input
               id="device"
               type="text"
               placeholder="Input your type of test device"
-              value={device}
-              onChange={setDevice}
+              {...register("device")}
             />
             <div className="checkbox-device">
-              <input
-                type="checkbox"
-                id="samedevice"
-                name="samedevice"
-                value="SameDevice"
+              <Controller
+                control={control}
+                name="sameDevice"
+                render={({ field }) => (
+                  <input type="checkbox" id="samedevice" {...field} />
+                )}
               />
               <label htmlFor="samedevice"> Client Use Same Device</label>
             </div>

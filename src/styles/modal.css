@@ -67,6 +67,7 @@
 .input-data input#fullname,
 .input-data input#age,
 .input-data input#device,
+.input-data input#method,
 .input-data select {
   padding: 8px;
   width: 100%;
