@@ -7,6 +7,7 @@
   top: 0;
   left: 0;
   background-color: rgba(128, 128, 128, 0.637);
+  overflow-y: scroll;
 }
 
 .modal-center {
@@ -46,20 +47,26 @@
   flex: 1;
 }
 
-.input-data {
+.input-data,
+.initial-test {
   display: flex;
   flex: 1;
   flex-direction: column;
 }
 
+.initial-test-box {
+  display: flex;
+  flex: 1;
+}
+
 .input-data input#adminname,
 .input-data input#adminemail,
 .input-data input#roomname,
-.input-data input#roominitial,
+.input-data input#tespurpose,
+.input-data input#room,
 .input-data input#fullname,
 .input-data input#age,
 .input-data input#device,
-.input-data input#room,
 .input-data select {
   padding: 8px;
   width: 100%;
@@ -67,6 +74,23 @@
   background-color: white;
   border: 0.5px solid gray;
   border-radius: 4px;
+}
+
+.initial-test input#tesrange,
+.initial-test input#roominitial {
+  font-size: 16px;
+  background-color: white;
+  border: 0.5px solid gray;
+  border-radius: 4px;
+}
+
+.initial-test input#tesrange {
+  padding: 8px 0;
+}
+
+.initial-test input#roominitial {
+  padding: 8px;
+  width: 100%;
 }
 
 .input-data button {
@@ -100,10 +124,17 @@
 
 .checkbox-device {
   margin-top: 6px;
+  padding-left: 4px;
   display: flex;
 }
 
 .checkbox-device label {
   font-size: 14px;
+  padding-left: 4px;
+}
+
+.input-data p {
+  margin-top: 2px;
+  font-size: 12px;
   padding-left: 4px;
 }

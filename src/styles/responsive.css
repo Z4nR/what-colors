@@ -108,6 +108,25 @@
     grid-column-gap: 5px;
     grid-row-gap: 15px;
   }
+  /*Modal*/
+  .initial-test-box {
+    flex-direction: column;
+  }
+  .roominitial {
+    margin-top: 10px;
+  }
+  .initial-test input#tesrange {
+    padding: 8px 0;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 351px) {
+  /*Modal*/
+  .initial-test input#tesrange {
+    padding: 8px 0;
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 450px) {

@@ -59,11 +59,11 @@ export default function IndividualModal({ closeModal }) {
         </div>
         <div className="input-data-box">
           <div className="input-data">
-            <label htmlFor="age">Age (in Year)</label>
+            <label htmlFor="age">Age</label>
             <input
               id="age"
               type="number"
-              placeholder="Input your age"
+              placeholder="Input your age  (Year)"
               autoComplete="off"
               {...register("age", { required: true })}
             />
