@@ -54,7 +54,9 @@ export default function IndividualModal({ closeModal }) {
               autoComplete="off"
               {...register("fullName", { required: true })}
             />
-            {errors.fullName && <p style={{ color: "red" }}>Wajib diisi</p>}
+            {errors.fullName && (
+              <p style={{ color: "red" }}>Fill Your Full Name</p>
+            )}
           </div>
         </div>
         <div className="input-data-box">
@@ -67,7 +69,9 @@ export default function IndividualModal({ closeModal }) {
               autoComplete="off"
               {...register("age", { required: true })}
             />
-            {errors.age && <p style={{ color: "red" }}>Wajib diisi</p>}
+            {errors.age && (
+              <p style={{ color: "red" }}>Please Input your Age</p>
+            )}
           </div>
           <div className="input-data">
             <label htmlFor="gender">Gender</label>
@@ -94,7 +98,7 @@ export default function IndividualModal({ closeModal }) {
               </div>
             </div>
             {errors.gender && (
-              <p style={{ color: "red" }}>Wajib dipilih salah satu</p>
+              <p style={{ color: "red" }}>Please Choose Your Gender</p>
             )}
           </div>
         </div>
@@ -104,11 +108,13 @@ export default function IndividualModal({ closeModal }) {
             <input
               id="device"
               type="text"
-              placeholder="Input your type of test device"
+              placeholder="Input Device / Monitor Type"
               autoComplete="off"
               {...register("device", { required: true })}
             />
-            {errors.device && <p style={{ color: "red" }}>Wajib diisi</p>}
+            {errors.device && (
+              <p style={{ color: "red" }}>Please Input Screen Spesification</p>
+            )}
           </div>
           <div className="input-data">
             <label htmlFor="method">Method</label>
@@ -125,7 +131,7 @@ export default function IndividualModal({ closeModal }) {
               ))}
             </select>
             {errors.test && (
-              <p style={{ color: "red" }}>Wajib dipilih salah satu</p>
+              <p style={{ color: "red" }}>Choose One Method To Use</p>
             )}
           </div>
         </div>

@@ -54,16 +54,24 @@
   flex-direction: column;
 }
 
-.initial-test-box {
+.initial-test-box,
+.verify-code-box {
   display: flex;
   flex: 1;
+}
+
+.verify-code-input {
+  flex: 6;
+}
+
+.verify-code-btn {
+  flex: 3;
 }
 
 .input-data input#adminname,
 .input-data input#adminemail,
 .input-data input#roomname,
 .input-data input#tespurpose,
-.input-data input#room,
 .input-data input#fullname,
 .input-data input#age,
 .input-data input#device,
@@ -71,6 +79,26 @@
 .input-data select {
   padding: 8px;
   width: 100%;
+  font-size: 16px;
+  background-color: white;
+  border: 0.5px solid gray;
+  border-radius: 4px;
+}
+
+.verify-code-btn button {
+  padding: 8px;
+  width: 100%;
+  font-size: 16px;
+  background-color: rgb(144, 233, 144);
+  border: 0.5px solid green;
+  border-radius: 4px;
+  font-weight: 550;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.verify-code-input input#room {
+  padding: 8px;
+  width: 97%;
   font-size: 16px;
   background-color: white;
   border: 0.5px solid gray;
@@ -102,6 +130,8 @@
   background-color: white;
   border: 0.5px solid gray;
   border-radius: 4px;
+  font-weight: 550;
+  text-transform: uppercase;
   cursor: pointer;
   transition: 0.4s ease-out;
 }
@@ -134,8 +164,9 @@
   padding-left: 4px;
 }
 
-.input-data p {
+.input-data p,
+.verify-code-input p {
   margin-top: 2px;
-  font-size: 12px;
+  font-size: 14px;
   padding-left: 4px;
 }

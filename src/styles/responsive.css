@@ -213,7 +213,8 @@
   .input-data-box {
     flex-direction: row;
   }
-  .input-data {
+  .input-data,
+  .verify-code-box {
     padding: 8px;
   }
   /*Test Sheet*/

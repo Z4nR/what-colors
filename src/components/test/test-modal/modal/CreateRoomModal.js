@@ -8,7 +8,6 @@ export default function CreateRoomModal({ closeModal }) {
   const {
     handleSubmit,
     register,
-    watch,
     formState: { errors },
     control,
   } = useForm({
@@ -60,10 +59,10 @@ export default function CreateRoomModal({ closeModal }) {
               {...register("roomName", { required: true, minLength: 10 })}
             />
             {errors.roomName && errors.roomName.type === "minLength" && (
-              <p style={{ color: "red" }}>Nama Room Minimal 10 Karakter</p>
+              <p style={{ color: "red" }}>Use Minimal 10 Character</p>
             )}
             {errors.roomName && errors.roomName.type === "required" && (
-              <p style={{ color: "red" }}>Wajib diisi</p>
+              <p style={{ color: "red" }}>Please Fill Room Name</p>
             )}
           </div>
           <div className="input-data">
@@ -75,7 +74,9 @@ export default function CreateRoomModal({ closeModal }) {
               autoComplete="off"
               {...register("adminName", { required: true })}
             />
-            {errors.adminName && <p style={{ color: "red" }}>Wajib diisi</p>}
+            {errors.adminName && (
+              <p style={{ color: "red" }}>Input Admin Name</p>
+            )}
           </div>
         </div>
         <div className="input-data-box">
@@ -88,7 +89,9 @@ export default function CreateRoomModal({ closeModal }) {
               autoComplete="off"
               {...register("adminEmail", { required: true })}
             />
-            {errors.adminEmail && <p style={{ color: "red" }}>Wajib diisi</p>}
+            {errors.adminEmail && (
+              <p style={{ color: "red" }}>Please Input Your Email</p>
+            )}
           </div>
           <div className="input-data">
             <label htmlFor="tespurpose">Test Purpose</label>
@@ -99,7 +102,9 @@ export default function CreateRoomModal({ closeModal }) {
               autoComplete="off"
               {...register("testPurpose", { required: true })}
             />
-            {errors.adminEmail && <p style={{ color: "red" }}>Wajib diisi</p>}
+            {errors.adminEmail && (
+              <p style={{ color: "red" }}>Fill Your Test Purpose</p>
+            )}
           </div>
         </div>
         <div className="input-data-box">
@@ -108,7 +113,7 @@ export default function CreateRoomModal({ closeModal }) {
             <input
               id="device"
               type="text"
-              placeholder="Input your type of test device"
+              placeholder="Input Device / Monitor Type"
               {...register("device")}
             />
             <div className="checkbox-device">
@@ -130,14 +135,12 @@ export default function CreateRoomModal({ closeModal }) {
                   id="tesrange"
                   type="range"
                   min="0"
-                  max="50"
+                  max="100"
                   {...register("maxTES", { required: true })}
                 />
                 <p>Max. TES : 100</p>
                 {errors.maxTES && (
-                  <p style={{ color: "red" }}>
-                    Wajib menentukan nilai maks. error
-                  </p>
+                  <p style={{ color: "red" }}>Please Set Maximal Error Score</p>
                 )}
               </div>
               <div className="initial-test">
@@ -158,9 +161,7 @@ export default function CreateRoomModal({ closeModal }) {
                 <p>Example : TOI3</p>
                 {errors.roomInitial &&
                   errors.roomInitial.type === "pattern" && (
-                    <p style={{ color: "red" }}>
-                      Gunakan Huruf Kapital atau Angka
-                    </p>
+                    <p style={{ color: "red" }}>Use Capital or Number</p>
                   )}
                 {errors.roomInitial &&
                   errors.roomInitial.type === "minLength" && (
@@ -190,7 +191,7 @@ export default function CreateRoomModal({ closeModal }) {
               ))}
             </select>
             {errors.test && (
-              <p style={{ color: "red" }}>Wajib dipilih salah satu</p>
+              <p style={{ color: "red" }}>Choose One Method To Use</p>
             )}
           </div>
         </div>

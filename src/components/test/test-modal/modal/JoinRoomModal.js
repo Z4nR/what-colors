@@ -31,9 +31,11 @@ export default function JoinRoomModal({ closeModal }) {
     }
   }, [setValue]);
 
+  const setTestType = watch("testType");
+
   useEffect(() => {
     setValue("value", createArray(getValues("testType")));
-  }, [watch("testType")]);
+  }, [setTestType, setValue, getValues]);
 
   function onSubmitClient(data) {
     localStorage.setItem("client", JSON.stringify(data));
@@ -49,9 +51,18 @@ export default function JoinRoomModal({ closeModal }) {
       </div>
       <form onSubmit={handleSubmit(onSubmitClient)}>
         <div className="input-data-box">
-          <div className="input-data">
-            <label htmlFor="room">Room Code</label>
-            <input id="room" type="text" placeholder="Input your room code" />
+          <div className="verify-code-box">
+            <div className="verify-code-input">
+              <input
+                id="room"
+                type="text"
+                placeholder="Input Verification Code"
+                maxLength="7"
+              />
+            </div>
+            <div className="verify-code-btn">
+              <button type="submit">Verify</button>
+            </div>
           </div>
         </div>
         <div className="input-data-box">
@@ -64,7 +75,9 @@ export default function JoinRoomModal({ closeModal }) {
               autoComplete="off"
               {...register("fullName", { required: true })}
             />
-            {errors.fullName && <p style={{ color: "red" }}>Wajib diisi</p>}
+            {errors.fullName && (
+              <p style={{ color: "red" }}>Fill Your Full Name</p>
+            )}
           </div>
         </div>
         <div className="input-data-box">
@@ -77,7 +90,9 @@ export default function JoinRoomModal({ closeModal }) {
               autoComplete="off"
               {...register("age", { required: true })}
             />
-            {errors.age && <p style={{ color: "red" }}>Wajib diisi</p>}
+            {errors.age && (
+              <p style={{ color: "red" }}>Please Input your Age</p>
+            )}
           </div>
           <div className="input-data">
             <label htmlFor="gender">Gender</label>
@@ -104,7 +119,7 @@ export default function JoinRoomModal({ closeModal }) {
               </div>
             </div>
             {errors.gender && (
-              <p style={{ color: "red" }}>Wajib dipilih salah satu</p>
+              <p style={{ color: "red" }}>Please Choose Your Gender</p>
             )}
           </div>
         </div>
@@ -114,11 +129,13 @@ export default function JoinRoomModal({ closeModal }) {
             <input
               id="device"
               type="text"
-              placeholder="Input your type of test device"
+              placeholder="Input Device / Monitor Type"
               autoComplete="off"
               {...register("device", { required: true })}
             />
-            {errors.device && <p style={{ color: "red" }}>Wajib diisi</p>}
+            {errors.device && (
+              <p style={{ color: "red" }}>Please Input Screen Spesification</p>
+            )}
           </div>
           <div className="input-data">
             <label htmlFor="method">Method</label>
@@ -128,9 +145,6 @@ export default function JoinRoomModal({ closeModal }) {
               readOnly
               value={getValues("testType")}
             />
-            {errors.test && (
-              <p style={{ color: "red" }}>Wajib dipilih salah satu</p>
-            )}
           </div>
         </div>
         <div className="input-data-box">
