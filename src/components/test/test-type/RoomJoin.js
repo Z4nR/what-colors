@@ -30,17 +30,35 @@ export default function RoomJoinTest({ openModal }) {
   }
 
   return isMobile ? (
-    <div
-      className="icons"
-      onClick={(event) => {
-        event.preventDefault();
-        openModal(ID);
-      }}
-    >
+    <div className="icons">
       <div className="join" />
       <div className="item-body">
         <h5>Join Test</h5>
-        <p>Join room to take color blidness test</p>
+        <form className="mobile-form" onSubmit={handleSubmit(onVerify)}>
+          <input
+            className="join-mbl"
+            id="room"
+            type="text"
+            placeholder="Input Verification Code"
+            maxLength="7"
+            {...register("code", { required: true })}
+          />
+          <button className="join-mbl-btn" type="submit">
+            Verify
+          </button>
+        </form>
+        {errors.code && (
+          <p
+            style={{
+              color: "red",
+              fontSize: "10px",
+              textAlign: "left",
+              paddingLeft: "4px",
+            }}
+          >
+            Fill Verify Code
+          </p>
+        )}
       </div>
     </div>
   ) : (
