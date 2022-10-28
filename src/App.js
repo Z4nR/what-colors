@@ -4,6 +4,7 @@ import AppNav from "./components/Navigation";
 import AboutPage from "./pages/AboutPage";
 import ArticlePage from "./pages/ArticlePage";
 import CountDownPage from "./pages/CountDownPage";
+import DashboardGroup from "./pages/DashboardGroupPage";
 import HomePage from "./pages/HomePage";
 import ResultPage from "./pages/ResultPage";
 import TestPage from "./pages/TestPage";
@@ -25,6 +26,10 @@ export default function ColorApp() {
           <Route path="/test/test-sheet" element={<TestSheet />} />
           <Route path="/result/:id" element={<ResultPage />} />
           <Route path="/countdown" element={<CountDownPage />} />
+          <Route
+            path="/dashboard/:groupId/:role"
+            element={<DashboardGroup />}
+          />
         </Routes>
       </main>
       <footer>

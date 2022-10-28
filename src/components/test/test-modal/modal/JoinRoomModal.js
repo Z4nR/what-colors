@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { FiHome } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 import { createArray } from "../../../../utils/data-local";
 
 export default function JoinRoomModal({ closeModal }) {
+  const navigate = useNavigate();
+
   const {
     handleSubmit,
     register,
@@ -38,6 +41,7 @@ export default function JoinRoomModal({ closeModal }) {
   }, [setTestType, setValue, getValues]);
 
   function onSubmitClient(data) {
+    navigate("/test/test-sheet");
     localStorage.setItem("client", JSON.stringify(data));
   }
 
@@ -50,21 +54,6 @@ export default function JoinRoomModal({ closeModal }) {
         </div>
       </div>
       <form onSubmit={handleSubmit(onSubmitClient)}>
-        <div className="input-data-box">
-          <div className="verify-code-box">
-            <div className="verify-code-input">
-              <input
-                id="room"
-                type="text"
-                placeholder="Input Verification Code"
-                maxLength="7"
-              />
-            </div>
-            <div className="verify-code-btn">
-              <button type="submit">Verify</button>
-            </div>
-          </div>
-        </div>
         <div className="input-data-box">
           <div className="input-data">
             <label htmlFor="fullname">Full Name</label>

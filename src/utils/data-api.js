@@ -40,7 +40,7 @@ async function addUserData({
     return { error: true, data: null };
   }
 
-  return { error: false, data: response };
+  return { error: false, data: responseJson };
 }
 
 async function getUserData(id) {
@@ -94,4 +94,22 @@ async function createTestRoom({
   return { error: false, data: response };
 }
 
-export { addUserData, getUserData, createTestRoom };
+async function verifyCode(code) {
+  const response = await fetch(`${BASE_URL}/verify-code/${code}`);
+  const responseJson = await response.json();
+
+  const isAdmin = responseJson.code.find((c) => c.key === code)._id === "01";
+
+  localStorage.setItem("idGroup", responseJson._id);
+
+  console.log(isAdmin);
+
+  if (response.status !== 201) {
+    alert(response.message);
+    return { error: true, data: null };
+  }
+
+  return { error: false, data: isAdmin };
+}
+
+export { addUserData, getUserData, createTestRoom, verifyCode };

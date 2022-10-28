@@ -170,7 +170,8 @@ section {
   border-radius: 4px;
 }
 
-.join-btn {
+.join-btn,
+.join-input {
   padding: 8px;
   width: 100%;
   font-size: 16px;
