@@ -4,6 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { ReactSortable } from "react-sortablejs";
 import { addUserData } from "../../utils/data-api";
 import { showFormattedDateEN, shuffleArray } from "../../utils/data-local";
+import {
+  compareArray,
+  discriminantValue,
+  methodCalculation,
+} from "../../utils/method-loader";
 
 export default function TestTime() {
   const [getData, setGetData] = useState(null);
@@ -11,7 +16,7 @@ export default function TestTime() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const dataInput = localStorage.getItem("data");
+    const dataInput = localStorage.getItem("individu");
     setGetData(JSON.parse(dataInput));
   }, []);
 
@@ -64,123 +69,6 @@ export default function TestTime() {
     return reunite;
   };
 
-  const compareArray = (result, initial) => {
-    const compare = result.map((item, rowIndex) => {
-      const res = [];
-      const initialRow = initial[rowIndex];
-
-      for (let i = 0; i < item.value.length; i++) {
-        const resultValue = item.value[i];
-        if (resultValue.status !== "removable") {
-          continue;
-        }
-
-        const initialValue = initialRow.value[i];
-        res.push(resultValue === initialValue);
-      }
-
-      return res;
-    });
-
-    const comparisonResult = compare.flat(1);
-
-    const value = [];
-    for (let i = 0; i < comparisonResult.length; i++) {
-      const compare = `${comparisonResult[i]}`;
-      const upperCompare = compare.toUpperCase();
-      value.push({ number: i + 1, comparison: upperCompare });
-    }
-
-    return value;
-  };
-
-  const discriminantValue = (result, initial) => {
-    const discriminant = result.map((item, rowIndex) => {
-      const res = [];
-      const initialRow = initial[rowIndex];
-
-      for (let i = 0; i < item.value.length; i++) {
-        const resultValue = item.value[i];
-        const resultNumber = resultValue.number;
-
-        if (resultValue.status !== "removable") {
-          continue;
-        }
-
-        const initialValue = initialRow.value[i];
-        const initialNumber = initialValue.number;
-
-        const countingDiscriminant =
-          resultNumber >= initialNumber
-            ? resultNumber - initialNumber
-            : initialNumber - resultNumber;
-
-        res.push(countingDiscriminant);
-      }
-
-      return res;
-    });
-
-    const discriminantResult = discriminant.flat(1);
-
-    const number = [];
-    for (let i = 0; i < discriminantResult.length; i++) {
-      number.push(i + 1);
-    }
-
-    const value = [];
-    for (let i = 0; i < discriminantResult.length; i++) {
-      value.push({ number: number[i], discriminant: discriminantResult[i] });
-    }
-
-    discriminantResult.reverse();
-    number.reverse();
-
-    return {
-      number: number,
-      result: discriminantResult,
-      value: value,
-    };
-  };
-
-  const methodCalculation = (result) => {
-    const method = result.map((item) => {
-      const res = [];
-
-      for (let i = 0; i < item.value.length; i++) {
-        const iCap = item.value[i];
-        if (iCap.status !== "removable") {
-          continue;
-        }
-        const capNumber = iCap.number;
-
-        const beforeCap = item.value[i - 1];
-        const capBefore = beforeCap.number;
-
-        const afterCap = item.value[i + 1];
-        const capAfter = afterCap.number;
-
-        const beforeCapCount = capNumber - capBefore;
-        const afterCapCount = capAfter - capNumber;
-        const totalCapError = beforeCapCount + afterCapCount;
-        const countingMethod = Math.abs(totalCapError - 2);
-
-        res.push(countingMethod);
-      }
-
-      const result = res.reduce((sum, cap) => sum + cap, 0);
-
-      return {
-        result: result,
-      };
-    });
-
-    const methodMapping = method.map((item) => item.result);
-    const totalErrorScore = methodMapping.reduce((sum, cap) => sum + cap, 0);
-
-    return totalErrorScore;
-  };
-
   async function onAddDataUser(data) {
     await addUserData(data);
   }
@@ -208,8 +96,6 @@ export default function TestTime() {
       comparisonResults,
       discriminantResults,
     };
-
-    console.log(data);
 
     onAddDataUser(data);
 

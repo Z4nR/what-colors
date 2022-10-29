@@ -21,6 +21,7 @@ export default function IndividualModal({ closeModal }) {
       gender: "",
       testType: "Fransworth Munsell-85 Hue",
       value: {},
+      isClient: false,
     },
   });
 
@@ -32,7 +33,7 @@ export default function IndividualModal({ closeModal }) {
 
   function onSubmit(data) {
     navigate("/test/test-sheet");
-    localStorage.setItem("data", JSON.stringify(data));
+    localStorage.setItem("individu", JSON.stringify(data));
   }
 
   return (

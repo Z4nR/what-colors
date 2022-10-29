@@ -3,7 +3,7 @@ import CreateRoomModal from "./modal/CreateRoomModal";
 import IndividualModal from "./modal/IndividualModal";
 import JoinRoomModal from "./modal/JoinRoomModal";
 
-export default function ModalBox({ openModal, closeModal, id, openTest }) {
+export default function ModalBox({ closeModal, id, openTest }) {
   return (
     <div className="modal-box">
       <div className="modal-center">

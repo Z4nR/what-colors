@@ -22,6 +22,7 @@ export default function JoinRoomModal({ closeModal }) {
       gender: "",
       testType: "",
       value: {},
+      isClient: true,
     },
   });
 
