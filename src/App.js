@@ -3,13 +3,13 @@ import { Route, Routes } from "react-router-dom";
 import AppNav from "./components/Navigation";
 import AboutPage from "./pages/AboutPage";
 import ArticlePage from "./pages/ArticlePage";
-import CountDownPage from "./pages/CountDownPage";
+import CountDownPage from "./pages/utils/CountDownPage";
 import DashboardGroup from "./pages/DashboardGroupPage";
 import HomePage from "./pages/HomePage";
 import ResultPage from "./pages/ResultPage";
 import TestPage from "./pages/TestPage";
 import TestSheet from "./pages/TestSheet";
-import Thanks from "./pages/ThanksPage";
+import Thanks from "./pages/utils/ThanksPage";
 
 export default function ColorApp() {
   return (
