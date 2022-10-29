@@ -120,9 +120,7 @@ export default function TestTime() {
       onAddDataClient(dataClient);
     }
 
-    localStorage.setItem("compareArray", JSON.stringify(comparisonResults));
     localStorage.setItem("discriminantResult", JSON.stringify(discriminant));
-    localStorage.setItem("methodResult", JSON.stringify(totalErrorScore));
   }
 
   return (
