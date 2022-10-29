@@ -16,7 +16,7 @@ export default function TestTime() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const dataInput = localStorage.getItem("individu");
+    const dataInput = localStorage.getItem("data");
     setGetData(JSON.parse(dataInput));
   }, []);
 
@@ -96,6 +96,10 @@ export default function TestTime() {
       comparisonResults,
       discriminantResults,
     };
+
+    const isClient = getData?.isClient;
+
+    console.log(isClient);
 
     onAddDataUser(data);
 

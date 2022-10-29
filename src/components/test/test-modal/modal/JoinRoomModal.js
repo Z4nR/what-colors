@@ -43,7 +43,7 @@ export default function JoinRoomModal({ closeModal }) {
 
   function onSubmitClient(data) {
     navigate("/test/test-sheet");
-    localStorage.setItem("client", JSON.stringify(data));
+    localStorage.setItem("data", JSON.stringify(data));
   }
 
   return (

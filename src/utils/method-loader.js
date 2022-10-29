@@ -22,7 +22,7 @@ const compareArray = (result, initial) => {
   for (let i = 0; i < comparisonResult.length; i++) {
     const compare = `${comparisonResult[i]}`;
     const upperCompare = compare.toUpperCase();
-    value.push({ number: i + 1, comparison: upperCompare });
+    value.push({ _id: i + 1, comparison: upperCompare });
   }
 
   return value;
@@ -64,7 +64,7 @@ const discriminantValue = (result, initial) => {
 
   const value = [];
   for (let i = 0; i < discriminantResult.length; i++) {
-    value.push({ number: number[i], discriminant: discriminantResult[i] });
+    value.push({ _id: number[i], discriminant: discriminantResult[i] });
   }
 
   discriminantResult.reverse();

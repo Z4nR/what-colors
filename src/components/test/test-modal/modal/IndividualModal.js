@@ -33,7 +33,7 @@ export default function IndividualModal({ closeModal }) {
 
   function onSubmit(data) {
     navigate("/test/test-sheet");
-    localStorage.setItem("individu", JSON.stringify(data));
+    localStorage.setItem("data", JSON.stringify(data));
   }
 
   return (
