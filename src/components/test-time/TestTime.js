@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FiHome } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { ReactSortable } from "react-sortablejs";
-import { addUserData } from "../../utils/data-api";
+import { addClientData, addUserData } from "../../utils/data-api";
 import { showFormattedDateEN, shuffleArray } from "../../utils/data-local";
 import {
   compareArray,
@@ -12,12 +12,18 @@ import {
 
 export default function TestTime() {
   const [getData, setGetData] = useState(null);
+  const [getGroupData, setGroupData] = useState(null);
   const [valueList, setValueList] = useState(null);
   const navigate = useNavigate();
+
+  const idGroup = localStorage.getItem("idGroup");
 
   useEffect(() => {
     const dataInput = localStorage.getItem("data");
     setGetData(JSON.parse(dataInput));
+
+    const group = localStorage.getItem("group");
+    setGroupData(JSON.parse(group));
   }, []);
 
   const date = getData?.date;
@@ -71,11 +77,15 @@ export default function TestTime() {
 
   async function onAddDataUser(data) {
     await addUserData(data);
+    navigate("/countdown");
+  }
+
+  async function onAddDataClient(data) {
+    await addClientData(data);
+    navigate("/thanks");
   }
 
   function onSubmitArray() {
-    navigate("/countdown");
-
     const resultArray = reuniteArray();
     const initial = getData?.value;
 
@@ -83,9 +93,12 @@ export default function TestTime() {
     const discriminant = discriminantValue(resultArray, initial);
     const totalErrorScore = methodCalculation(resultArray);
 
+    const status =
+      totalErrorScore > getGroupData?.maxTES ? "Tidak Lolos" : "Lolos";
+
     const discriminantResults = discriminant.value;
 
-    const data = {
+    const dataUser = {
       date,
       fullName,
       age,
@@ -97,11 +110,15 @@ export default function TestTime() {
       discriminantResults,
     };
 
+    const dataClient = { idGroup, ...dataUser, status };
+
     const isClient = getData?.isClient;
 
-    console.log(isClient);
-
-    onAddDataUser(data);
+    if (isClient === false) {
+      onAddDataUser(dataUser);
+    } else {
+      onAddDataClient(dataClient);
+    }
 
     localStorage.setItem("compareArray", JSON.stringify(comparisonResults));
     localStorage.setItem("discriminantResult", JSON.stringify(discriminant));

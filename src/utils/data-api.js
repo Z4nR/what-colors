@@ -112,4 +112,48 @@ async function verifyCode(code) {
   return { error: false, data: isAdmin };
 }
 
-export { addUserData, getUserData, createTestRoom, verifyCode };
+async function addClientData({
+  idGroup,
+  date,
+  fullName,
+  age,
+  gender,
+  device,
+  testType,
+  totalErrorScore,
+  comparisonResults,
+  discriminantResults,
+  status,
+}) {
+  const data = JSON.stringify({
+    date,
+    fullName,
+    age,
+    gender,
+    device,
+    testType,
+    totalErrorScore,
+    comparisonResults,
+    discriminantResults,
+    status,
+  });
+
+  const response = await fetch(`${BASE_URL}/${idGroup}/client`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: data,
+  });
+
+  const responseJson = await response.json();
+
+  if (response.status !== 201) {
+    alert(response.message);
+    return { error: true, data: null };
+  }
+
+  return { error: false, data: responseJson };
+}
+
+export { addUserData, getUserData, createTestRoom, verifyCode, addClientData };

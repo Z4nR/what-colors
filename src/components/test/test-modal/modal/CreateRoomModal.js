@@ -35,6 +35,7 @@ export default function CreateRoomModal({ closeModal }) {
       JSON.stringify({
         device: data.device,
         testType: data.testType,
+        maxTES: data.maxTES,
       })
     );
   }

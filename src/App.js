@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage";
 import ResultPage from "./pages/ResultPage";
 import TestPage from "./pages/TestPage";
 import TestSheet from "./pages/TestSheet";
+import Thanks from "./pages/ThanksPage";
 
 export default function ColorApp() {
   return (
@@ -30,6 +31,7 @@ export default function ColorApp() {
             path="/dashboard/:groupId/:role"
             element={<DashboardGroup />}
           />
+          <Route path="/thanks" element={<Thanks />} />
         </Routes>
       </main>
       <footer>
