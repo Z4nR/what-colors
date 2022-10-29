@@ -94,6 +94,18 @@ async function createTestRoom({
   return { error: false, data: response };
 }
 
+async function getRoomData(idGroup) {
+  const response = await fetch(`${BASE_URL}/room/${idGroup}`);
+  const responseJson = await response.json();
+
+  if (response.status !== 200) {
+    alert(response.message);
+    return { error: true, data: null };
+  }
+
+  return { error: false, data: responseJson };
+}
+
 async function verifyCode(code) {
   const response = await fetch(`${BASE_URL}/verify-code/${code}`);
   const responseJson = await response.json();
@@ -156,4 +168,24 @@ async function addClientData({
   return { error: false, data: responseJson };
 }
 
-export { addUserData, getUserData, createTestRoom, verifyCode, addClientData };
+async function getClientsData(idGroup) {
+  const response = await fetch(`${BASE_URL}/${idGroup}/admin`);
+  const responseJson = await response.json();
+
+  if (response.status !== 200) {
+    alert(response.message);
+    return { error: true, data: null };
+  }
+
+  return { error: false, data: responseJson };
+}
+
+export {
+  addUserData,
+  getUserData,
+  createTestRoom,
+  getRoomData,
+  verifyCode,
+  addClientData,
+  getClientsData,
+};

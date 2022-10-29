@@ -36,6 +36,7 @@ export default function CreateRoomModal({ closeModal }) {
         device: data.device,
         testType: data.testType,
         maxTES: data.maxTES,
+        initial: data.roomInitial,
       })
     );
   }
