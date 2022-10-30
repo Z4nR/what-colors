@@ -13,8 +13,8 @@ export default function CountDownPage() {
 
   return timer === 0 ? (
     <section>
-      <div className="countdown-box image-result">
-        <p>Ready to watch your result?</p>
+      <div className="util-box image-result">
+        <h1>Ready to watch your result?</h1>
         <button
           onClick={(event) => {
             event.preventDefault();
@@ -27,7 +27,7 @@ export default function CountDownPage() {
     </section>
   ) : (
     <section>
-      <div className="countdown-box image-congrats">
+      <div className="util-box image-congrats">
         <h2>
           Yeeeeeaaayyy <br /> You Already Finish The Test
         </h2>

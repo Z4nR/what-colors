@@ -1,6 +1,7 @@
 @import "./responsive.css";
 @import "./modal.css";
 @import "./testsheet.css";
+@import "./utils.css";
 
 * {
   padding: 0;
@@ -290,57 +291,6 @@ section {
   width: 32px;
   background-repeat: no-repeat;
   background-image: url("../../public/icons/join.svg");
-}
-
-/*Countdown*/
-.countdown-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 80vh;
-  text-align: center;
-  padding: 16px;
-}
-
-.image-result {
-  background-image: url(../../public/img/People\ search-bro.svg);
-  background-repeat: no-repeat;
-  background-position-x: center;
-}
-
-.image-congrats {
-  background-image: url(../../public/img/Happy\ student-rafiki.svg);
-  background-repeat: no-repeat;
-  background-position-x: center;
-}
-
-.countdown-box p {
-  padding: 28px;
-  font-size: 28px;
-  flex: 1;
-}
-
-.countdown-box button {
-  margin: 0 auto;
-  text-align: center;
-  padding: 16px;
-  border: 0;
-  background-color: transparent;
-  color: black;
-  font-family: "Inter", sans-serif;
-  font-weight: 550;
-  font-size: 20px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.countdown-box h2 {
-  padding: 16px;
-  flex: 1;
-}
-
-.countdown-box h4 {
-  padding: 16px;
 }
 
 /*Result*/

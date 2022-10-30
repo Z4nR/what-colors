@@ -84,7 +84,9 @@ async function createTestRoom({
     body: data,
   });
 
-  await response.json();
+  const responseJson = await response.json();
+
+  localStorage.setItem("idGroup", responseJson._id);
 
   if (response.status !== 201) {
     alert(response.message);

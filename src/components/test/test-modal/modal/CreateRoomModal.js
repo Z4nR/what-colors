@@ -1,10 +1,13 @@
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { FiHome } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 import { createTestRoom } from "../../../../utils/data-api";
 import { testType } from "../../../../utils/data-local";
 
 export default function CreateRoomModal({ closeModal }) {
+  const navigate = useNavigate();
+
   const {
     handleSubmit,
     register,
@@ -25,6 +28,7 @@ export default function CreateRoomModal({ closeModal }) {
 
   async function onCreateRoom(data) {
     await createTestRoom(data);
+    navigate("/code-sended");
   }
 
   function onSubmit(data) {

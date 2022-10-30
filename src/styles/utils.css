@@ -1,0 +1,59 @@
+.util-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  padding: 16px;
+}
+
+.util-box h1 {
+  padding: 28px;
+  font-size: 28px;
+  font-weight: 400;
+  flex: 1;
+}
+
+.util-box button {
+  margin: 0 auto;
+  text-align: center;
+  padding: 16px;
+  border: 0;
+  background-color: transparent;
+  color: black;
+  font-family: "Inter", sans-serif;
+  font-weight: 550;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.util-box h2 {
+  padding: 16px;
+  font-weight: 500;
+  flex: 1;
+}
+
+.util-box h4 {
+  padding: 16px;
+}
+
+/*Countdown*/
+.image-result {
+  background-image: url(../../public/img/People\ search-bro.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+.image-congrats {
+  background-image: url(../../public/img/Happy\ student-rafiki.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+/*Email Sended*/
+.image-sending {
+  background-image: url(../../public/img/Messenger-amico.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+}

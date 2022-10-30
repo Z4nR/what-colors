@@ -10,6 +10,7 @@ import ResultPage from "./pages/ResultPage";
 import TestPage from "./pages/TestPage";
 import TestSheet from "./pages/TestSheet";
 import Thanks from "./pages/utils/ThanksPage";
+import SendCode from "./pages/utils/SendCodePage";
 
 export default function ColorApp() {
   return (
@@ -26,11 +27,12 @@ export default function ColorApp() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/test/test-sheet" element={<TestSheet />} />
           <Route path="/result/:id" element={<ResultPage />} />
-          <Route path="/countdown" element={<CountDownPage />} />
           <Route
-            path="/dashboard/:groupId/:role"
+            path="/dashboard/:groupId/admin"
             element={<DashboardGroup />}
           />
+          <Route path="/code-sended" element={<SendCode />} />
+          <Route path="/countdown" element={<CountDownPage />} />
           <Route path="/thanks" element={<Thanks />} />
         </Routes>
       </main>
