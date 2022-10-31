@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { CSVLink } from "react-csv";
 import { getClientsData, getRoomData } from "../utils/data-api";
 
 export default function DashboardGroup() {
@@ -14,7 +15,6 @@ export default function DashboardGroup() {
 
     getClientsData(idGroup).then((data) => {
       setClientData(data.data);
-      console.log(data.data);
     });
   }, []);
 
@@ -49,6 +49,17 @@ export default function DashboardGroup() {
             </tbody>
           </table>
         </div>
+        {clientData !== null ? (
+          <CSVLink
+            data={clientData}
+            separator={";"}
+            filename={"group-data.csv"}
+          >
+            Download Data
+          </CSVLink>
+        ) : (
+          <p>Link Tidak Tersedia</p>
+        )}
       </div>
     </section>
   );
