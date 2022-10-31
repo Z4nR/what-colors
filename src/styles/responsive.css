@@ -46,6 +46,17 @@
   .end-row {
     padding-top: 7px;
   }
+  /*Dashboard*/
+  .admin-header h2 {
+    font-size: 18px;
+  }
+  .admin-header h3 {
+    font-size: 16px;
+  }
+  .table-client {
+    font-size: 14px;
+  }
+
   /*Utils*/
   .util-box h1 {
     padding: 14px;

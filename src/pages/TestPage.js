@@ -19,7 +19,7 @@ export default function TestPage() {
   return (
     <section>
       {isModalShowed && <ModalBox closeModal={closeModal} id={isIDModal} />}
-      <div className="page">
+      <div className="test-page">
         <AnnouncementTest />
         <ChooseTest openModal={openModal} />
       </div>

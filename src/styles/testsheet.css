@@ -103,3 +103,7 @@
 .table-biodata {
   border-collapse: unset;
 }
+
+.table-biodata td {
+  text-align: start;
+}

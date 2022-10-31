@@ -73,9 +73,13 @@ section {
 }
 
 /*Test Page*/
+.test-page {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
 .instruction-box,
 .announcement-box {
-  margin: 0 auto;
   padding: 8px 0;
 }
 
@@ -379,15 +383,14 @@ table {
 tr {
   border-bottom: 1px solid #ddd;
 }
+td {
+  text-align: center;
+}
 .cap-data:hover {
   background-color: #d6eeee;
 }
-.table-number {
-  text-align: center;
-}
-.table-value {
+.th-value {
   width: 80%;
-  text-align: center;
 }
 .table-compare {
   margin-top: 8px;
@@ -398,6 +401,28 @@ tr {
   margin-top: 8px;
   height: 80%;
   overflow-y: scroll;
+}
+
+/*Admin*/
+.admin-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 8px;
+}
+.admin-header {
+  margin: 0 auto;
+  text-align: center;
+}
+.admin-header h3 {
+  padding: 8px;
+}
+
+.table-client {
+  margin-top: 8px;
+}
+.table-client td,
+.table-client th {
+  padding: 8px;
 }
 
 /*Footer*/

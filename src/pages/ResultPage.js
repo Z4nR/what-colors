@@ -119,7 +119,7 @@ export default function ResultPage() {
                 <thead>
                   <tr>
                     <th>No.</th>
-                    <th className="table-value">Value</th>
+                    <th className="th-value">Value</th>
                   </tr>
                 </thead>
               </table>
@@ -128,7 +128,7 @@ export default function ResultPage() {
                   <tbody>
                     {result?.comparisonResults?.map((cap) => (
                       <tr className="cap-data" key={cap._id}>
-                        <td className="table-number">{cap._id}</td>
+                        <td>{cap._id}</td>
                         <td className="table-value">{cap.comparison}</td>
                       </tr>
                     ))}
