@@ -8,10 +8,7 @@
 }
 
 .util-box h1 {
-  padding: 28px;
-  font-size: 28px;
   font-weight: 400;
-  flex: 1;
 }
 
 .util-box button {
@@ -22,16 +19,12 @@
   background-color: transparent;
   color: black;
   font-family: "Inter", sans-serif;
-  font-weight: 550;
-  font-size: 20px;
   text-transform: uppercase;
   cursor: pointer;
 }
 
 .util-box h2 {
-  padding: 16px;
   font-weight: 500;
-  flex: 1;
 }
 
 .util-box h4 {
