@@ -128,7 +128,7 @@ export default function ResultPage() {
                   <tbody>
                     {result?.comparisonResults?.map((cap) => (
                       <tr className="cap-data" key={cap._id}>
-                        <td>{cap._id}</td>
+                        <td className="table-number">{cap._id}</td>
                         <td className="table-value">{cap.comparison}</td>
                       </tr>
                     ))}
@@ -161,7 +161,7 @@ export default function ResultPage() {
                     <tbody>
                       {result?.discriminantResults?.map((cap) => (
                         <tr className="cap-data" key={cap._id}>
-                          <td>{cap._id}</td>
+                          <td className="table-number">{cap._id}</td>
                           <td className="table-value">{cap.discriminant}</td>
                         </tr>
                       ))}

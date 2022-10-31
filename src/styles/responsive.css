@@ -30,6 +30,9 @@
     font-weight: lighter;
   }
   /*Test Sheet*/
+  .biodata-testing table {
+    font-size: 14px;
+  }
   .start-row,
   .end-row,
   .row-value {

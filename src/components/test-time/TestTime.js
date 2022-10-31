@@ -138,10 +138,26 @@ export default function TestTime() {
             />
           </div>
         </div>
-        <p>Name : {fullName}</p>
-        <p>Age : {age}</p>
-        <p>Gender : {gender}</p>
-        <p>Device : {device}</p>
+        <table className="table-biodata">
+          <tbody>
+            <tr>
+              <td>Name </td>
+              <td>: {fullName}</td>
+            </tr>
+            <tr>
+              <td>Age </td>
+              <td>: {age}</td>
+            </tr>
+            <tr>
+              <td>Gender </td>
+              <td>: {gender}</td>
+            </tr>
+            <tr>
+              <td>Device </td>
+              <td>: {device}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       {valueList?.map((data) => (
         <div className="row-sheet" key={data.row}>

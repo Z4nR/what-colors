@@ -382,11 +382,12 @@ tr {
 .cap-data:hover {
   background-color: #d6eeee;
 }
-td {
+.table-number {
   text-align: center;
 }
 .table-value {
   width: 80%;
+  text-align: center;
 }
 .table-compare {
   margin-top: 8px;

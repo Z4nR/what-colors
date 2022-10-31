@@ -41,13 +41,13 @@ export default function RoomJoinTest({ openModal }) {
             type="text"
             placeholder="Input Verification Code"
             maxLength="7"
-            {...register("code", { required: true })}
+            {...register("code", { required: true, pattern: /[A-Z0-9]/ })}
           />
           <button className="join-mbl-btn" type="submit">
             Verify
           </button>
         </form>
-        {errors.code && (
+        {errors.code && errors.code.type === "required" && (
           <p
             style={{
               color: "red",
@@ -57,6 +57,18 @@ export default function RoomJoinTest({ openModal }) {
             }}
           >
             Fill Verify Code
+          </p>
+        )}
+        {errors.code && errors.code.type === "pattern" && (
+          <p
+            style={{
+              color: "red",
+              fontSize: "10px",
+              textAlign: "left",
+              paddingLeft: "4px",
+            }}
+          >
+            Use Capital Character
           </p>
         )}
       </div>
@@ -73,11 +85,30 @@ export default function RoomJoinTest({ openModal }) {
           placeholder="Input Verification Code"
           maxLength="7"
           style={{ textAlign: "center", marginBottom: "8px" }}
-          {...register("code", { required: true })}
+          {...register("code", { required: true, pattern: /[A-Z0-9]{3}/ })}
         />
-        {errors.code && (
-          <p style={{ color: "red", fontSize: "14px", padding: "4px" }}>
+        {errors.code && errors.code.type === "required" && (
+          <p
+            style={{
+              color: "red",
+              fontSize: "14px",
+              textAlign: "center",
+              marginBottom: "8px",
+            }}
+          >
             Fill Verify Code
+          </p>
+        )}
+        {errors.code && errors.code.type === "pattern" && (
+          <p
+            style={{
+              color: "red",
+              fontSize: "14px",
+              textAlign: "center",
+              marginBottom: "8px",
+            }}
+          >
+            Use Capital Character
           </p>
         )}
         <button className="join-btn room-btn" type="submit">
