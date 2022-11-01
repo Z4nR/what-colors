@@ -5,6 +5,7 @@ import { getClientsData, getRoomData } from "../utils/data-api";
 export default function DashboardGroup() {
   const [groupData, setGroupData] = useState(null);
   const [clientData, setClientData] = useState(null);
+  const [csvData, setCsvData] = useState(null);
 
   useEffect(() => {
     const idGroup = localStorage.getItem("idGroup");
@@ -17,6 +18,50 @@ export default function DashboardGroup() {
       setClientData(data.data);
     });
   }, []);
+
+  useEffect(() => {
+    const csvData = clientData?.map((c) => {
+      const name = c.fullName;
+      const age = c.age;
+      const device = c.device;
+      const status = c.status;
+      const score = c.totalErrorScore;
+
+      const comparisonId = c?.comparisonResults.map((item) => item._id);
+      const comparisonKey = c?.comparisonResults.map((item) => item.comparison);
+
+      const discriminantId = c?.discriminantResults.map((item) => item._id);
+      const discriminantKey = c?.discriminantResults.map(
+        (item) => item.discriminant
+      );
+
+      const header = [
+        "Name",
+        "Age",
+        "Device",
+        "Status",
+        "Total Error Score",
+        ...comparisonId,
+        ...discriminantId,
+      ];
+
+      const newArray = [
+        name,
+        age,
+        device,
+        status,
+        score,
+        ...comparisonKey,
+        ...discriminantKey,
+      ];
+
+      return newArray;
+    });
+
+    setCsvData(csvData);
+  }, [clientData]);
+
+  console.log(csvData);
 
   return (
     <section>
@@ -49,12 +94,8 @@ export default function DashboardGroup() {
             </tbody>
           </table>
         </div>
-        {clientData !== null ? (
-          <CSVLink
-            data={clientData}
-            separator={";"}
-            filename={"group-data.csv"}
-          >
+        {csvData !== null ? (
+          <CSVLink data={csvData} separator={";"} filename={"group-data.csv"}>
             Download Data
           </CSVLink>
         ) : (
