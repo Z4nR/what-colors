@@ -31,7 +31,7 @@ section {
 
 .color-app_header h2 {
   font-weight: normal;
-  padding: 16px;
+  padding: 10px 16px;
   flex: 1;
 }
 
@@ -423,6 +423,26 @@ td {
 .table-client td,
 .table-client th {
   padding: 8px;
+}
+
+.client-data {
+  min-height: 60vh;
+  overflow-y: scroll;
+}
+
+.csv-btn-box {
+  margin: 0 auto;
+  padding: 14px;
+  text-align: center;
+}
+.csv-btn {
+  padding: 10px;
+  background-color: rgb(48, 156, 192);
+  color: white;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 /*Footer*/

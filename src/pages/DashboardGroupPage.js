@@ -85,7 +85,7 @@ export default function DashboardGroup() {
             {groupData?.roomName} ({groupData?.roomInitial})
           </h3>
         </div>
-        <div className="admin-data">
+        <div className="client-data">
           <table className="table-client">
             <thead>
               <tr>
@@ -107,13 +107,15 @@ export default function DashboardGroup() {
             </tbody>
           </table>
         </div>
-        {csvData !== null ? (
-          <CSVLink data={csvData} separator={";"} filename={"group-data.csv"}>
-            Download Data
-          </CSVLink>
-        ) : (
-          <p>Link Tidak Tersedia</p>
-        )}
+        <div className="csv-btn-box">
+          {csvData !== null ? (
+            <CSVLink data={csvData} separator={";"} filename={"group-data.csv"}>
+              <button className="csv-btn">Export Data</button>
+            </CSVLink>
+          ) : (
+            <p>Link Tidak Tersedia</p>
+          )}
+        </div>
       </div>
     </section>
   );
