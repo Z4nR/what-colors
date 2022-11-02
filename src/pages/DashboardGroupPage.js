@@ -16,24 +16,23 @@ export default function DashboardGroup() {
 
     getClientsData(idGroup).then((data) => {
       setClientData(data.data);
+      console.log(
+        Array(data.data[0].comparisonResults.length)
+          .fill(null)
+          .map((_, id) => `C${id + 1}`)
+      );
     });
   }, []);
 
   useEffect(() => {
-    const csvData = clientData?.map((c) => {
-      const name = c.fullName;
-      const age = c.age;
-      const device = c.device;
-      const status = c.status;
-      const score = c.totalErrorScore;
+    if (clientData !== null) {
+      const comparisonId = Array(clientData[0].comparisonResults.length)
+        .fill(null)
+        .map((_, id) => `C${id + 1}`);
 
-      const comparisonId = c?.comparisonResults.map((item) => item._id);
-      const comparisonKey = c?.comparisonResults.map((item) => item.comparison);
-
-      const discriminantId = c?.discriminantResults.map((item) => item._id);
-      const discriminantKey = c?.discriminantResults.map(
-        (item) => item.discriminant
-      );
+      const discriminantId = Array(clientData[0].discriminantResults.length)
+        .fill(null)
+        .map((_, id) => `D${id + 1}`);
 
       const header = [
         "Name",
@@ -45,23 +44,37 @@ export default function DashboardGroup() {
         ...discriminantId,
       ];
 
-      const newArray = [
-        name,
-        age,
-        device,
-        status,
-        score,
-        ...comparisonKey,
-        ...discriminantKey,
-      ];
+      const csvData = clientData?.map((c) => {
+        const name = c.fullName;
+        const age = c.age;
+        const device = c.device;
+        const status = c.status;
+        const score = c.totalErrorScore;
+        const comparisonKey = c?.comparisonResults.map(
+          (item) => item.comparison
+        );
+        const discriminantKey = c?.discriminantResults.map(
+          (item) => item.discriminant
+        );
 
-      return newArray;
-    });
+        const newArray = [
+          name,
+          age,
+          device,
+          status,
+          score,
+          ...comparisonKey,
+          ...discriminantKey,
+        ];
 
-    setCsvData(csvData);
+        return newArray;
+      });
+
+      const finalData = [header, ...csvData];
+
+      setCsvData(finalData);
+    }
   }, [clientData]);
-
-  console.log(csvData);
 
   return (
     <section>
