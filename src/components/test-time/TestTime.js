@@ -9,12 +9,16 @@ import {
   discriminantValue,
   methodCalculation,
 } from "../../utils/method-loader";
+import { io } from "socket.io-client";
 
 export default function TestTime() {
   const [getData, setGetData] = useState(null);
   const [getGroupData, setGroupData] = useState(null);
   const [valueList, setValueList] = useState(null);
   const navigate = useNavigate();
+
+  let socket;
+  socket = io("http://localhost:5000");
 
   const idGroup = localStorage.getItem("idGroup");
 
@@ -26,9 +30,14 @@ export default function TestTime() {
     setGroupData(JSON.parse(group));
   }, []);
 
+  const isClient = getData?.isClient;
+
   const date = getData?.date;
   const testType = getData?.testType;
-  const fullName = getData?.fullName;
+  const fullName =
+    isClient === true
+      ? `${getGroupData?.initial} ${getData?.fullName}`
+      : getData?.fullName;
   const age = getData?.age;
   const gender = getData?.gender;
   const device = getData?.device;
@@ -81,6 +90,7 @@ export default function TestTime() {
   }
 
   async function onAddDataClient(data) {
+    socket.emit("client-join", data);
     await addClientData(data);
     navigate("/thanks");
   }
@@ -111,8 +121,6 @@ export default function TestTime() {
     };
 
     const dataClient = { idGroup, ...dataUser, status };
-
-    const isClient = getData?.isClient;
 
     if (isClient === false) {
       onAddDataUser(dataUser);

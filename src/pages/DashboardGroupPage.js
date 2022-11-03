@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CSVLink } from "react-csv";
+import { io } from "socket.io-client";
 import { getClientsData, getRoomData } from "../utils/data-api";
 
 export default function DashboardGroup() {
@@ -8,20 +9,24 @@ export default function DashboardGroup() {
   const [csvData, setCsvData] = useState(null);
 
   useEffect(() => {
+    let socket;
+    socket = io("http://localhost:5000");
+
     const idGroup = localStorage.getItem("idGroup");
 
     getRoomData(idGroup).then((data) => {
       setGroupData(data.data);
     });
 
-    getClientsData(idGroup).then((data) => {
+    const getClient = getClientsData(idGroup).then((data) => {
       setClientData(data.data);
-      console.log(
-        Array(data.data[0].comparisonResults.length)
-          .fill(null)
-          .map((_, id) => `C${id + 1}`)
-      );
     });
+
+    socket.on("refresh-list", getClient);
+
+    return () => {
+      socket.close();
+    };
   }, []);
 
   useEffect(() => {

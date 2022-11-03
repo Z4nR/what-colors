@@ -116,8 +116,6 @@ async function verifyCode(code) {
 
   localStorage.setItem("idGroup", responseJson._id);
 
-  console.log(isAdmin);
-
   if (response.status !== 201) {
     alert(response.message);
     return { error: true, data: null };
