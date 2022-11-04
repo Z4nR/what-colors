@@ -18,11 +18,18 @@ export default function DashboardGroup() {
       setGroupData(data.data);
     });
 
-    const getClient = getClientsData(idGroup).then((data) => {
-      setClientData(data.data);
+    const getClient = () => {
+      getClientsData(idGroup).then((data) => {
+        setClientData(data.data);
+      });
+    };
+
+    socket.on("refresh-list", () => {
+      console.log("keterima coy");
+      getClient();
     });
 
-    socket.on("refresh-list", getClient);
+    getClient();
 
     return () => {
       socket.close();

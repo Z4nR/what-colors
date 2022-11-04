@@ -100,16 +100,17 @@ export default function CreateRoomModal({ closeModal }) {
             )}
           </div>
           <div className="input-data">
-            <label htmlFor="tespurpose">Test Purpose</label>
+            <label htmlFor="tesrange">Max. TES</label>
             <input
-              id="tespurpose"
-              type="text"
-              placeholder="Input your test purpose"
-              autoComplete="off"
-              {...register("testPurpose", { required: true })}
+              id="tesrange"
+              type="range"
+              min="0"
+              max="100"
+              {...register("maxTES", { required: true })}
             />
-            {errors.adminEmail && (
-              <p style={{ color: "red" }}>Fill Your Test Purpose</p>
+            <p>Max. TES : 100</p>
+            {errors.maxTES && (
+              <p style={{ color: "red" }}>Please Set Maximal Error Score</p>
             )}
           </div>
         </div>
@@ -134,51 +135,30 @@ export default function CreateRoomModal({ closeModal }) {
             </div>
           </div>
           <div className="input-data">
-            <div className="initial-test-box">
-              <div className="initial-test">
-                <label htmlFor="tesrange">Max. TES</label>
-                <input
-                  id="tesrange"
-                  type="range"
-                  min="0"
-                  max="100"
-                  {...register("maxTES", { required: true })}
-                />
-                <p>Max. TES : 100</p>
-                {errors.maxTES && (
-                  <p style={{ color: "red" }}>Please Set Maximal Error Score</p>
-                )}
-              </div>
-              <div className="initial-test">
-                <label className="roominitial" htmlFor="roominitial">
-                  Room Initial
-                </label>
-                <input
-                  id="roominitial"
-                  type="text"
-                  placeholder="Input room initial"
-                  maxLength="5"
-                  {...register("roomInitial", {
-                    required: true,
-                    minLength: 3,
-                    pattern: /[A-Z0-9]/,
-                  })}
-                />
-                <p>Example : TOI3</p>
-                {errors.roomInitial &&
-                  errors.roomInitial.type === "pattern" && (
-                    <p style={{ color: "red" }}>Use Capital or Number</p>
-                  )}
-                {errors.roomInitial &&
-                  errors.roomInitial.type === "minLength" && (
-                    <p style={{ color: "red" }}>Inisial Room Minimal 3 Huruf</p>
-                  )}
-                {errors.roomInitial &&
-                  errors.roomInitial.type === "required" && (
-                    <p style={{ color: "red" }}>Wajib diisi</p>
-                  )}
-              </div>
-            </div>
+            <label className="roominitial" htmlFor="roominitial">
+              Room Initial
+            </label>
+            <input
+              id="roominitial"
+              type="text"
+              placeholder="Input room initial"
+              maxLength="5"
+              {...register("roomInitial", {
+                required: true,
+                minLength: 3,
+                pattern: /[A-Z0-9]/,
+              })}
+            />
+            <p>Example : TOI3</p>
+            {errors.roomInitial && errors.roomInitial.type === "pattern" && (
+              <p style={{ color: "red" }}>Use Capital or Number</p>
+            )}
+            {errors.roomInitial && errors.roomInitial.type === "minLength" && (
+              <p style={{ color: "red" }}>Inisial Room Minimal 3 Huruf</p>
+            )}
+            {errors.roomInitial && errors.roomInitial.type === "required" && (
+              <p style={{ color: "red" }}>Wajib diisi</p>
+            )}
           </div>
         </div>
         <div className="input-data-box">

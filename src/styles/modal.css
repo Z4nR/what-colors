@@ -47,22 +47,17 @@
   flex: 1;
 }
 
-.input-data,
-.initial-test {
+.input-data {
   display: flex;
   flex: 1;
   flex-direction: column;
 }
 
-.initial-test-box {
-  display: flex;
-  flex: 1;
-}
-
 .input-data input#adminname,
 .input-data input#adminemail,
 .input-data input#roomname,
-.input-data input#tespurpose,
+.input-data input#roominitial,
+.input-data input#tesrange,
 .input-data input#fullname,
 .input-data input#age,
 .input-data input#device,
@@ -76,21 +71,13 @@
   border-radius: 4px;
 }
 
-.initial-test input#tesrange,
-.initial-test input#roominitial {
+.input-data input#tesrange {
+  padding: 8px 0;
+  width: 100%;
   font-size: 16px;
   background-color: white;
   border: 0.5px solid gray;
   border-radius: 4px;
-}
-
-.initial-test input#tesrange {
-  padding: 8px 0;
-}
-
-.initial-test input#roominitial {
-  padding: 8px;
-  width: 100%;
 }
 
 .input-data button {
