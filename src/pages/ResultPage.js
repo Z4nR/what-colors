@@ -19,8 +19,11 @@ export default function ResultPage() {
 
     getUserData(id).then((data) => {
       setResult(data.data);
+      console.log(data.data);
     });
   }, []);
+
+  console.log(result);
 
   const maxResult = useMemo(() => {
     if (getDiscriminant !== null) {

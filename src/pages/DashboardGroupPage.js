@@ -35,8 +35,7 @@ export default function DashboardGroup() {
   }, []);
 
   useEffect(() => {
-    if (clientData !== [] && null) {
-      console.log(clientData);
+    if (clientData !== null) {
       const comparisonId = Array(clientData[0].comparisonResults.length)
         .fill(null)
         .map((_, id) => `C${id + 1}`);
@@ -83,9 +82,15 @@ export default function DashboardGroup() {
 
       const finalData = [header, ...csvData];
 
+      console.log(finalData);
+
       setCsvData(finalData);
     }
   }, [clientData]);
+
+  console.log(clientData);
+
+  console.log(csvData);
 
   return (
     <section>

@@ -85,7 +85,7 @@ export default function RoomJoinTest({ openModal }) {
           placeholder="Input Verification Code"
           maxLength="7"
           style={{ textAlign: "center", marginBottom: "8px" }}
-          {...register("code", { required: true, pattern: /[A-Z0-9]{3}/ })}
+          {...register("code", { required: true, pattern: /[A-Z0-9]{7}/ })}
         />
         {errors.code && errors.code.type === "required" && (
           <p
