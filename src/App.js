@@ -11,6 +11,7 @@ import TestPage from "./pages/TestPage";
 import TestSheet from "./pages/TestSheet";
 import Thanks from "./pages/utils/ThanksPage";
 import SendCode from "./pages/utils/SendCodePage";
+import NotFoundPage from "./pages/utils/404Page";
 
 export default function ColorApp() {
   return (
@@ -21,6 +22,7 @@ export default function ColorApp() {
       </header>
       <main>
         <Routes>
+          */Main Route/*
           <Route path="/" element={<HomePage />} />
           <Route path="/test" element={<TestPage />} />
           <Route path="/article" element={<ArticlePage />} />
@@ -31,9 +33,11 @@ export default function ColorApp() {
             path="/dashboard/:groupId/admin"
             element={<DashboardGroup />}
           />
+          */Util Route/*
           <Route path="/code-sended" element={<SendCode />} />
           <Route path="/countdown" element={<CountDownPage />} />
           <Route path="/thanks" element={<Thanks />} />
+          <Route path="/notFound" element={<NotFoundPage />} />
         </Routes>
       </main>
       <footer>

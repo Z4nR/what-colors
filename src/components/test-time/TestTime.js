@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FiHome } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { ReactSortable } from "react-sortablejs";
-import { addClientData, addUserData } from "../../utils/data-api";
+import { addClientData, addUserData, getRoomData } from "../../utils/data-api";
 import { showFormattedDateEN, shuffleArray } from "../../utils/data-local";
 import {
   compareArray,
@@ -17,17 +17,16 @@ export default function TestTime() {
   const [valueList, setValueList] = useState(null);
   const navigate = useNavigate();
 
-  let socket;
-  socket = io("http://localhost:5000");
-
+  const socket = io("http://localhost:5000");
   const idGroup = localStorage.getItem("idGroup");
 
   useEffect(() => {
     const dataInput = localStorage.getItem("data");
     setGetData(JSON.parse(dataInput));
 
-    const group = localStorage.getItem("group");
-    setGroupData(JSON.parse(group));
+    getRoomData(idGroup).then((data) => {
+      setGroupData(data.data);
+    });
   }, []);
 
   const isClient = getData?.isClient;
@@ -36,7 +35,7 @@ export default function TestTime() {
   const testType = getData?.testType;
   const fullName =
     isClient === true
-      ? `${getGroupData?.initial} ${getData?.fullName}`
+      ? `${getGroupData?.roomInitial} ${getData?.fullName}`
       : getData?.fullName;
   const age = getData?.age;
   const gender = getData?.gender;

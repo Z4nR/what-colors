@@ -58,22 +58,20 @@ async function getUserData(id) {
 async function createTestRoom({
   date,
   roomName,
-  adminName,
   adminEmail,
-  testPurpose,
   maxTES,
   roomInitial,
   testType,
+  device,
 }) {
   const data = JSON.stringify({
     date,
     roomName,
-    adminName,
     adminEmail,
-    testPurpose,
     maxTES,
     roomInitial,
     testType,
+    device,
   });
 
   const response = await fetch(`${BASE_URL}/create-room`, {

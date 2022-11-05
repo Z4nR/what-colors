@@ -7,11 +7,9 @@ export default function DashboardGroup() {
   const [groupData, setGroupData] = useState(null);
   const [clientData, setClientData] = useState(null);
   const [csvData, setCsvData] = useState(null);
+  const socket = io("http://localhost:5000");
 
   useEffect(() => {
-    let socket;
-    socket = io("http://localhost:5000");
-
     const idGroup = localStorage.getItem("idGroup");
 
     getRoomData(idGroup).then((data) => {
@@ -37,7 +35,8 @@ export default function DashboardGroup() {
   }, []);
 
   useEffect(() => {
-    if (clientData !== null) {
+    if (clientData !== [] && null) {
+      console.log(clientData);
       const comparisonId = Array(clientData[0].comparisonResults.length)
         .fill(null)
         .map((_, id) => `C${id + 1}`);

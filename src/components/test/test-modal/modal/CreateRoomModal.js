@@ -1,5 +1,5 @@
 import React from "react";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { FiHome } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { createTestRoom } from "../../../../utils/data-api";
@@ -12,17 +12,14 @@ export default function CreateRoomModal({ closeModal }) {
     handleSubmit,
     register,
     formState: { errors },
-    control,
   } = useForm({
     defaultValues: {
       date: new Date().toISOString(),
       roomName: "",
       roomInitial: "",
-      adminName: "",
       adminEmail: "",
       testType: "Fransworth Munsell-85 Hue",
       device: "",
-      sameDevice: false,
     },
   });
 
@@ -33,16 +30,6 @@ export default function CreateRoomModal({ closeModal }) {
 
   function onSubmit(data) {
     onCreateRoom(data);
-
-    localStorage.setItem(
-      "group",
-      JSON.stringify({
-        device: data.device,
-        testType: data.testType,
-        maxTES: data.maxTES,
-        initial: data.roomInitial,
-      })
-    );
   }
 
   return (
@@ -72,21 +59,6 @@ export default function CreateRoomModal({ closeModal }) {
             )}
           </div>
           <div className="input-data">
-            <label htmlFor="adminname">Admin Name</label>
-            <input
-              id="adminname"
-              type="text"
-              placeholder="Input your admin name"
-              autoComplete="off"
-              {...register("adminName", { required: true })}
-            />
-            {errors.adminName && (
-              <p style={{ color: "red" }}>Input Admin Name</p>
-            )}
-          </div>
-        </div>
-        <div className="input-data-box">
-          <div className="input-data">
             <label htmlFor="adminemail">Admin Email</label>
             <input
               id="adminemail"
@@ -99,41 +71,8 @@ export default function CreateRoomModal({ closeModal }) {
               <p style={{ color: "red" }}>Please Input Your Email</p>
             )}
           </div>
-          <div className="input-data">
-            <label htmlFor="tesrange">Max. TES</label>
-            <input
-              id="tesrange"
-              type="range"
-              min="0"
-              max="100"
-              {...register("maxTES", { required: true })}
-            />
-            <p>Max. TES : 100</p>
-            {errors.maxTES && (
-              <p style={{ color: "red" }}>Please Set Maximal Error Score</p>
-            )}
-          </div>
         </div>
         <div className="input-data-box">
-          <div className="input-data">
-            <label htmlFor="device">Device (Optional)</label>
-            <input
-              id="device"
-              type="text"
-              placeholder="Input Device / Monitor Type"
-              {...register("device")}
-            />
-            <div className="checkbox-device">
-              <Controller
-                control={control}
-                name="sameDevice"
-                render={({ field }) => (
-                  <input type="checkbox" id="samedevice" {...field} />
-                )}
-              />
-              <label htmlFor="samedevice"> Client Use Same Device</label>
-            </div>
-          </div>
           <div className="input-data">
             <label className="roominitial" htmlFor="roominitial">
               Room Initial
@@ -160,8 +99,31 @@ export default function CreateRoomModal({ closeModal }) {
               <p style={{ color: "red" }}>Wajib diisi</p>
             )}
           </div>
+          <div className="input-data">
+            <label htmlFor="tesrange">Max. TES</label>
+            <input
+              id="tesrange"
+              type="range"
+              min="0"
+              max="100"
+              {...register("maxTES", { required: true })}
+            />
+            <p>Max. TES : 100</p>
+            {errors.maxTES && (
+              <p style={{ color: "red" }}>Please Set Maximal Error Score</p>
+            )}
+          </div>
         </div>
         <div className="input-data-box">
+          <div className="input-data">
+            <label htmlFor="device">Device (Optional)</label>
+            <input
+              id="device"
+              type="text"
+              placeholder="Input Device / Monitor Type"
+              {...register("device")}
+            />
+          </div>
           <div className="input-data">
             <label htmlFor="method">Method</label>
             <select
