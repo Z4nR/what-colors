@@ -7,9 +7,9 @@ export default function DashboardGroup() {
   const [groupData, setGroupData] = useState(null);
   const [clientData, setClientData] = useState(null);
   const [csvData, setCsvData] = useState(null);
-  const socket = io("http://localhost:5000");
 
   useEffect(() => {
+    const socket = io("http://localhost:5000");
     const idGroup = localStorage.getItem("idGroup");
 
     getRoomData(idGroup).then((data) => {

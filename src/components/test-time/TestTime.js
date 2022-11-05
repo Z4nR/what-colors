@@ -18,9 +18,10 @@ export default function TestTime() {
   const navigate = useNavigate();
 
   const socket = io("http://localhost:5000");
-  const idGroup = localStorage.getItem("idGroup");
 
   useEffect(() => {
+    const idGroup = localStorage.getItem("idGroup");
+
     const dataInput = localStorage.getItem("data");
     setGetData(JSON.parse(dataInput));
 
@@ -30,6 +31,8 @@ export default function TestTime() {
   }, []);
 
   const isClient = getData?.isClient;
+
+  const idGroup = getGroupData?._id;
 
   const date = getData?.date;
   const testType = getData?.testType;
