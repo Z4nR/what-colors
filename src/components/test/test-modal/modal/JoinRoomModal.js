@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { FiHome } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import { getRoomData } from "../../../../utils/data-api";
 import { createArray } from "../../../../utils/data-local";
 
 export default function JoinRoomModal({ closeModal }) {
@@ -27,17 +28,19 @@ export default function JoinRoomModal({ closeModal }) {
   });
 
   useEffect(() => {
-    const group = localStorage.getItem("group");
-    if (group != null) {
-      const parse = JSON.parse(group);
-      setValue("device", parse.device);
-      setValue("testType", parse.testType);
-    }
+    const idGroup = localStorage.getItem("idGroup");
+
+    getRoomData(idGroup).then((data) => {
+      const group = data.data;
+      setValue("device", group.device);
+      setValue("testType", group.testType);
+    });
   }, [setValue]);
 
   const setTestType = watch("testType");
 
   useEffect(() => {
+    console.log(getValues("testType"));
     setValue("value", createArray(getValues("testType")));
   }, [setTestType, setValue, getValues]);
 

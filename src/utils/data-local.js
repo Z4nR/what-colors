@@ -19,6 +19,7 @@ const testType = [
 ];
 
 function createArray(type) {
+  console.log(type);
   const test = testType.find((test) => test.type === type);
   const value = test.value;
   return value;

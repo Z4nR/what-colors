@@ -9,7 +9,7 @@ export default function DashboardGroup() {
   const [csvData, setCsvData] = useState(null);
 
   useEffect(() => {
-    const socket = io("http://localhost:5000");
+    const socket = io("https://what-color.herokuapp.com/");
     const idGroup = localStorage.getItem("idGroup");
 
     getRoomData(idGroup).then((data) => {
@@ -101,19 +101,21 @@ export default function DashboardGroup() {
             {groupData?.roomName} ({groupData?.roomInitial})
           </h3>
         </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Status</th>
+              <th>Total Error Score</th>
+              <th>Device</th>
+            </tr>
+          </thead>
+        </table>
         <div className="client-data">
           <table className="table-client">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Status</th>
-                <th>Total Error Score</th>
-                <th>Device</th>
-              </tr>
-            </thead>
             <tbody>
               {clientData?.map((client) => (
-                <tr key={client._id}>
+                <tr className="cap-data" key={client._id}>
                   <td>{client.fullName}</td>
                   <td>{client.status}</td>
                   <td>{client.totalErrorScore}</td>

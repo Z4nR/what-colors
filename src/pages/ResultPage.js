@@ -155,7 +155,7 @@ export default function ResultPage() {
                   <thead>
                     <tr>
                       <th>No.</th>
-                      <th className="table-value">Value</th>
+                      <th className="th-value">Value</th>
                     </tr>
                   </thead>
                 </table>

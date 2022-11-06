@@ -17,7 +17,7 @@ export default function TestTime() {
   const [valueList, setValueList] = useState(null);
   const navigate = useNavigate();
 
-  const socket = io("http://localhost:5000");
+  const socket = io("https://what-color.herokuapp.com/");
 
   useEffect(() => {
     const idGroup = localStorage.getItem("idGroup");
