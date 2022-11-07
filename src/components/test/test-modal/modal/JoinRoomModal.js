@@ -21,7 +21,6 @@ export default function JoinRoomModal({ closeModal }) {
       fullName: "",
       device: "",
       gender: "",
-      testType: "",
       value: {},
       isClient: true,
     },
@@ -34,15 +33,11 @@ export default function JoinRoomModal({ closeModal }) {
       const group = data.data;
       setValue("device", group.device);
       setValue("testType", group.testType);
+
+      const value = createArray(group.testType);
+      setValue("value", value);
     });
   }, [setValue]);
-
-  const setTestType = watch("testType");
-
-  useEffect(() => {
-    console.log(getValues("testType"));
-    setValue("value", createArray(getValues("testType")));
-  }, [setTestType, setValue, getValues]);
 
   function onSubmitClient(data) {
     navigate("/test/test-sheet");

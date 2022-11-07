@@ -23,7 +23,6 @@ export default function DashboardGroup() {
     };
 
     socket.on("refresh-list", () => {
-      console.log("keterima coy");
       getClient();
     });
 
@@ -35,7 +34,7 @@ export default function DashboardGroup() {
   }, []);
 
   useEffect(() => {
-    if (clientData !== null) {
+    if (clientData && !!clientData.length) {
       const comparisonId = Array(clientData[0].comparisonResults.length)
         .fill(null)
         .map((_, id) => `C${id + 1}`);
@@ -82,15 +81,9 @@ export default function DashboardGroup() {
 
       const finalData = [header, ...csvData];
 
-      console.log(finalData);
-
       setCsvData(finalData);
     }
   }, [clientData]);
-
-  console.log(clientData);
-
-  console.log(csvData);
 
   return (
     <section>

@@ -92,8 +92,8 @@ export default function TestTime() {
   }
 
   async function onAddDataClient(data) {
-    socket.emit("client-join", data);
     await addClientData(data);
+    socket.emit("client-join", data);
     navigate("/thanks");
   }
 

@@ -25,7 +25,6 @@ export default function RoomJoinTest({ openModal }) {
       data.data === true
         ? navigate(`/dashboard/${idGroup}/admin`)
         : openModal(ID);
-      console.log(data.data);
     });
   }
 
