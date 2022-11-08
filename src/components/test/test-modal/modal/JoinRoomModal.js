@@ -11,10 +11,8 @@ export default function JoinRoomModal({ closeModal }) {
   const {
     handleSubmit,
     register,
-    watch,
     formState: { errors },
     setValue,
-    getValues,
   } = useForm({
     defaultValues: {
       date: new Date().toISOString(),
@@ -131,7 +129,7 @@ export default function JoinRoomModal({ closeModal }) {
               id="method"
               type="text"
               readOnly
-              value={getValues("testType")}
+              {...register("testType", { required: true })}
             />
           </div>
         </div>
