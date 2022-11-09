@@ -29,8 +29,12 @@ export default function JoinRoomModal({ closeModal }) {
 
     getRoomData(idGroup).then((data) => {
       const group = data.data;
-      setValue("device", group.device);
-      setValue("testType", group.testType);
+
+      const device = group.device;
+      const testType = group.testType;
+
+      setValue("device", device);
+      setValue("testType", testType);
 
       const value = createArray(group.testType);
       setValue("value", value);
