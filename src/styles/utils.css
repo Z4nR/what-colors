@@ -29,6 +29,7 @@
 
 .util-box h4 {
   padding: 16px;
+  font-weight: 500;
 }
 
 /*Countdown*/
@@ -38,6 +39,7 @@
   background-position-x: center;
 }
 
+/*Congrats*/
 .image-congrats {
   background-image: url(../../public/img/Happy\ student-rafiki.svg);
   background-repeat: no-repeat;
@@ -47,6 +49,13 @@
 /*Email Sended*/
 .image-sending {
   background-image: url(../../public/img/Messenger-amico.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+/*Thanks*/
+.image-thanks {
+  background-image: url(../../public/img/Done-rafiki.svg);
   background-repeat: no-repeat;
   background-position-x: center;
 }
