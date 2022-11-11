@@ -4,6 +4,7 @@ import { io } from "socket.io-client";
 import { getClientsData, getRoomData } from "../utils/data-api";
 
 export default function DashboardGroup() {
+  const [isLoading, setLoading] = useState(true);
   const [groupData, setGroupData] = useState(null);
   const [clientData, setClientData] = useState(null);
   const [csvData, setCsvData] = useState(null);
@@ -14,6 +15,7 @@ export default function DashboardGroup() {
 
     getRoomData(idGroup).then((data) => {
       setGroupData(data.data);
+      setLoading(false);
     });
 
     const getClient = () => {
@@ -87,47 +89,55 @@ export default function DashboardGroup() {
 
   return (
     <section>
-      <div className="admin-page">
-        <div className="admin-header">
-          <h2>Admin Dashboard</h2>
-          <h3>
-            {groupData?.roomName} ({groupData?.roomInitial})
-          </h3>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Status</th>
-              <th>Total Error Score</th>
-              <th>Device</th>
-            </tr>
-          </thead>
-        </table>
-        <div className="client-data">
-          <table className="table-client">
-            <tbody>
-              {clientData?.map((client) => (
-                <tr className="cap-data" key={client._id}>
-                  <td>{client.fullName}</td>
-                  <td>{client.status}</td>
-                  <td>{client.totalErrorScore}</td>
-                  <td>{client.device}</td>
-                </tr>
-              ))}
-            </tbody>
+      {isLoading === false ? (
+        <div className="admin-page">
+          <div className="admin-header">
+            <h2>Admin Dashboard</h2>
+            <h3>
+              {groupData?.roomName} ({groupData?.roomInitial})
+            </h3>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Total Error Score</th>
+                <th>Device</th>
+              </tr>
+            </thead>
           </table>
+          <div className="client-data">
+            <table className="table-client">
+              <tbody>
+                {clientData?.map((client) => (
+                  <tr className="cap-data" key={client._id}>
+                    <td>{client.fullName}</td>
+                    <td>{client.status}</td>
+                    <td>{client.totalErrorScore}</td>
+                    <td>{client.device}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="csv-btn-box">
+            {csvData !== null ? (
+              <CSVLink
+                data={csvData}
+                separator={";"}
+                filename={"group-data.csv"}
+              >
+                <button className="csv-btn">Export Data</button>
+              </CSVLink>
+            ) : (
+              <p>Link Tidak Tersedia</p>
+            )}
+          </div>
         </div>
-        <div className="csv-btn-box">
-          {csvData !== null ? (
-            <CSVLink data={csvData} separator={";"} filename={"group-data.csv"}>
-              <button className="csv-btn">Export Data</button>
-            </CSVLink>
-          ) : (
-            <p>Link Tidak Tersedia</p>
-          )}
-        </div>
-      </div>
+      ) : (
+        <div className="loading"></div>
+      )}
     </section>
   );
 }

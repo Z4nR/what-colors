@@ -59,3 +59,12 @@
   background-repeat: no-repeat;
   background-position-x: center;
 }
+
+/*Loading*/
+.loading {
+  background-image: url(../../public/img/Wedges-3s-200px.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  height: 200px;
+  margin: 0 auto;
+}

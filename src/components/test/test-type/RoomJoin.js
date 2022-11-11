@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
 import { verifyCode } from "../../../utils/data-api";
 
 export default function RoomJoinTest({ openModal }) {
+  const [isLoading, setLoading] = useState(false);
   const ID = 3;
 
   const navigate = useNavigate();
@@ -21,7 +22,9 @@ export default function RoomJoinTest({ openModal }) {
   } = useForm();
 
   function onVerify(data) {
+    setLoading(true);
     verifyCode(data.code).then((data) => {
+      setLoading(false);
       data.data === true
         ? navigate(`/dashboard/${idGroup}/admin`)
         : openModal(ID);
@@ -110,9 +113,15 @@ export default function RoomJoinTest({ openModal }) {
             Use Capital Character
           </p>
         )}
-        <button className="join-btn room-btn" type="submit">
-          Verify
-        </button>
+        {isLoading === false ? (
+          <button className="join-btn room-btn" type="submit">
+            Verify
+          </button>
+        ) : (
+          <button className="join-btn room-btn" type="submit" disabled>
+            Loading...
+          </button>
+        )}
       </form>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FiHome } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +6,7 @@ import { createTestRoom } from "../../../../utils/data-api";
 import { testType } from "../../../../utils/data-local";
 
 export default function CreateRoomModal({ closeModal }) {
+  const [isLoading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const {
@@ -30,6 +31,7 @@ export default function CreateRoomModal({ closeModal }) {
 
   function onSubmit(data) {
     onCreateRoom(data);
+    setLoading(true);
   }
 
   return (
@@ -145,7 +147,13 @@ export default function CreateRoomModal({ closeModal }) {
         </div>
         <div className="input-data-box">
           <div className="input-data">
-            <button type="submit">Create Test Room</button>
+            {isLoading === false ? (
+              <button type="submit">Create Test Room</button>
+            ) : (
+              <button type="submit" disabled>
+                Loading...
+              </button>
+            )}
           </div>
         </div>
       </form>
