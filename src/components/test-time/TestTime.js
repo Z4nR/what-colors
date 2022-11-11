@@ -15,6 +15,7 @@ export default function TestTime() {
   const [getData, setGetData] = useState(null);
   const [getGroupData, setGroupData] = useState(null);
   const [valueList, setValueList] = useState(null);
+  const [isLoading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   const socket = io("https://what-color.herokuapp.com/");
@@ -26,6 +27,7 @@ export default function TestTime() {
     setGetData(JSON.parse(dataInput));
 
     getRoomData(idGroup).then((data) => {
+      setLoading(false);
       setGroupData(data.data);
     });
   }, []);
@@ -98,6 +100,8 @@ export default function TestTime() {
   }
 
   function onSubmitArray() {
+    setLoading(true);
+
     const resultArray = reuniteArray();
     const initial = getData?.value;
 
@@ -133,7 +137,7 @@ export default function TestTime() {
     localStorage.setItem("discriminantResult", JSON.stringify(discriminant));
   }
 
-  return (
+  return isLoading === false ? (
     <div className="test-sheet">
       <div className="biodata-testing">
         <h4 className="header-testing">{testType} Test</h4>
@@ -216,6 +220,11 @@ export default function TestTime() {
       >
         Submit Result
       </button>
+    </div>
+  ) : (
+    <div className="util-box">
+      <div className="loading-box loading" />
+      <p>Please Wait</p>
     </div>
   );
 }

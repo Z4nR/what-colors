@@ -6,6 +6,7 @@ import { useMediaQuery } from "react-responsive";
 export default function ResultPage() {
   const [result, setResult] = useState(null);
   const [getDiscriminant, setDiscriminant] = useState(null);
+  const [isLoading, setLoading] = useState(true);
 
   const isDesktop = useMediaQuery({
     query: "(min-width: 450px)",
@@ -18,12 +19,13 @@ export default function ResultPage() {
     const id = localStorage.getItem("id");
 
     getUserData(id).then((data) => {
+      setLoading(false);
       setResult(data.data);
       console.log(data.data);
     });
   }, []);
 
-  console.log(result);
+  console.log(getDiscriminant);
 
   const maxResult = useMemo(() => {
     if (getDiscriminant !== null) {
@@ -80,12 +82,14 @@ export default function ResultPage() {
 
     if (getDiscriminant !== null) {
       if (isDesktop) {
-        new Chart("radar-chart", config);
+        if (isLoading === false) {
+          new Chart("radar-chart", config);
+        }
       }
     }
-  }, [getDiscriminant, maxResult, isDesktop]);
+  }, [getDiscriminant, maxResult, isDesktop, isLoading]);
 
-  return (
+  return isLoading === false ? (
     <section>
       <div className="result">
         <div className="data-box">
@@ -177,5 +181,10 @@ export default function ResultPage() {
         </div>
       </div>
     </section>
+  ) : (
+    <div className="util-box">
+      <div className="loading-box loading" />
+      <p>Please Wait</p>
+    </div>
   );
 }

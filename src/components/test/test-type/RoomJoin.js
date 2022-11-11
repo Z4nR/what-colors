@@ -118,7 +118,7 @@ export default function RoomJoinTest({ openModal }) {
             Verify
           </button>
         ) : (
-          <button className="join-btn room-btn" type="submit" disabled>
+          <button className="join-btn" type="submit" disabled>
             Loading...
           </button>
         )}

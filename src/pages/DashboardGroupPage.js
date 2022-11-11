@@ -136,7 +136,10 @@ export default function DashboardGroup() {
           </div>
         </div>
       ) : (
-        <div className="loading"></div>
+        <div className="util-box">
+          <div className="loading-box loading" />
+          <p>Please Wait</p>
+        </div>
       )}
     </section>
   );

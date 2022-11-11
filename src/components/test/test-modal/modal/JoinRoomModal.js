@@ -150,7 +150,7 @@ export default function JoinRoomModal({ closeModal }) {
           </div>
         </form>
       ) : (
-        <div className="loading" />
+        <div className="loading-box loading" />
       )}
     </div>
   );
