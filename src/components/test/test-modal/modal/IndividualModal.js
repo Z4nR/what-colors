@@ -68,6 +68,7 @@ export default function IndividualModal({ closeModal }) {
               type="number"
               placeholder="Input your age  (Year)"
               autoComplete="off"
+              min="0"
               {...register("age", { required: true })}
             />
             {errors.age && (

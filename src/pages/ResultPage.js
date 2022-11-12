@@ -113,6 +113,7 @@ export default function ResultPage() {
                   <p> : {result?.age}</p>
                   <p> : {result?.gender}</p>
                   <p> : {result?.device}</p>
+                  <p>Total Error Score : {result?.totalErrorScore}</p>
                 </div>
               </div>
             </div>
@@ -120,23 +121,20 @@ export default function ResultPage() {
           <div className="result-box">
             <h3>Test Result</h3>
             <div className="info-result">
-              <p>Total Error Score : {result?.totalErrorScore}</p>
               <p>Comparison Result : </p>
-              <table>
-                <thead>
-                  <tr>
-                    <th>No.</th>
-                    <th className="th-value">Value</th>
-                  </tr>
-                </thead>
-              </table>
-              <div className="table-compare">
+              <div className="table-data">
                 <table>
+                  <thead>
+                    <tr>
+                      <th>No.</th>
+                      <th>Value</th>
+                    </tr>
+                  </thead>
                   <tbody>
                     {result?.comparisonResults?.map((cap) => (
                       <tr className="cap-data" key={cap._id}>
                         <td>{cap._id}</td>
-                        <td className="table-value">{cap.comparison}</td>
+                        <td>{cap.comparison}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -155,21 +153,19 @@ export default function ResultPage() {
             ) : (
               <div className="info-result">
                 <p>Discriminant Result : </p>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>No.</th>
-                      <th className="th-value">Value</th>
-                    </tr>
-                  </thead>
-                </table>
-                <div className="table-discriminant">
+                <div className="table-data">
                   <table>
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Value</th>
+                      </tr>
+                    </thead>
                     <tbody>
                       {result?.discriminantResults?.map((cap) => (
                         <tr className="cap-data" key={cap._id}>
-                          <td className="table-number">{cap._id}</td>
-                          <td className="table-value">{cap.discriminant}</td>
+                          <td>{cap._id}</td>
+                          <td>{cap.discriminant}</td>
                         </tr>
                       ))}
                     </tbody>

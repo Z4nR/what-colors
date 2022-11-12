@@ -97,18 +97,16 @@ export default function DashboardGroup() {
               {groupData?.roomName} ({groupData?.roomInitial})
             </h3>
           </div>
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Status</th>
-                <th>Total Error Score</th>
-                <th>Device</th>
-              </tr>
-            </thead>
-          </table>
-          <div className="client-data">
-            <table className="table-client">
+          <div className="table-data">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Status</th>
+                  <th>Total Error Score</th>
+                  <th>Device</th>
+                </tr>
+              </thead>
               <tbody>
                 {clientData?.map((client) => (
                   <tr className="cap-data" key={client._id}>
