@@ -107,13 +107,14 @@ export default function ResultPage() {
                   <p>Age </p>
                   <p>Gender </p>
                   <p>Device </p>
+                  <p>Total Error Score</p>
                 </div>
                 <div className="data-info">
                   <p>: {result?.fullName}</p>
                   <p> : {result?.age}</p>
                   <p> : {result?.gender}</p>
                   <p> : {result?.device}</p>
-                  <p>Total Error Score : {result?.totalErrorScore}</p>
+                  <p> : {result?.totalErrorScore}</p>
                 </div>
               </div>
             </div>

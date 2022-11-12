@@ -97,7 +97,7 @@ export default function DashboardGroup() {
               {groupData?.roomName} ({groupData?.roomInitial})
             </h3>
           </div>
-          <div className="table-data">
+          <div className="table-client">
             <table>
               <thead>
                 <tr>

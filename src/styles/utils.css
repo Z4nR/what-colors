@@ -81,26 +81,30 @@ tr {
   border-bottom: 1px solid #ddd;
 }
 
-.table-data {
+.table-data,
+.table-client {
   margin: 8px;
-  height: 65vh;
 }
 
 .table-data thead,
-.table-data tbody tr {
+.table-data tbody tr,
+.table-client thead,
+.table-client tbody tr {
   display: table;
   width: 100%;
   table-layout: fixed;
 }
 
-.table-data tbody {
+.table-data tbody,
+.table-client tbody {
   display: block;
   overflow-y: auto;
-  height: 60vh;
 }
 
 .table-data td,
-.table-data th {
+.table-data th,
+.table-client td,
+.table-cleint th {
   padding: 4px;
 }
 

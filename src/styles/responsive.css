@@ -382,6 +382,16 @@
   .result {
     flex-direction: column;
   }
+
+  .info-result {
+    height: 100%;
+  }
+  .table-data {
+    height: 65vh;
+  }
+  .table-data tbody {
+    height: 60vh;
+  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -390,5 +400,21 @@
   .row-value {
     height: 45px;
     width: 45px;
+  }
+
+  .info-result {
+    height: 250px;
+  }
+  .table-data {
+    height: 65vh;
+  }
+  .table-data tbody {
+    height: 30vh;
+  }
+  .table-client {
+    height: 65vh;
+  }
+  .table-client tbody {
+    height: 60vh;
   }
 }
