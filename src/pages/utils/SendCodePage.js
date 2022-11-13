@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function SendCode() {
-  const idGroup = localStorage.getItem("idGroup");
+  const roomInitial = localStorage.getItem("roomInitial");
 
   return (
     <section>
@@ -11,7 +11,7 @@ export default function SendCode() {
         <h4>
           your room verification code already send to your email. Go to{" "}
           <span>
-            <Link to={`/dashboard/${idGroup}/admin`}>Dashboard</Link>
+            <Link to={`/dashboard/${roomInitial}/admin`}>Dashboard</Link>
           </span>
         </h4>
       </div>

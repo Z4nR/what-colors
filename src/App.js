@@ -30,7 +30,7 @@ export default function ColorApp() {
           <Route path="/test/test-sheet" element={<TestSheet />} />
           <Route path="/result/:id" element={<ResultPage />} />
           <Route
-            path="/dashboard/:groupId/admin"
+            path="/dashboard/:roomInitial/admin"
             element={<DashboardGroup />}
           />
           */Util Route/*
