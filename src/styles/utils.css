@@ -32,16 +32,9 @@
   font-weight: 500;
 }
 
-/*Countdown*/
+/*Result*/
 .image-result {
   background-image: url(../../public/img/People\ search-bro.svg);
-  background-repeat: no-repeat;
-  background-position-x: center;
-}
-
-/*Congrats*/
-.image-congrats {
-  background-image: url(../../public/img/Happy\ student-rafiki.svg);
   background-repeat: no-repeat;
   background-position-x: center;
 }

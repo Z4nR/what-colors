@@ -50,7 +50,7 @@ export default function JoinRoomModal({ closeModal }) {
   }
 
   return (
-    <div className="modal-input individual-input">
+    <div className="modal-input client-join">
       <div className="header-input-data">
         <h3>Join Test Room</h3>
         <div className="icon-close">

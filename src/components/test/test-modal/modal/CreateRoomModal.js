@@ -39,7 +39,7 @@ export default function CreateRoomModal({ closeModal }) {
   }
 
   return (
-    <div className="modal-input individual-input">
+    <div className="modal-input room-create">
       <div className="header-input-data">
         <h3>Room Setting</h3>
         <div className="icon-close">
