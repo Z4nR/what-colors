@@ -12,6 +12,7 @@ export default function CreateRoomModal({ closeModal }) {
   const {
     handleSubmit,
     register,
+    watch,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -21,8 +22,11 @@ export default function CreateRoomModal({ closeModal }) {
       adminEmail: "",
       testType: "Fransworth Munsell-85 Hue",
       device: "",
+      maxTES: 50,
     },
   });
+
+  const maxTES = watch("maxTES");
 
   async function onCreateRoom(data) {
     await createTestRoom(data);
@@ -110,7 +114,7 @@ export default function CreateRoomModal({ closeModal }) {
               max="100"
               {...register("maxTES", { required: true })}
             />
-            <p>Max. TES : 100</p>
+            <p>Max. TES : {maxTES}</p>
             {errors.maxTES && (
               <p style={{ color: "red" }}>Please Set Maximal Error Score</p>
             )}
