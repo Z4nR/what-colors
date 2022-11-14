@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function LoadingPage() {
   const navigate = useNavigate();
-  const [timer, setTimer] = useState(30);
+  const [timer, setTimer] = useState(15);
 
   useEffect(() => {
     if (timer === 0) {

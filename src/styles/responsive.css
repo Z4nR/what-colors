@@ -326,6 +326,9 @@
 }
 
 @media screen and (min-width: 750px) {
+  section {
+    min-height: 85vh;
+  }
   /*App Header*/
   .color-app_header h2 {
     font-size: 32px;
