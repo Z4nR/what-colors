@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import AppNav from "./components/Navigation";
 import AboutPage from "./pages/AboutPage";
 import ArticlePage from "./pages/ArticlePage";
-import CountDownPage from "./pages/utils/CountDownPage";
 import DashboardGroup from "./pages/DashboardGroupPage";
 import HomePage from "./pages/HomePage";
 import ResultPage from "./pages/ResultPage";
@@ -12,6 +11,8 @@ import TestSheet from "./pages/TestSheet";
 import Thanks from "./pages/utils/ThanksPage";
 import SendCode from "./pages/utils/SendCodePage";
 import NotFoundPage from "./pages/utils/404Page";
+import ShowResultPage from "./pages/utils/ShowResultPage";
+import SlowInetPage from "./pages/utils/SlowInternetPage";
 
 export default function ColorApp() {
   return (
@@ -35,8 +36,9 @@ export default function ColorApp() {
           />
           */Util Route/*
           <Route path="/code-sended" element={<SendCode />} />
-          <Route path="/countdown" element={<CountDownPage />} />
+          <Route path="/show-result" element={<ShowResultPage />} />
           <Route path="/thanks" element={<Thanks />} />
+          <Route path="/slow-inet" element={<SlowInetPage />} />
           <Route path="/notFound" element={<NotFoundPage />} />
         </Routes>
       </main>

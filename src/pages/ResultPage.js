@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import Chart from "chart.js/auto";
 import { getUserData } from "../utils/data-api";
 import { useMediaQuery } from "react-responsive";
+import LoadingPage from "./utils/LoadingPage";
 
 export default function ResultPage() {
   const [result, setResult] = useState(null);
@@ -180,7 +181,7 @@ export default function ResultPage() {
     </section>
   ) : (
     <div className="util-box">
-      <div className="loading-box loading" />
+      <LoadingPage />
       <p>Please Wait</p>
     </div>
   );

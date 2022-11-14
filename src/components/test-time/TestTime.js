@@ -10,6 +10,7 @@ import {
   methodCalculation,
 } from "../../utils/method-loader";
 import { io } from "socket.io-client";
+import LoadingPage from "../../pages/utils/LoadingPage";
 
 export default function TestTime() {
   const [getData, setGetData] = useState(null);
@@ -21,11 +22,10 @@ export default function TestTime() {
   const socket = io("https://what-color.herokuapp.com/");
 
   useEffect(() => {
-    const idGroup = localStorage.getItem("idGroup");
-
     const dataInput = localStorage.getItem("data");
     setGetData(JSON.parse(dataInput));
 
+    const idGroup = localStorage.getItem("idGroup");
     getRoomData(idGroup).then((data) => {
       setLoading(false);
       setGroupData(data.data);
@@ -90,7 +90,7 @@ export default function TestTime() {
 
   async function onAddDataUser(data) {
     await addUserData(data);
-    navigate("/countdown");
+    navigate("/show-result");
   }
 
   async function onAddDataClient(data) {
@@ -223,7 +223,7 @@ export default function TestTime() {
     </div>
   ) : (
     <div className="util-box">
-      <div className="loading-box loading" />
+      <LoadingPage />
       <p>Please Wait</p>
     </div>
   );

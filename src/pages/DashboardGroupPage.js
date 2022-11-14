@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CSVLink } from "react-csv";
 import { io } from "socket.io-client";
 import { getClientsData, getRoomData } from "../utils/data-api";
+import LoadingPage from "./utils/LoadingPage";
 
 export default function DashboardGroup() {
   const [isLoading, setLoading] = useState(true);
@@ -135,7 +136,7 @@ export default function DashboardGroup() {
         </div>
       ) : (
         <div className="util-box">
-          <div className="loading-box loading" />
+          <LoadingPage />
           <p>Please Wait</p>
         </div>
       )}

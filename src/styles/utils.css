@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 80vh;
+  min-height: 85vh;
   text-align: center;
   padding: 16px;
 }
@@ -54,14 +54,11 @@
 }
 
 /*Loading*/
-.loading-box {
-  min-height: 280px;
-}
-
 .loading {
   background-image: url(../../public/img/Wedges-3s-200px.svg);
   background-repeat: no-repeat;
   background-position-x: center;
+  min-height: 280px;
 }
 
 /*Table*/

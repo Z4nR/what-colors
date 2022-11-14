@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FiHome } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import LoadingPage from "../../../../pages/utils/LoadingPage";
 import { getRoomData } from "../../../../utils/data-api";
 import { createArray } from "../../../../utils/data-local";
 
@@ -150,7 +151,7 @@ export default function JoinRoomModal({ closeModal }) {
           </div>
         </form>
       ) : (
-        <div className="loading-box loading" />
+        <LoadingPage />
       )}
     </div>
   );

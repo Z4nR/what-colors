@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function CountDownPage() {
+export default function ShowResultPage() {
   const navigate = useNavigate();
   const id = localStorage.getItem("id");
 
