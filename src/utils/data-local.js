@@ -7,11 +7,11 @@ const genderType = [
 
 const testType = [
   {
-    type: "Fransworth Munsell-85 Hue",
+    type: "Farnsworth Munsell-85 Hue",
     value: fm85,
   },
   {
-    type: "Fransworth Munsell-40 Hue",
+    type: "Farnsworth Munsell-40 Hue",
     value: fm40,
   },
   //{ type: "hrr", label: "Hardy Rand Rittler" },
