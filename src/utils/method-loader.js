@@ -1,3 +1,5 @@
+import { colorBlindName, colorBlindRange } from "./data-local";
+
 const compareArray = (result, initial) => {
   const compare = result.map((item, rowIndex) => {
     const res = [];
@@ -113,6 +115,25 @@ const methodCalculation = (result) => {
   const totalErrorScore = methodMapping.reduce((sum, cap) => sum + cap, 0);
 
   return totalErrorScore;
+};
+
+const colorBlindType = (type, resultArray) => {
+  const testRule = colorBlindRange[type];
+  const blindType = {};
+  resultArray.forEach((value, index) => {
+    const position = index + 1;
+    if (value === false) {
+      Object.keys(testRule).forEach((color) => {
+        const rule = testRule[color];
+        if (position >= rule.min && position <= rule.max) {
+          blindType[color] = true;
+        }
+      });
+    }
+  });
+
+  const result = Object.keys(blindType).map((color) => colorBlindName[color]);
+  return result.join(", ");
 };
 
 const fm85 = [
@@ -289,4 +310,11 @@ const fm40 = [
   },
 ];
 
-export { compareArray, discriminantValue, methodCalculation, fm85, fm40 };
+export {
+  compareArray,
+  discriminantValue,
+  methodCalculation,
+  colorBlindType,
+  fm85,
+  fm40,
+};
