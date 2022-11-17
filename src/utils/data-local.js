@@ -8,10 +8,16 @@ const genderType = [
 const testType = [
   {
     type: "Farnsworth Munsell-85 Hue",
+    red: { min: 1, max: 5 },
+    blue: { min: 20, max: 35 },
+    green: { min: 50, max: 77 },
     value: fm85,
   },
   {
     type: "Farnsworth Munsell-40 Hue",
+    red: { min: 1, max: 5 },
+    blue: { min: 20, max: 35 },
+    green: { min: 50, max: 77 },
     value: fm40,
   },
   //{ type: "hrr", label: "Hardy Rand Rittler" },
