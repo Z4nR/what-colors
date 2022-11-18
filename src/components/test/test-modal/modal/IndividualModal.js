@@ -19,7 +19,7 @@ export default function IndividualModal({ closeModal }) {
       fullName: "",
       device: "",
       gender: "",
-      testType: "Fransworth Munsell-85 Hue",
+      testType: "Farnsworth Munsell-85 Hue",
       value: {},
       isClient: false,
     },

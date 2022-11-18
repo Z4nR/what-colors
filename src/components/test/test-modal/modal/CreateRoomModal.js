@@ -20,7 +20,7 @@ export default function CreateRoomModal({ closeModal }) {
       roomName: "",
       roomInitial: "",
       adminEmail: "",
-      testType: "Fransworth Munsell-85 Hue",
+      testType: "Farnsworth Munsell-85 Hue",
       device: "",
       maxTES: 50,
     },

@@ -27,7 +27,7 @@ const compareArray = (result, initial) => {
     value.push({ _id: `C${i + 1}`, comparison: upperCompare });
   }
 
-  return value;
+  return { value: value, result: comparisonResult };
 };
 
 const discriminantValue = (result, initial) => {
