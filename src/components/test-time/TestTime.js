@@ -131,8 +131,6 @@ export default function TestTime() {
 
     const findBlindness = colorBlind(testType, comparison.result);
 
-    console.log(testType);
-    console.log(comparisonResults);
     console.log(findBlindness);
 
     const dataUser = {
