@@ -160,6 +160,32 @@ const blindType = (t, totalScore, findBlind) => {
   return type;
 };
 
+const blindStatus = (t, totalScore) => {
+  let type;
+  if (t === "Farnsworth Munsell-85 Hue") {
+    if (totalScore <= 16) {
+      type = "Superior";
+    } else if (totalScore >= 10 && totalScore <= 100) {
+      type = "Average";
+    } else {
+      type = "Weak";
+    }
+  } else {
+    if (totalScore <= 10) {
+      type = "Superior";
+    } else if (totalScore >= 10 && totalScore <= 50) {
+      type = "Average";
+    } else {
+      type = "Weak";
+    }
+  }
+
+  console.log(totalScore);
+  console.log(t);
+
+  return type;
+};
+
 const fm85 = [
   {
     row: "row1",
@@ -340,6 +366,7 @@ export {
   methodCalculation,
   colorBlind,
   blindType,
+  blindStatus,
   fm85,
   fm40,
 };

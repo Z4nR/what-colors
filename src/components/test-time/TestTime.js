@@ -5,6 +5,7 @@ import { ReactSortable } from "react-sortablejs";
 import { addClientData, addUserData, getRoomData } from "../../utils/data-api";
 import { showFormattedDateEN, shuffleArray } from "../../utils/data-local";
 import {
+  blindStatus,
   blindType,
   colorBlind,
   compareArray,
@@ -121,6 +122,9 @@ export default function TestTime() {
 
     const colorBlindType = blindType(testType, totalErrorScore, findBlindness);
     console.log(colorBlindType);
+
+    const colorBlindStatus = blindStatus(testType, totalErrorScore);
+    console.log(colorBlindStatus);
 
     const dataUser = {
       date,
