@@ -134,6 +134,8 @@ export default function TestTime() {
       device,
       testType,
       totalErrorScore,
+      colorBlindType,
+      colorBlindStatus,
       comparisonResults,
       discriminantResults,
     };
