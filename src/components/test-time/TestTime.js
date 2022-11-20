@@ -5,7 +5,8 @@ import { ReactSortable } from "react-sortablejs";
 import { addClientData, addUserData, getRoomData } from "../../utils/data-api";
 import { showFormattedDateEN, shuffleArray } from "../../utils/data-local";
 import {
-  colorBlindType,
+  blindType,
+  colorBlind,
   compareArray,
   discriminantValue,
   methodCalculation,
@@ -89,19 +90,6 @@ export default function TestTime() {
     return reunite;
   };
 
-  const colorBlind = (t, result) => {
-    let type;
-    if (t === "Farnsworth Munsell-85 Hue") {
-      type = "type85";
-    } else {
-      type = "type40";
-    }
-
-    const findBlindType = colorBlindType(type, result);
-
-    return findBlindType;
-  };
-
   async function onAddDataUser(data) {
     await addUserData(data);
     navigate("/show-result");
@@ -131,7 +119,8 @@ export default function TestTime() {
 
     const findBlindness = colorBlind(testType, comparison.result);
 
-    console.log(findBlindness);
+    const colorBlindType = blindType(testType, totalErrorScore, findBlindness);
+    console.log(colorBlindType);
 
     const dataUser = {
       date,

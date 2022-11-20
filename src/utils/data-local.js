@@ -14,8 +14,6 @@ const testType = [
     type: "Farnsworth Munsell-40 Hue",
     value: fm40,
   },
-  //{ type: "hrr", label: "Hardy Rand Rittler" },
-  //{ type: "ishihara", label: "Ishihara" },
 ];
 
 const colorBlindRange = {
@@ -27,8 +25,8 @@ const colorBlindRange = {
 
   type40: {
     red: { min: 1, max: 5 },
-    blue: { min: 20, max: 35 },
-    green: { min: 50, max: 77 },
+    blue: { min: 10, max: 15 },
+    green: { min: 20, max: 25 },
   },
 };
 

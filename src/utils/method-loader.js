@@ -136,6 +136,30 @@ const colorBlindType = (type, resultArray) => {
   return result.join(", ");
 };
 
+const colorBlind = (t, result) => {
+  let type;
+  if (t === "Farnsworth Munsell-85 Hue") {
+    type = "type85";
+  } else {
+    type = "type40";
+  }
+
+  const findBlindType = colorBlindType(type, result);
+
+  return findBlindType;
+};
+
+const blindType = (t, totalScore, findBlind) => {
+  let type;
+  if (t === "Farnsworth Munsell-85 Hue") {
+    type = totalScore < 100 ? "Normal" : findBlind;
+  } else {
+    type = totalScore < 45 ? "Normal" : findBlind;
+  }
+
+  return type;
+};
+
 const fm85 = [
   {
     row: "row1",
@@ -314,7 +338,8 @@ export {
   compareArray,
   discriminantValue,
   methodCalculation,
-  colorBlindType,
+  colorBlind,
+  blindType,
   fm85,
   fm40,
 };
