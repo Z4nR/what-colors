@@ -112,7 +112,10 @@ export default function ResultPage() {
                   <p> : {result?.age}</p>
                   <p> : {result?.gender}</p>
                   <p> : {result?.device}</p>
-                  <p> : {result?.totalErrorScore}</p>
+                  <p>
+                    {" "}
+                    : {result?.totalErrorScore} ({result?.errorScoreStatus})
+                  </p>
                 </div>
               </div>
             </div>

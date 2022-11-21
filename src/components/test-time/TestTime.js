@@ -123,8 +123,8 @@ export default function TestTime() {
     const colorBlindType = blindType(testType, totalErrorScore, findBlindness);
     console.log(colorBlindType);
 
-    const colorBlindStatus = blindStatus(testType, totalErrorScore);
-    console.log(colorBlindStatus);
+    const errorScoreStatus = blindStatus(testType, totalErrorScore);
+    console.log(errorScoreStatus);
 
     const dataUser = {
       date,
@@ -134,8 +134,8 @@ export default function TestTime() {
       device,
       testType,
       totalErrorScore,
+      errorScoreStatus,
       colorBlindType,
-      colorBlindStatus,
       comparisonResults,
       discriminantResults,
     };
