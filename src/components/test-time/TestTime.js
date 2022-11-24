@@ -12,7 +12,6 @@ import {
   discriminantValue,
   methodCalculation,
 } from "../../utils/method-loader";
-import { io } from "socket.io-client";
 import LoadingPage from "../../pages/utils/LoadingPage";
 
 export default function TestTime() {
@@ -21,8 +20,6 @@ export default function TestTime() {
   const [valueList, setValueList] = useState(null);
   const [isLoading, setLoading] = useState(true);
   const navigate = useNavigate();
-
-  const socket = io("https://what-color.herokuapp.com/");
 
   useEffect(() => {
     const dataInput = localStorage.getItem("data");
@@ -98,7 +95,6 @@ export default function TestTime() {
 
   async function onAddDataClient(data) {
     await addClientData(data);
-    socket.emit("client-join", data);
     navigate("/thanks");
   }
 

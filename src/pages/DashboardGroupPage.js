@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { CSVLink } from "react-csv";
-import { io } from "socket.io-client";
 import { getClientsData, getRoomData } from "../utils/data-api";
 import LoadingPage from "./utils/LoadingPage";
 
@@ -11,7 +10,6 @@ export default function DashboardGroup() {
   const [csvData, setCsvData] = useState(null);
 
   useEffect(() => {
-    const socket = io("https://what-color.herokuapp.com/");
     const idGroup = localStorage.getItem("idGroup");
 
     getRoomData(idGroup).then((data) => {
@@ -19,21 +17,9 @@ export default function DashboardGroup() {
       setLoading(false);
     });
 
-    const getClient = () => {
-      getClientsData(idGroup).then((data) => {
-        setClientData(data.data);
-      });
-    };
-
-    socket.on("refresh-list", () => {
-      getClient();
+    getClientsData(idGroup).then((data) => {
+      setClientData(data.data);
     });
-
-    getClient();
-
-    return () => {
-      socket.close();
-    };
   }, []);
 
   useEffect(() => {
