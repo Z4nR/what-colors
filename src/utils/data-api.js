@@ -1,4 +1,4 @@
-const BASE_URL = "https://what-color.herokuapp.com/v1";
+const BASE_URL = "https://fm100-backend.cyclic.app/v1/";
 
 async function addUserData({
   date,
@@ -127,6 +127,21 @@ async function verifyCode(code) {
   return { error: false, data: isAdmin };
 }
 
+async function deleteRoom(idGroup) {
+  const response = await fetch(`${BASE_URL}/delete-room/${idGroup}`, {
+    method: "DELETE",
+  });
+
+  const responseJson = await response.json();
+
+  if (responseJson.status !== "success") {
+    alert(responseJson.message);
+    return { error: true };
+  }
+
+  return { error: false };
+}
+
 async function addClientData({
   idGroup,
   date,
@@ -193,6 +208,7 @@ export {
   createTestRoom,
   getRoomData,
   verifyCode,
+  deleteRoom,
   addClientData,
   getClientsData,
 };

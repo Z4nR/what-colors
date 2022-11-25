@@ -17,9 +17,11 @@ export default function DashboardGroup() {
       setLoading(false);
     });
 
-    getClientsData(idGroup).then((data) => {
-      setClientData(data.data);
-    });
+    setInterval(() => {
+      getClientsData(idGroup).then((data) => {
+        setClientData(data.data);
+      });
+    }, 10000);
   }, []);
 
   useEffect(() => {
