@@ -1,21 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ArticleList from "../components/article/ArticleList";
+import { getArticle } from "../utils/data-api";
+import LoadingPage from "./utils/LoadingPage";
 
 export default function ArticlePage() {
-  return (
+  const [article, setArticle] = useState(null);
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getArticle().then((data) => {
+      setArticle(data.data);
+      setLoading(false);
+    });
+  }, []);
+
+  console.log(article);
+
+  return isLoading === false ? (
     <section>
       <div className="article-title">
         <h2>Article Page</h2>
       </div>
-      <div className="article-container">
-        <h3>Article Title</h3>
-        <h5>Category : </h5>
-        <p className="article-desc">
-          Description <br /> Description <br /> Description <br /> Description{" "}
-          <br /> Description
-        </p>
-      </div>
-      <ArticleList />
+      <ArticleList articles={article} />
     </section>
+  ) : (
+    <div className="util-box">
+      <LoadingPage />
+      <p>Please Wait</p>
+    </div>
   );
 }

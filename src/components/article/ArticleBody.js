@@ -1,13 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-export default function ArticleBody({ url, title, category, description }) {
+export default function ArticleBody({
+  url,
+  title,
+  author,
+  year,
+  category,
+  description,
+}) {
   return (
     <div className="article-container">
       <h3>
-        <Link to={url}>{title}</Link>
+        <a href={url}>{title}</a>
       </h3>
-      <h5>Category : {category}</h5>
+      <h4>
+        Authro : {author} ({year})
+      </h4>
+      <h4>Category : {category}</h4>
       <p className="article-desc">{description}</p>
     </div>
   );

@@ -202,6 +202,18 @@ async function getClientsData(idGroup) {
   return { error: false, data: responseJson };
 }
 
+async function getArticle() {
+  const response = await fetch(`${BASE_URL}/article/show-article`);
+  const responseJson = await response.json();
+
+  if (response.status !== 200) {
+    alert(response.message);
+    return { error: true, data: null };
+  }
+
+  return { error: false, data: responseJson };
+}
+
 export {
   addUserData,
   getUserData,
@@ -211,4 +223,5 @@ export {
   deleteRoom,
   addClientData,
   getClientsData,
+  getArticle,
 };
