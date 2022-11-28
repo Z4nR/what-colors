@@ -7,7 +7,15 @@ export default function Footer() {
     <div className="footer">
       <div className="foot-desc">
         <div className="foot-desc_item">
-          <p>Copyright 2022</p>
+          <p>
+            This website still in development for efficiency and collectible
+            color blindness test. <br />
+            To get more spesific result, you can call doctor or come to hospital
+            / eyecare clinic
+          </p>
+          <p>
+            <b>WhatColors © Copyright 2022</b>
+          </p>
         </div>
       </div>
       <nav className="foot-nav">
