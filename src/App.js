@@ -13,6 +13,7 @@ import SendCode from "./pages/utils/SendCodePage";
 import NotFoundPage from "./pages/utils/404Page";
 import ShowResultPage from "./pages/utils/ShowResultPage";
 import SlowInetPage from "./pages/utils/SlowInternetPage";
+import Footer from "./components/Footer";
 
 export default function ColorApp() {
   return (
@@ -43,7 +44,7 @@ export default function ColorApp() {
         </Routes>
       </main>
       <footer>
-        <p>Copyright 2022</p>
+        <Footer />
       </footer>
     </div>
   );

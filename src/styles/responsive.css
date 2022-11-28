@@ -115,6 +115,13 @@
   .end-row {
     padding-top: 7px;
   }
+  /*Footer*/
+  .foot-nav ul li {
+    padding: 0 10px;
+  }
+  .foot-nav ul li a svg {
+    font-size: 28px;
+  }
 }
 
 @media screen and (min-width: 301px) and (max-width: 350px) {
@@ -259,6 +266,17 @@
     border-radius: 15px;
     padding: 8px;
   }
+  /*Footer*/
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .foot-desc {
+    padding: 16px 0;
+  }
+  .foot-nav {
+    padding: 16px 0;
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -310,6 +328,10 @@
   .start-row,
   .end-row {
     padding-top: 7px;
+  }
+  /*Footer*/
+  .footer {
+    justify-content: space-between;
   }
 }
 
