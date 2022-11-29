@@ -8,14 +8,14 @@ export default function HomePage() {
     <section>
       <div className="go-to-box">
         <div className="go-to-test">
-          <h2>Want Check Your Color Blindness?</h2>
+          <h2>Apakah kamu buta warna? Cek sekarang</h2>
           <button
             onClick={(event) => {
               event.preventDefault();
               navigate("/test");
             }}
           >
-            Take Test
+            Coba Tes
           </button>
         </div>
       </div>

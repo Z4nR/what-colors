@@ -81,7 +81,7 @@ export default function DashboardGroup() {
       {isLoading === false ? (
         <div className="admin-page">
           <div className="admin-header">
-            <h2>Admin Dashboard</h2>
+            <h2>Dashboard Admin</h2>
             <h3>
               {groupData?.roomName} ({groupData?.roomInitial})
             </h3>
@@ -90,10 +90,10 @@ export default function DashboardGroup() {
             <table>
               <thead>
                 <tr>
-                  <th>Name</th>
+                  <th>Nama</th>
                   <th>Status</th>
-                  <th>Total Error Score</th>
-                  <th>Device</th>
+                  <th>Jumlah Skor Eror</th>
+                  <th>Perangkat</th>
                 </tr>
               </thead>
               <tbody>
@@ -125,7 +125,7 @@ export default function DashboardGroup() {
       ) : (
         <div className="util-box">
           <LoadingPage />
-          <p>Please Wait</p>
+          <p>Harap Tunggu</p>
         </div>
       )}
     </section>

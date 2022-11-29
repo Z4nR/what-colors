@@ -18,14 +18,14 @@ export default function MassalTest({ openModal }) {
     >
       <div className="group" />
       <div className="item-body">
-        <h5>Party Test</h5>
-        <p>Check potential color blindness level in your society</p>
+        <h5>Tes Berjamaah</h5>
+        <p>Apakah kalian buta warna? Mari buktikan</p>
       </div>
     </div>
   ) : (
     <div className="test-type massal-test">
-      <h3>Party Test</h3>
-      <p>Check potential color blindness level in your society</p>
+      <h3>Tes Berjamaah</h3>
+      <p>Diantara kalian mungkin ada yang buta warna. Tidak ada yang tau.</p>
       <button
         className="join-btn massal-btn"
         onClick={(event) => {
@@ -33,7 +33,7 @@ export default function MassalTest({ openModal }) {
           openModal(ID);
         }}
       >
-        Create Room
+        Buat Grup
       </button>
     </div>
   );

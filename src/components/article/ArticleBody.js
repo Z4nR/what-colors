@@ -14,10 +14,10 @@ export default function ArticleBody({
         <a href={url}>{title}</a>
       </h3>
       <h4>
-        Authro : {author} ({year})
+        Penulis : {author} ({year})
       </h4>
-      <h4>Category : {category}</h4>
-      <p className="article-desc">{description}</p>
+      <h4>Kategori : {category}</h4>
+      <p className="article-desc">Deskripsi : {description}</p>
     </div>
   );
 }

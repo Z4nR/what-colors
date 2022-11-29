@@ -41,7 +41,7 @@ export default function CreateRoomModal({ closeModal }) {
   return (
     <div className="modal-input room-create">
       <div className="header-input-data">
-        <h3>Room Setting</h3>
+        <h3>Buat Pengaturan Grup</h3>
         <div className="icon-close">
           <FiHome onClick={closeModal} />
         </div>
@@ -49,44 +49,44 @@ export default function CreateRoomModal({ closeModal }) {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="input-data-box">
           <div className="input-data">
-            <label htmlFor="roomname">Room Name</label>
+            <label htmlFor="roomname">Nama Grup</label>
             <input
               id="roomname"
               type="text"
-              placeholder="Input test room name"
+              placeholder="Masukan Nama Grup"
               maxLength="20"
               {...register("roomName", { required: true, minLength: 10 })}
             />
             {errors.roomName && errors.roomName.type === "minLength" && (
-              <p style={{ color: "red" }}>Use Minimal 10 Character</p>
+              <p style={{ color: "red" }}>Gunakan Min. 10 Karakter</p>
             )}
             {errors.roomName && errors.roomName.type === "required" && (
-              <p style={{ color: "red" }}>Please Fill Room Name</p>
+              <p style={{ color: "red" }}>Nama Grup Wajib Diisi</p>
             )}
           </div>
           <div className="input-data">
-            <label htmlFor="adminemail">Admin Email</label>
+            <label htmlFor="adminemail">Email Admin</label>
             <input
               id="adminemail"
               type="email"
-              placeholder="Input your@email.xxx"
+              placeholder="Masukkan email anda"
               autoComplete="off"
               {...register("adminEmail", { required: true })}
             />
             {errors.adminEmail && (
-              <p style={{ color: "red" }}>Please Input Your Email</p>
+              <p style={{ color: "red" }}>Email Admin Wajib Diisi</p>
             )}
           </div>
         </div>
         <div className="input-data-box">
           <div className="input-data">
             <label className="roominitial" htmlFor="roominitial">
-              Room Initial
+              Inisial Grup
             </label>
             <input
               id="roominitial"
               type="text"
-              placeholder="Input room initial"
+              placeholder="Masukkan Inisial Grup Anda"
               maxLength="5"
               {...register("roomInitial", {
                 required: true,
@@ -94,19 +94,19 @@ export default function CreateRoomModal({ closeModal }) {
                 pattern: /[A-Z0-9]/,
               })}
             />
-            <p>Example : TOI3</p>
+            <p>Contoh : TOI3</p>
             {errors.roomInitial && errors.roomInitial.type === "pattern" && (
-              <p style={{ color: "red" }}>Use Capital or Number</p>
+              <p style={{ color: "red" }}>Gunakan Huruf Kapital dan Angka</p>
             )}
             {errors.roomInitial && errors.roomInitial.type === "minLength" && (
-              <p style={{ color: "red" }}>Inisial Room Minimal 3 Huruf</p>
+              <p style={{ color: "red" }}>Inisial Grup Min. 3 Huruf</p>
             )}
             {errors.roomInitial && errors.roomInitial.type === "required" && (
-              <p style={{ color: "red" }}>Wajib diisi</p>
+              <p style={{ color: "red" }}>Inisial Grup Wajib diisi</p>
             )}
           </div>
           <div className="input-data">
-            <label htmlFor="tesrange">Max. TES</label>
+            <label htmlFor="tesrange">Nilai Maks. Error</label>
             <input
               id="tesrange"
               type="range"
@@ -114,24 +114,24 @@ export default function CreateRoomModal({ closeModal }) {
               max="100"
               {...register("maxTES", { required: true })}
             />
-            <p>Max. TES : {maxTES}</p>
+            <p>Nilai Maks. Error: {maxTES}</p>
             {errors.maxTES && (
-              <p style={{ color: "red" }}>Please Set Maximal Error Score</p>
+              <p style={{ color: "red" }}>Nilai Maks. Error Wajib Ditentukan</p>
             )}
           </div>
         </div>
         <div className="input-data-box">
           <div className="input-data">
-            <label htmlFor="device">Device (Optional)</label>
+            <label htmlFor="device">Perangkat (Opsional)</label>
             <input
               id="device"
               type="text"
-              placeholder="Input Device / Monitor Type"
+              placeholder="Masukan Tipe Layar / Gawai"
               {...register("device")}
             />
           </div>
           <div className="input-data">
-            <label htmlFor="method">Method</label>
+            <label htmlFor="method">Metode</label>
             <select
               id="method"
               {...register("testType", {
@@ -144,18 +144,15 @@ export default function CreateRoomModal({ closeModal }) {
                 </option>
               ))}
             </select>
-            {errors.test && (
-              <p style={{ color: "red" }}>Choose One Method To Use</p>
-            )}
           </div>
         </div>
         <div className="input-data-box">
           <div className="input-data">
             {isLoading === false ? (
-              <button type="submit">Create Test Room</button>
+              <button type="submit">Buat Ruang Tes</button>
             ) : (
               <button type="submit" disabled>
-                Loading...
+                Memuat...
               </button>
             )}
           </div>

@@ -92,12 +92,11 @@ export default function ResultPage() {
       <div className="result">
         <div className="data-box">
           <div className="biodata-box">
-            <h3>Tester Biodata</h3>
+            <h3>Data Kamu</h3>
             <div className="info-biodata">
               <p className="intro">
-                Thanks for taking the test about your colorblindness prediction.
-                After taking time to count the test, we will show test result
-                taken by:
+                Terima kasih telah melakukan tes buta warna, setelah
+                dihitung-hitung ini nih hasil yang kamu ambil dengan data diri:
               </p>
               <div className="data-type-box">
                 <div className="data-type">

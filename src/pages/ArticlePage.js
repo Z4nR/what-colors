@@ -19,14 +19,14 @@ export default function ArticlePage() {
   return isLoading === false ? (
     <section>
       <div className="article-title">
-        <h2>Article Page</h2>
+        <h2>Artikel Mengenai Buta Warna</h2>
       </div>
       <ArticleList articles={article} />
     </section>
   ) : (
     <div className="util-box">
       <LoadingPage />
-      <p>Please Wait</p>
+      <p>Harap Tunggu</p>
     </div>
   );
 }

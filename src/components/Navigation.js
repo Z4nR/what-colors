@@ -12,16 +12,16 @@ export default function AppNav() {
     <nav className="app-nav">
       <ul>
         <li>
-          <Link to="/">{isDesktop ? "Home" : <FiHome />}</Link>
+          <Link to="/">{isDesktop ? "Beranda" : <FiHome />}</Link>
         </li>
         <li>
-          <Link to="/test">{isDesktop ? "Test" : <FiHome />}</Link>
+          <Link to="/test">{isDesktop ? "Tes" : <FiHome />}</Link>
         </li>
         <li>
-          <Link to="/article">{isDesktop ? "Article" : <FiHome />}</Link>
+          <Link to="/article">{isDesktop ? "Artikel" : <FiHome />}</Link>
         </li>
         <li>
-          <Link to="/about">{isDesktop ? "About" : <FiHome />}</Link>
+          <Link to="/about">{isDesktop ? "Tentang" : <FiHome />}</Link>
         </li>
       </ul>
     </nav>

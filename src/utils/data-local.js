@@ -57,14 +57,14 @@ function shuffleArray(array) {
   return array;
 }
 
-const showFormattedDateEN = (date) => {
+const showFormattedDateID = (date) => {
   const options = {
     weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
   };
-  return new Date(date).toLocaleDateString("en-EN", options);
+  return new Date(date).toLocaleDateString("id-ID", options);
 };
 
 export {
@@ -74,5 +74,5 @@ export {
   colorBlindName,
   createArray,
   shuffleArray,
-  showFormattedDateEN,
+  showFormattedDateID,
 };

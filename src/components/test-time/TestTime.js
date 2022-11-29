@@ -3,7 +3,7 @@ import { FiHome } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { ReactSortable } from "react-sortablejs";
 import { addClientData, addUserData, getRoomData } from "../../utils/data-api";
-import { showFormattedDateEN, shuffleArray } from "../../utils/data-local";
+import { showFormattedDateID, shuffleArray } from "../../utils/data-local";
 import {
   blindStatus,
   blindType,
@@ -150,9 +150,9 @@ export default function TestTime() {
   return isLoading === false ? (
     <div className="test-sheet">
       <div className="biodata-testing">
-        <h4 className="header-testing">{testType} Test</h4>
+        <h4 className="header-testing">Tes {testType}</h4>
         <div className="testing-status">
-          <p>{showFormattedDateEN(date)}</p>
+          <p>{showFormattedDateID(date)}</p>
           <div className="icon-close-test">
             <FiHome
               onClick={(event) => {
@@ -165,19 +165,19 @@ export default function TestTime() {
         <table className="table-biodata">
           <tbody>
             <tr>
-              <td>Name </td>
+              <td>Nama </td>
               <td>: {fullName}</td>
             </tr>
             <tr>
-              <td>Age </td>
+              <td>Umur </td>
               <td>: {age}</td>
             </tr>
             <tr>
-              <td>Gender </td>
+              <td>Jenis Kelamin </td>
               <td>: {gender}</td>
             </tr>
             <tr>
-              <td>Device </td>
+              <td>Perangkat (Monitor / Gawai) </td>
               <td>: {device}</td>
             </tr>
           </tbody>
@@ -191,7 +191,7 @@ export default function TestTime() {
               key={data.first}
               style={{ backgroundColor: data.first.color }}
             >
-              <p className="row-point-explainer">Start</p>
+              <p className="row-point-explainer">Mulai</p>
             </div>
           </div>
           <ReactSortable
@@ -216,7 +216,7 @@ export default function TestTime() {
               key={data.last}
               style={{ backgroundColor: data.last.color }}
             >
-              <p className="row-point-explainer">End</p>
+              <p className="row-point-explainer">Selesai</p>
             </div>
           </div>
         </div>
@@ -228,13 +228,13 @@ export default function TestTime() {
           onSubmitArray();
         }}
       >
-        Submit Result
+        Selesai
       </button>
     </div>
   ) : (
     <div className="util-box">
       <LoadingPage />
-      <p>Please Wait</p>
+      <p>Harap Tunggu</p>
     </div>
   );
 }

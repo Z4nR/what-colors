@@ -5,11 +5,13 @@ export default function SlowInetPage() {
   return (
     <section>
       <div className="util-box image-slow-inet">
-        <h1>Your Internet Is Slowest Than Before</h1>
+        <h1>Internetmu lemot nih, pasti menyebalkan</h1>
         <h4>
-          Please Try Again Later <br />
+          Sementara kamu bisa ke
+          <br />
           <span>
-            <Link to="/">Home</Link> or <Link to="/test">Take Test Again</Link>
+            <Link to="/">Beranda</Link> atau{" "}
+            <Link to="/test">Mau ngulang lagi</Link>
           </span>
         </h4>
       </div>

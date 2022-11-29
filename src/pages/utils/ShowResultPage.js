@@ -8,14 +8,14 @@ export default function ShowResultPage() {
   return (
     <section>
       <div className="util-box image-result">
-        <h1>Ready to watch your result?</h1>
+        <h1>Udah siap lihat hasil tes kamu?</h1>
         <button
           onClick={(event) => {
             event.preventDefault();
             navigate(`/result/${id}`);
           }}
         >
-          <u>Show My Result</u>
+          <u>Lihat Hasil Saya</u>
         </button>
       </div>
     </section>

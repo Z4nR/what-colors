@@ -7,9 +7,9 @@ export default function SendCode() {
   return (
     <section>
       <div className="util-box image-sending">
-        <h1>Verification Code Already Send</h1>
+        <h1>Kode Verifikasi Grup Terkirim</h1>
         <h4>
-          your room verification code already send to your email. Go to{" "}
+          Kode Verifikasi Grup Anda Sudah Terkirim Cek Email Anda atau Lanjut ke{" "}
           <span>
             <Link to={`/dashboard/${roomInitial}/admin`}>Dashboard</Link>
           </span>

@@ -18,14 +18,14 @@ export default function IndividualTest({ openModal }) {
     >
       <div className="individual" />
       <div className="item-body">
-        <h5>Individual Test</h5>
-        <p>Challenge yourself to know your eye look the color</p>
+        <h5>Tes Individu</h5>
+        <p>Apa yang matamu lihat belom tentu sama dengan orang lain lihat</p>
       </div>
     </div>
   ) : (
     <div className="test-type individual-test">
-      <h3>Individual Test</h3>
-      <p>Challenge yourself to know your eye look the color</p>
+      <h3>Tes Individu</h3>
+      <p>Apa yang matamu lihat belom tentu sama dengan orang lain lihat</p>
       <button
         className="join-btn individual-btn"
         onClick={(event) => {
@@ -33,7 +33,7 @@ export default function IndividualTest({ openModal }) {
           openModal(ID);
         }}
       >
-        Take Test
+        Coba Tes
       </button>
     </div>
   );

@@ -35,56 +35,53 @@ export default function RoomJoinTest({ openModal }) {
     <div className="icons">
       <div className="join" />
       <div className="item-body">
-        <h5>Join Test</h5>
+        <h5>Gabung Tes</h5>
         <form className="mobile-form" onSubmit={handleSubmit(onVerify)}>
           <input
             className="join-mbl"
             id="room"
             type="text"
-            placeholder="Input Verification Code"
+            placeholder="Verifikasikan Kode Anda"
             maxLength="7"
             {...register("code", { required: true, pattern: /[A-Z0-9]/ })}
           />
-          <button className="join-mbl-btn" type="submit">
-            Verify
-          </button>
+          {errors.code && errors.code.type === "required" && (
+            <p
+              style={{
+                color: "red",
+                fontSize: "10px",
+                textAlign: "center",
+              }}
+            >
+              Isi Kode Verifikasi
+            </p>
+          )}
+          {errors.code && errors.code.type === "pattern" && (
+            <p
+              style={{
+                color: "red",
+                fontSize: "10px",
+                textAlign: "left",
+                paddingLeft: "4px",
+              }}
+            >
+              Gunakan Huruf Kapital
+            </p>
+          )}
+          <button type="submit">Verifikasi</button>
         </form>
-        {errors.code && errors.code.type === "required" && (
-          <p
-            style={{
-              color: "red",
-              fontSize: "10px",
-              textAlign: "left",
-              paddingLeft: "4px",
-            }}
-          >
-            Fill Verify Code
-          </p>
-        )}
-        {errors.code && errors.code.type === "pattern" && (
-          <p
-            style={{
-              color: "red",
-              fontSize: "10px",
-              textAlign: "left",
-              paddingLeft: "4px",
-            }}
-          >
-            Use Capital Character
-          </p>
-        )}
       </div>
     </div>
   ) : (
     <div className="test-type room-join">
-      <h3>Join Test</h3>
-      <p>Join room to take color blidness test</p>
+      <h3>Gabung Tes</h3>
+      <p>Berpartisipasilah dalam grup tes buta warna</p>
       <form onSubmit={handleSubmit(onVerify)}>
         <input
           className="join-input"
           id="room"
           type="text"
-          placeholder="Input Verification Code"
+          placeholder="Verifikasikan Kode Anda"
           maxLength="7"
           style={{ textAlign: "center", marginBottom: "8px" }}
           {...register("code", { required: true, pattern: /[A-Z0-9]{7}/ })}
@@ -98,7 +95,7 @@ export default function RoomJoinTest({ openModal }) {
               marginBottom: "8px",
             }}
           >
-            Fill Verify Code
+            Isi Kode Verifikasi
           </p>
         )}
         {errors.code && errors.code.type === "pattern" && (
@@ -110,12 +107,12 @@ export default function RoomJoinTest({ openModal }) {
               marginBottom: "8px",
             }}
           >
-            Use Capital Character
+            Gunakan Huruf Kapital
           </p>
         )}
         {isLoading === false ? (
           <button className="join-btn room-btn" type="submit">
-            Verify
+            Verifikasi
           </button>
         ) : (
           <button

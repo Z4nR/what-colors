@@ -5,7 +5,7 @@ export default function InstructionTest() {
     <div className="instruction-box">
       <div className="test-instruction">
         <div className="instruction">
-          <h3>Test Instruction</h3>
+          <h3>Instruksi Selama Tes</h3>
           <ul>
             <li>
               Maksimalkan kecerahan layar perangkat yang akan digunakan dalam
@@ -15,7 +15,10 @@ export default function InstructionTest() {
               Jangan gunakan mode baca atau anti sinar biru pada pengaturan
               layar perangkat pengetesan
             </li>
-            <li>Lepaskan atau jangan gunakan alat bantu lihat jenis apapun</li>
+            <li>
+              Lepaskan atau jangan gunakan alat bantu lihat jenis apapun,
+              kecuali kacamata minus, plus atau silinder
+            </li>
             <li>Waktu pengetesan optimal : pukul 11:00 -13:00</li>
           </ul>
         </div>

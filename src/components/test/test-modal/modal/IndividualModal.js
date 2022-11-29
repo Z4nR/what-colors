@@ -39,7 +39,7 @@ export default function IndividualModal({ closeModal }) {
   return (
     <div className="modal-input individual-input">
       <div className="header-input-data">
-        <h3>Individual Data</h3>
+        <h3>Data Pribadi</h3>
         <div className="icon-close">
           <FiHome onClick={closeModal} />
         </div>
@@ -47,36 +47,32 @@ export default function IndividualModal({ closeModal }) {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="input-data-box">
           <div className="input-data">
-            <label htmlFor="fullname">Full Name</label>
+            <label htmlFor="fullname">Nama Lengkap</label>
             <input
               id="fullname"
               type="text"
-              placeholder="Input your full name"
+              placeholder="Masukkan Nama Lengkap Anda"
               autoComplete="off"
               {...register("fullName", { required: true })}
             />
-            {errors.fullName && (
-              <p style={{ color: "red" }}>Fill Your Full Name</p>
-            )}
+            {errors.fullName && <p style={{ color: "red" }}>Punya nama kan?</p>}
           </div>
         </div>
         <div className="input-data-box">
           <div className="input-data">
-            <label htmlFor="age">Age</label>
+            <label htmlFor="age">Usia (Tahun)</label>
             <input
               id="age"
               type="number"
-              placeholder="Input your age  (Year)"
+              placeholder="Masukkan Usia Anda Min. 18 Tahun"
               autoComplete="off"
-              min="0"
+              min="18"
               {...register("age", { required: true })}
             />
-            {errors.age && (
-              <p style={{ color: "red" }}>Please Input your Age</p>
-            )}
+            {errors.age && <p style={{ color: "red" }}>Harap Isi Usia Anda</p>}
           </div>
           <div className="input-data">
-            <label htmlFor="gender">Gender</label>
+            <label htmlFor="gender">Jenis Kelamin</label>
             <div className="gender-box">
               <div className="male-box">
                 <input
@@ -86,7 +82,7 @@ export default function IndividualModal({ closeModal }) {
                   value="Male"
                   {...register("gender", { required: true })}
                 />
-                <label htmlFor="male">Male</label>
+                <label htmlFor="male">Pria</label>
               </div>
               <div className="female-box">
                 <input
@@ -96,30 +92,30 @@ export default function IndividualModal({ closeModal }) {
                   value="Female"
                   {...register("gender", { required: true })}
                 />
-                <label htmlFor="female">Female</label>
+                <label htmlFor="female">Wanita</label>
               </div>
             </div>
             {errors.gender && (
-              <p style={{ color: "red" }}>Please Choose Your Gender</p>
+              <p style={{ color: "red" }}>Maaf Manusia Hanya Ada 2 Jenis</p>
             )}
           </div>
         </div>
         <div className="input-data-box">
           <div className="input-data">
-            <label htmlFor="device">Device</label>
+            <label htmlFor="device">Perangkat</label>
             <input
               id="device"
               type="text"
-              placeholder="Input Device / Monitor Type"
+              placeholder="Masukkan Tipe Layar / Gawai"
               autoComplete="off"
               {...register("device", { required: true })}
             />
             {errors.device && (
-              <p style={{ color: "red" }}>Please Input Screen Spesification</p>
+              <p style={{ color: "red" }}>Harap Isi Spesifikasi Perangkat</p>
             )}
           </div>
           <div className="input-data">
-            <label htmlFor="method">Method</label>
+            <label htmlFor="method">Metode</label>
             <select
               id="method"
               {...register("testType", {
@@ -132,14 +128,11 @@ export default function IndividualModal({ closeModal }) {
                 </option>
               ))}
             </select>
-            {errors.test && (
-              <p style={{ color: "red" }}>Choose One Method To Use</p>
-            )}
           </div>
         </div>
         <div className="input-data-box">
           <div className="input-data">
-            <button type="submit">Submit Data</button>
+            <button type="submit">Buat Tes</button>
           </div>
         </div>
       </form>
