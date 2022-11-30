@@ -111,6 +111,7 @@ section {
 
 .announcement h5 {
   margin-top: 8px;
+  font-weight: lighter;
 }
 
 .choose-box {
@@ -430,8 +431,8 @@ footer {
 }
 
 .foot-desc_item {
-  max-width: 900px;
-  text-align: justify;
+  max-width: 600px;
+  font-size: 0.8em;
 }
 
 .foot-desc_item p {

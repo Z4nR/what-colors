@@ -3,7 +3,8 @@
   .app-nav ul li {
     padding: 15px;
   }
-  .app-nav ul li a svg {
+  .app-nav ul li a svg,
+  .foot-nav ul li a svg {
     font-size: 24px;
   }
   /*Home Page*/
@@ -25,9 +26,6 @@
   .choose-box h2 {
     font-weight: 200;
     font-size: 16px;
-  }
-  .announcement h5 {
-    font-weight: lighter;
   }
   /*Test Sheet*/
   .biodata-testing table {
@@ -94,12 +92,6 @@
     width: 145px;
     padding: 8px;
     background-color: lightblue;
-  }
-  /*Test Page*/
-  .instruction h3,
-  .announcement h4,
-  .announcement h5 {
-    font-weight: 550;
   }
   /*Test Sheet*/
   .start-row,
@@ -174,6 +166,13 @@
   .initial-test input#tesrange {
     padding: 8px 0;
     width: 100%;
+  }
+  /*Footer*/
+  .foot-nav ul li {
+    padding: 0 8px;
+  }
+  .foot_desc {
+    display: none;
   }
 }
 
@@ -266,17 +265,6 @@
     border-radius: 15px;
     padding: 8px;
   }
-  /*Footer*/
-  .footer {
-    flex-direction: column;
-    justify-content: center;
-  }
-  .foot-desc {
-    padding: 16px 0;
-  }
-  .foot-nav {
-    padding: 16px 0;
-  }
 }
 
 @media screen and (min-width: 600px) {
@@ -302,6 +290,10 @@
   .choose-test {
     grid-template-columns: 1fr 1fr 1fr;
     max-width: 900px;
+  }
+  .announcement h5,
+  .announcement h4 {
+    font-size: medium;
   }
   /*Modal*/
   .modal-center {
@@ -332,6 +324,9 @@
   /*Footer*/
   .footer {
     justify-content: space-between;
+  }
+  .foot-desc_item {
+    text-align: justify;
   }
 }
 
@@ -399,6 +394,26 @@
     border-radius: 15px;
     margin: 16px;
     padding: 8px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  /*Footer*/
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .foot-desc {
+    padding: 16px 0;
+  }
+  .foot_desc {
+    text-align: justify;
+  }
+  .foot_copyright {
+    text-align: center;
+  }
+  .foot-nav {
+    padding: 16px 0;
   }
 }
 

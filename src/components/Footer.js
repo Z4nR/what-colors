@@ -7,14 +7,14 @@ export default function Footer() {
     <div className="footer">
       <div className="foot-desc">
         <div className="foot-desc_item">
-          <p>
-            This website still in development for efficiency and collectible
-            color blindness test. <br />
-            To get more spesific result, you can call doctor or come to hospital
-            / eyecare clinic
+          <p className="foot_desc">
+            Situs web ini digunakan hanya untuk kebutuhan tes cepat dan efisien
+            dalam waktu cepat. <br />
+            Apabila memerlukan hasil tes yang akurat dan tepat silhakan datang
+            ke klinik mata atau rumah sakit untuk pemeriksaan lebih lanjut.
           </p>
           <p>
-            <b>WhatColors © Copyright 2022</b>
+            <b className="foot_copyright">WhatColors © Copyright 2022</b>
           </p>
         </div>
       </div>
