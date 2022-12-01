@@ -39,7 +39,11 @@ section {
 }
 
 .app-nav ul li a {
-  color: black;
+  color: #252525;
+  text-decoration: none;
+}
+.app-nav ul li a:not(:hover) {
+  opacity: 0.7;
 }
 
 /*Home Page*/
@@ -303,15 +307,42 @@ section {
 }
 
 /*Article*/
-.article-title {
+.page-title {
   padding: 8px;
   text-align: center;
   margin-bottom: 16px;
 }
 
-.article-title h2 {
+.page-title h2 {
   text-align: center;
   font-weight: lighter;
+}
+
+.page-title h2::after {
+  align-self: center;
+  content: "";
+  width: 30%;
+  margin: 4px auto 16px auto;
+  display: block;
+  border-bottom: 2px solid black;
+}
+
+/*About*/
+.about-item {
+  display: flex;
+  margin: 0 auto 2rem;
+  justify-content: center;
+  max-width: 1200px;
+}
+
+.about-item h3 {
+  font-size: 0.95rem;
+  line-height: 1.8rem;
+  color: #252525;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 4px;
+  max-width: 700px;
 }
 
 /*Result*/
@@ -426,7 +457,7 @@ footer {
   background-color: #ddd;
   margin-top: auto;
   text-align: center;
-  padding: 16px;
+  padding: 16px 2rem;
   bottom: 0;
 }
 
@@ -442,6 +473,10 @@ footer {
 
 .foot-desc_item p {
   padding: 4px 0;
+}
+
+.foot-desc {
+  line-height: 1.2em;
 }
 
 .foot-nav ul li {

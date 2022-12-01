@@ -8,10 +8,13 @@ export default function Footer() {
       <div className="foot-desc">
         <div className="foot-desc_item">
           <p className="foot_desc">
-            Situs web ini digunakan hanya untuk kebutuhan tes cepat dan efisien
-            dalam waktu cepat. <br />
-            Apabila memerlukan hasil tes yang akurat dan tepat silhakan datang
-            ke klinik mata atau rumah sakit untuk pemeriksaan lebih lanjut.
+            <b>Disclaimer! </b>
+            <br />
+            Situs web ini digunakan hanya untuk mendapatkan akurasi dan
+            efisiensi hasil tes dengan kebutuhan tertentu dalam waktu cepat.
+            Apabila memerlukan hasil tes yang lebih akurat mengenai gangguan
+            buta warna. Kami anjurkan untuk ke klinik mata atau rumah sakit guna
+            pemeriksaan lebih lanjut.
           </p>
           <p>
             <b className="foot_copyright">WhatColors © Copyright 2022</b>

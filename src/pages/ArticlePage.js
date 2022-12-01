@@ -18,7 +18,7 @@ export default function ArticlePage() {
 
   return isLoading === false ? (
     <section>
-      <div className="article-title">
+      <div className="page-title">
         <h2>Artikel Mengenai Buta Warna</h2>
         <p>
           Artikel berikut ini berisi wawasan mengenai buta warna terbaru (5
