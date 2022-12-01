@@ -54,6 +54,16 @@
   .table-client {
     font-size: 14px;
   }
+  /*Article*/
+  .article-container h3 {
+    font-size: small;
+  }
+  .article-container h4 {
+    font-size: small;
+  }
+  .article-desc {
+    font-size: small;
+  }
 
   /*Utils*/
   .util-box h1 {
@@ -147,6 +157,16 @@
   .util-box u {
     font-size: 20px;
   }
+  /*Article*/
+  .article-container h3 {
+    font-size: medium;
+  }
+  .article-container h4 {
+    font-size: small;
+  }
+  .article-desc {
+    font-size: small;
+  }
 }
 
 @media screen and (max-width: 350px) {
@@ -217,6 +237,20 @@
   .util-box u {
     font-weight: 550;
     font-size: 20px;
+  }
+  /*Article*/
+  .article_list {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+  }
+  .article-container h3 {
+    font-size: 0.95em;
+  }
+  .article-container h4 {
+    font-size: 0.85em;
+  }
+  .article-desc {
+    font-size: 0.85em;
   }
 }
 
@@ -360,10 +394,6 @@
   .go-to-test h2 {
     font-size: 24px;
   }
-  .go-to-test button {
-    width: 290px;
-    padding: 16px;
-  }
 }
 
 @media screen and (max-width: 775px) {
@@ -394,6 +424,10 @@
     border-radius: 15px;
     margin: 16px;
     padding: 8px;
+  }
+  /*Article*/
+  .article_list {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 

@@ -20,6 +20,10 @@ export default function ArticlePage() {
     <section>
       <div className="article-title">
         <h2>Artikel Mengenai Buta Warna</h2>
+        <p>
+          Artikel berikut ini berisi wawasan mengenai buta warna terbaru (5
+          tahun terakhir) dan terverifikasi datanya.
+        </p>
       </div>
       <ArticleList articles={article} />
     </section>

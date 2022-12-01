@@ -92,7 +92,7 @@ export default function ResultPage() {
       <div className="result">
         <div className="data-box">
           <div className="biodata-box">
-            <h3>Data Kamu</h3>
+            <h3>Hasil Tes Kamu</h3>
             <div className="info-biodata">
               <p className="intro">
                 Terima kasih telah melakukan tes buta warna, setelah
@@ -100,11 +100,11 @@ export default function ResultPage() {
               </p>
               <div className="data-type-box">
                 <div className="data-type">
-                  <p>Name </p>
-                  <p>Age </p>
-                  <p>Gender </p>
-                  <p>Device </p>
-                  <p>Total Error Score</p>
+                  <p>Nama </p>
+                  <p>Usia </p>
+                  <p>Jenis Kelamin </p>
+                  <p>Perangkat </p>
+                  <p>Nilai Skor Eror</p>
                 </div>
                 <div className="data-info">
                   <p>: {result?.fullName}</p>
@@ -117,12 +117,19 @@ export default function ResultPage() {
                   </p>
                 </div>
               </div>
+              <p className="intro">
+                Hasil dari tes berupa nilai komparasi dan nilai diskriminan kamu
+                dapat dilihat di tabel ataupun grafik disini ya.
+              </p>
             </div>
           </div>
           <div className="result-box">
-            <h3>Test Result</h3>
             <div className="info-result">
-              <p>Comparison Result : </p>
+              <h3>Hasil Komparasi : </h3>
+              <p>
+                Hasil komparasi diambil dari hasil tes yang kamu lakukan
+                kemudian dibandingkan dengan nilai asli
+              </p>
               <div className="table-data">
                 <table>
                   <thead>
@@ -148,12 +155,20 @@ export default function ResultPage() {
           <div className="chart-card">
             {isDesktop ? (
               <div>
-                <h3>Discriminant Result</h3>
+                <h3>Hasil Diskirminasi</h3>
+                <p>
+                  Hasil komparasi diambil dari hasil tes yang kamu lakukan
+                  kemudian dibandingkan dengan nilai asli
+                </p>
                 <canvas id="radar-chart"></canvas>
               </div>
             ) : (
               <div className="info-result">
-                <p>Discriminant Result : </p>
+                <h3>Discriminant Result : </h3>
+                <p>
+                  Hasil komparasi diambil dari hasil tes yang kamu lakukan
+                  kemudian dibandingkan dengan nilai asli
+                </p>
                 <div className="table-data">
                   <table>
                     <thead>

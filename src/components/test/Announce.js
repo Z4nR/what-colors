@@ -5,7 +5,7 @@ export default function AnnouncementTest() {
     <div className="announcement-box">
       <div className="test-announcement">
         <div className="announcement">
-          <h4>Perhatian</h4>
+          <h3>Perhatian</h3>
           <h5>
             Seluruh Data Tes termasuk data hasil tes individu, data room, dan
             data peserta room akan dihapus setiap pukul 23.59

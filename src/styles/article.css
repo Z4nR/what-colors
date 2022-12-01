@@ -1,5 +1,12 @@
+.article_list {
+  margin: 0 auto;
+  display: grid;
+  grid-row-gap: 10px;
+  padding: 0 10px 16px 10px;
+  max-width: 1200px;
+}
+
 .article-container {
-  margin: 0 auto 16px auto;
   border: 2px dashed black;
   padding: 16px;
   border-radius: 8px;
@@ -14,6 +21,7 @@
 
 .article-container a {
   color: black;
+  font-weight: lighter;
 }
 
 .article-container h4 {
@@ -22,7 +30,6 @@
 }
 
 .article-desc {
-  height: 40px;
   display: -webkit-box;
   overflow: hidden;
   text-align: justify;
