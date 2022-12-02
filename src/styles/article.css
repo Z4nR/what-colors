@@ -21,8 +21,11 @@
 }
 
 .article-item a {
-  color: black;
+  color: #252525;
   font-weight: lighter;
+}
+.article-item a:hover {
+  color: black;
 }
 
 .article-item h4 {
