@@ -479,18 +479,24 @@
   }
 
   .info-result {
-    height: 275px;
+    height: auto;
   }
   .table-data {
-    height: 65vh;
+    height: 80vh;
   }
   .table-data tbody {
-    height: 30vh;
+    max-height: 75vh;
   }
   .table-client {
     height: 65vh;
   }
   .table-client tbody {
     height: 60vh;
+  }
+}
+
+@media screen and (min-height: 650px) {
+  #radar-chart {
+    margin-top: 15%;
   }
 }

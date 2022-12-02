@@ -91,7 +91,7 @@ export default function ResultPage() {
     <section>
       <div className="result">
         <div className="data-box">
-          <div className="biodata-box">
+          {/* <div className="biodata-box">
             <h3>Hasil Tes Kamu</h3>
             <div className="info-biodata">
               <p className="intro">
@@ -122,7 +122,7 @@ export default function ResultPage() {
                 dapat dilihat di tabel ataupun grafik disini ya.
               </p>
             </div>
-          </div>
+          </div> */}
           <div className="result-box">
             <div className="info-result">
               <h3>Hasil Komparasi : </h3>
@@ -160,7 +160,7 @@ export default function ResultPage() {
                   Hasil komparasi diambil dari hasil tes yang kamu lakukan
                   kemudian dibandingkan dengan nilai asli
                 </p>
-                <canvas id="radar-chart"></canvas>
+                <canvas id="radar-chart" />
               </div>
             ) : (
               <div className="info-result">
@@ -196,7 +196,7 @@ export default function ResultPage() {
   ) : (
     <div className="util-box">
       <LoadingPage />
-      <p>Please Wait</p>
+      <p>Harap Tunggu</p>
     </div>
   );
 }
