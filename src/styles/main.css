@@ -322,7 +322,7 @@ section {
   align-self: center;
   content: "";
   width: 30%;
-  margin: 4px auto 16px auto;
+  margin: 4px auto;
   display: block;
   border-bottom: 2px solid black;
 }
