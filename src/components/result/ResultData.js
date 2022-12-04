@@ -2,12 +2,10 @@ import React, { useEffect, useMemo, useState } from "react";
 import Chart from "chart.js/auto";
 import { getUserData } from "../../utils/data-api";
 import { useMediaQuery } from "react-responsive";
-import LoadingPage from "../../pages/utils/LoadingPage";
 
 export default function ResultData() {
   const [result, setResult] = useState(null);
   const [getDiscriminant, setDiscriminant] = useState(null);
-  const [isLoading, setLoading] = useState(true);
 
   const isDesktop = useMediaQuery({
     query: "(min-width: 450px)",
@@ -20,7 +18,6 @@ export default function ResultData() {
     const id = localStorage.getItem("id");
 
     getUserData(id).then((data) => {
-      setLoading(false);
       setResult(data.data);
     });
   }, []);
@@ -80,14 +77,12 @@ export default function ResultData() {
 
     if (getDiscriminant !== null) {
       if (isDesktop) {
-        if (isLoading === false) {
-          new Chart("radar-chart", config);
-        }
+        new Chart("radar-chart", config);
       }
     }
-  }, [getDiscriminant, maxResult, isDesktop, isLoading]);
+  }, [getDiscriminant, maxResult, isDesktop]);
 
-  return isLoading === false ? (
+  return (
     <div className="result">
       <div className="data-box">
         <div className="result-box">
@@ -168,11 +163,6 @@ export default function ResultData() {
           )}
         </div>
       </div>
-    </div>
-  ) : (
-    <div className="util-box">
-      <LoadingPage />
-      <p>Harap Tunggu</p>
     </div>
   );
 }
