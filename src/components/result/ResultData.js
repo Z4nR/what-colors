@@ -92,11 +92,13 @@ export default function ResultData() {
       <div className="data-box">
         <div className="result-box">
           <div className="info-result">
-            <h3>Hasil Komparasi : </h3>
-            <p>
-              Hasil komparasi diambil dari hasil tes yang kamu lakukan kemudian
-              dibandingkan dengan nilai asli
-            </p>
+            <div className="info-result_title">
+              <h3>Hasil Komparasi Warna: </h3>
+              <p>
+                Hasil komparasi diambil dari hasil tes yang kamu lakukan
+                kemudian dibandingkan dengan nilai asli
+              </p>
+            </div>
             <div className="table-data">
               <table>
                 <thead>
@@ -121,21 +123,29 @@ export default function ResultData() {
       <div className="chart-box">
         <div className="chart-card">
           {isDesktop ? (
-            <div>
-              <h3>Hasil Diskirminasi</h3>
-              <p>
-                Hasil komparasi diambil dari hasil tes yang kamu lakukan
-                kemudian dibandingkan dengan nilai asli
-              </p>
-              <canvas id="radar-chart" />
+            <div className="chart_item">
+              <div className="info-result_title">
+                <h3>Hasil Diskriminasi Warna : </h3>
+                <p>
+                  Hasil diskriminasi diambil dari seberapa jauh kesalahan
+                  peletakan warna hasil tes yang kamu lakukan dengan posisi
+                  aslinya
+                </p>
+              </div>
+              <div className="radar-box">
+                <canvas id="radar-chart" />
+              </div>
             </div>
           ) : (
             <div className="info-result">
-              <h3>Discriminant Result : </h3>
-              <p>
-                Hasil komparasi diambil dari hasil tes yang kamu lakukan
-                kemudian dibandingkan dengan nilai asli
-              </p>
+              <div className="info-result_title">
+                <h3>Hasil Diskriminasi Warna : </h3>
+                <p>
+                  Hasil diskriminasi diambil dari seberapa jauh kesalahan
+                  peletakan warna hasil tes yang kamu lakukan dengan posisi
+                  aslinya
+                </p>
+              </div>
               <div className="table-data">
                 <table>
                   <thead>

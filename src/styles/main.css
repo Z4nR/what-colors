@@ -375,6 +375,10 @@ section {
   margin: 8px;
 }
 
+.info-result_title {
+  margin-bottom: 2rem;
+}
+
 .info-result p,
 .chart-card p {
   padding: 4px;
@@ -404,10 +408,15 @@ section {
 
 .chart-box {
   flex: 3;
-  display: flex;
   justify-content: center;
   border: solid 2px grey;
   border-radius: 15px;
+}
+
+.chart_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .chart-card {

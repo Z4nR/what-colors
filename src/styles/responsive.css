@@ -495,9 +495,32 @@
   }
 }
 
+@media screen and (max-height: 599px) {
+  .radar-box {
+    width: 500px;
+  }
+}
+
+@media screen and (min-height: 600px) and (max-height: 649px) {
+  .radar-box {
+    width: 550px;
+  }
+}
+
 @media screen and (min-height: 650px) {
+  .radar-box {
+    width: 600px;
+  }
+}
+
+@media screen and (min-height: 650px) and (max-height: 815px) {
   #radar-chart {
-    margin: 5% auto;
-    width: 250%;
+    margin-top: 5%;
+  }
+}
+
+@media screen and (min-height: 816px) {
+  #radar-chart {
+    margin: 10% 0;
   }
 }
