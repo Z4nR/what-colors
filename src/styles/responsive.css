@@ -482,10 +482,10 @@
     height: auto;
   }
   .table-data {
-    height: 80vh;
+    height: 90vh;
   }
   .table-data tbody {
-    max-height: 75vh;
+    max-height: 85vh;
   }
   .table-client {
     height: 65vh;
