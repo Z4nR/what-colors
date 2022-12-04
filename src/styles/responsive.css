@@ -497,6 +497,7 @@
 
 @media screen and (min-height: 650px) {
   #radar-chart {
-    margin-top: 15%;
+    margin: 5% auto;
+    width: 250%;
   }
 }
