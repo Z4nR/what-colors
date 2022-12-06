@@ -12,12 +12,11 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: whitesmoke;
+  background: white;
 }
 
 section {
   margin: 8px auto;
-  background-color: whitesmoke;
 }
 
 /*App Header*/
@@ -348,7 +347,6 @@ section {
 /*Result*/
 .result {
   display: flex;
-  background-color: white;
 }
 
 .data-box {
@@ -422,7 +420,6 @@ section {
 .chart-card {
   padding: 8px;
   border-radius: 20px;
-  background: white;
   overflow: auto;
 }
 

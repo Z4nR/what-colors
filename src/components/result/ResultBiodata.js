@@ -20,7 +20,7 @@ export default function ResultBiodata() {
   return (
     <div className="result">
       <div className="biodata_item">
-        <h3>Halllo {biodata.fullName}</h3>
+        <h3>Halllo {biodata?.fullName}</h3>
       </div>
     </div>
   );
