@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { getUserData } from "../../utils/data-api";
 
-export default function ResultBiodata() {
+export default function ResultBiodata({ setLoadingMap }) {
   const [biodata, setBiodata] = useState(null);
 
   const isDesktop = useMediaQuery({
@@ -13,6 +13,7 @@ export default function ResultBiodata() {
     const id = localStorage.getItem("id");
 
     getUserData(id).then((data) => {
+      setLoadingMap((prev) => ({ ...prev, biodata: false }));
       setBiodata(data.data);
     });
   }, []);

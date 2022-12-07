@@ -4,12 +4,16 @@ import ResultData from "../components/result/ResultData";
 import LoadingPage from "./utils/LoadingPage";
 
 export default function ResultPage() {
-  const [isLoading, setLoading] = useState(false);
+  const [loadingMap, setLoadingMap] = useState({ biodata: true, data: true });
+  const { biodata, data } = loadingMap;
+  const isLoading = biodata && data;
+
+  console.log(loadingMap);
 
   return isLoading === false ? (
     <section>
-      <ResultBiodata />
-      <ResultData />
+      <ResultBiodata setLoadingMap={setLoadingMap} />
+      <ResultData setLoadingMap={setLoadingMap} />
     </section>
   ) : (
     <div className="util-box">

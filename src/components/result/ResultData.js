@@ -3,7 +3,7 @@ import Chart from "chart.js/auto";
 import { getUserData } from "../../utils/data-api";
 import { useMediaQuery } from "react-responsive";
 
-export default function ResultData() {
+export default function ResultData({ setLoadingMap }) {
   const [result, setResult] = useState(null);
   const [getDiscriminant, setDiscriminant] = useState(null);
 
@@ -18,6 +18,7 @@ export default function ResultData() {
     const id = localStorage.getItem("id");
 
     getUserData(id).then((data) => {
+      setLoadingMap((prev) => ({ ...prev, data: false }));
       setResult(data.data);
     });
   }, []);
