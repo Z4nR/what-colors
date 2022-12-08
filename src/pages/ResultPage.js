@@ -1,19 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ResultBiodata from "../components/result/ResultBiodata";
 import ResultData from "../components/result/ResultData";
+import { getUserData } from "../utils/data-api";
 import LoadingPage from "./utils/LoadingPage";
 
 export default function ResultPage() {
-  const [loadingMap, setLoadingMap] = useState({ biodata: true, data: true });
-  const { biodata, data } = loadingMap;
-  const isLoading = biodata && data;
+  const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(true);
 
-  console.log(loadingMap);
+  useEffect(() => {
+    const id = localStorage.getItem("id");
+
+    getUserData(id).then((data) => {
+      setData(data.data);
+      setLoading(false);
+    });
+  }, []);
 
   return isLoading === false ? (
     <section>
-      <ResultBiodata setLoadingMap={setLoadingMap} />
-      <ResultData setLoadingMap={setLoadingMap} />
+      <ResultBiodata data={data} />
+      <ResultData data={data} />
     </section>
   ) : (
     <div className="util-box">

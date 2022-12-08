@@ -191,7 +191,7 @@ export default function TestTime() {
               key={data.first}
               style={{ backgroundColor: data.first.color }}
             >
-              <p className="row-point-explainer">Mulai</p>
+              <p className="row-point-explainer">Awal</p>
             </div>
           </div>
           <ReactSortable
@@ -216,7 +216,7 @@ export default function TestTime() {
               key={data.last}
               style={{ backgroundColor: data.last.color }}
             >
-              <p className="row-point-explainer">Selesai</p>
+              <p className="row-point-explainer">Akhir</p>
             </div>
           </div>
         </div>

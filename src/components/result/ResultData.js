@@ -1,10 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Chart from "chart.js/auto";
-import { getUserData } from "../../utils/data-api";
 import { useMediaQuery } from "react-responsive";
 
-export default function ResultData({ setLoadingMap }) {
-  const [result, setResult] = useState(null);
+export default function ResultData({ data }) {
   const [getDiscriminant, setDiscriminant] = useState(null);
 
   const isDesktop = useMediaQuery({
@@ -14,13 +12,6 @@ export default function ResultData({ setLoadingMap }) {
   useEffect(() => {
     const discriminantResult = localStorage.getItem("discriminantResult");
     setDiscriminant(JSON.parse(discriminantResult));
-
-    const id = localStorage.getItem("id");
-
-    getUserData(id).then((data) => {
-      setLoadingMap((prev) => ({ ...prev, data: false }));
-      setResult(data.data);
-    });
   }, []);
 
   const maxResult = useMemo(() => {
@@ -104,7 +95,7 @@ export default function ResultData({ setLoadingMap }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {result?.comparisonResults?.map((cap) => (
+                  {data?.comparisonResults?.map((cap) => (
                     <tr className="cap-data" key={cap._id}>
                       <td>{cap._id}</td>
                       <td>{cap.comparison}</td>
@@ -151,7 +142,7 @@ export default function ResultData({ setLoadingMap }) {
                     </tr>
                   </thead>
                   <tbody>
-                    {result?.discriminantResults?.map((cap) => (
+                    {data?.discriminantResults?.map((cap) => (
                       <tr className="cap-data" key={cap._id}>
                         <td>{cap._id}</td>
                         <td>{cap.discriminant}</td>
