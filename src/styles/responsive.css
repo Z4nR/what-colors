@@ -389,6 +389,11 @@
   .go-to-test h2 {
     font-size: 24px;
   }
+  /*About*/
+  .about-item h3 {
+    font-size: 0.95rem;
+    line-height: 1.8rem;
+  }
 }
 
 @media screen and (max-width: 775px) {
