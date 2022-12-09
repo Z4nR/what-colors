@@ -347,6 +347,20 @@ section {
   display: flex;
 }
 
+.biodata_item {
+  text-align: center;
+  line-height: 2rem;
+  flex: 1;
+  padding: 8px;
+  margin: 8px;
+  border: 0;
+  border-radius: 15px;
+}
+
+.biodata_item h3 {
+  font-weight: 500;
+}
+
 .data-box {
   flex: 4;
   display: flex;

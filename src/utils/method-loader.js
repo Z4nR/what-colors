@@ -180,9 +180,6 @@ const blindStatus = (t, totalScore) => {
     }
   }
 
-  console.log(totalScore);
-  console.log(t);
-
   return type;
 };
 
