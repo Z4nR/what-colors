@@ -326,7 +326,16 @@ section {
   border-bottom: 2px solid black;
 }
 
+.page-title p {
+  margin-top: 1rem;
+  font-weight: 300;
+}
+
 /*About*/
+.about-page {
+  margin: 0 16px;
+}
+
 .about-item {
   display: flex;
   margin: 0 auto 2rem;
@@ -336,7 +345,6 @@ section {
 
 .about-item h3 {
   color: #252525;
-  text-align: center;
   font-weight: 400;
   margin-bottom: 4px;
   max-width: 700px;

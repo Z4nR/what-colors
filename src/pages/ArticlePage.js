@@ -14,8 +14,6 @@ export default function ArticlePage() {
     });
   }, []);
 
-  console.log(article);
-
   return isLoading === false ? (
     <section>
       <div className="page-title">
