@@ -182,6 +182,12 @@
     grid-column-gap: 5px;
     grid-row-gap: 15px;
   }
+  .announcement h3 {
+    font-size: medium;
+  }
+  .announcement h5 {
+    font-size: 0.75rem;
+  }
   /*Modal*/
   .initial-test-box {
     flex-direction: column;

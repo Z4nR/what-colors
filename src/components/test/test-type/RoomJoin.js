@@ -36,6 +36,7 @@ export default function RoomJoinTest({ openModal }) {
       <div className="join" />
       <div className="item-body">
         <h5>Gabung Tes</h5>
+        <p>Gabung menggunakan kode yang ada</p>
         <form className="mobile-form" onSubmit={handleSubmit(onVerify)}>
           <input
             className="join-mbl"

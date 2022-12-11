@@ -24,16 +24,16 @@ export default function Footer() {
       <nav className="foot-nav">
         <ul>
           <li>
-            <Link to="/">{<GrMail />}</Link>
+            <Link to="/email">{<GrMail />}</Link>
           </li>
           <li>
-            <Link to="/test">{<GrGithub />}</Link>
+            <a href="https://github.com/Z4nR">{<GrGithub />}</a>
           </li>
           <li>
-            <Link to="/article">{<GrLinkedin />}</Link>
+            <a href="https://github.com/Z4nR">{<GrLinkedin />}</a>
           </li>
           <li>
-            <Link to="/about">{<GrUser />}</Link>
+            <a href="https://github.com/Z4nR">{<GrUser />}</a>
           </li>
         </ul>
       </nav>

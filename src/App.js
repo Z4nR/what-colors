@@ -14,6 +14,7 @@ import NotFoundPage from "./pages/utils/404Page";
 import ShowResultPage from "./pages/utils/ShowResultPage";
 import SlowInetPage from "./pages/utils/SlowInternetPage";
 import Footer from "./components/Footer";
+import EmailPage from "./pages/utils/EmailPage";
 
 export default function ColorApp() {
   return (
@@ -36,6 +37,7 @@ export default function ColorApp() {
             element={<DashboardGroup />}
           />
           */Util Route/*
+          <Route path="/email" element={<EmailPage />} />
           <Route path="/code-sended" element={<SendCode />} />
           <Route path="/show-result" element={<ShowResultPage />} />
           <Route path="/thanks" element={<Thanks />} />
