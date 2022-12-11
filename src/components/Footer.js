@@ -30,7 +30,9 @@ export default function Footer() {
             <a href="https://github.com/Z4nR">{<GrGithub />}</a>
           </li>
           <li>
-            <a href="https://github.com/Z4nR">{<GrLinkedin />}</a>
+            <a href="https://www.linkedin.com/in/zulham-ari-nur-ridhwan-2a6873202">
+              {<GrLinkedin />}
+            </a>
           </li>
           <li>
             <a href="https://github.com/Z4nR">{<GrUser />}</a>
