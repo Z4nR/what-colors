@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import InstructionTest from "../components/test-time/Instruction";
 import TestTime from "../components/test-time/TestTime";
 
 export default function TestSheet() {
+  const [isInstructionShowed, setInstructionShowed] = useState(true);
+
+  function closeModal() {
+    setInstructionShowed(false);
+  }
+
   return (
-    <section className="test-section">
-      <InstructionTest />
+    <section>
+      {isInstructionShowed && <InstructionTest closeModal={closeModal} />}
       <TestTime />
     </section>
   );

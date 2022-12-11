@@ -6,7 +6,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(128, 128, 128, 0.637);
+  background-color: #808080d2;
   overflow-y: scroll;
 }
 
@@ -130,4 +130,16 @@
   margin-top: 2px;
   font-size: 14px;
   padding-left: 4px;
+}
+
+.instruction button {
+  width: fit-content;
+  font-size: 16px;
+  background-color: lightgoldenrodyellow;
+  border: 0.5px solid gray;
+  border-radius: 4px;
+  font-weight: 550;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 8px;
 }

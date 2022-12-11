@@ -86,7 +86,6 @@ section {
   padding: 8px 0;
 }
 
-.test-instruction,
 .test-announcement,
 .instruction,
 .announcement {
@@ -94,17 +93,26 @@ section {
   margin: 0 auto;
 }
 
+.instruction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .instruction,
 .announcement {
   max-width: 835px;
-  background-color: lightgoldenrodyellow;
   border-radius: 10px;
-  border: 1px solid khaki;
   padding: 16px;
 }
 
+.announcement {
+  background-color: lightgoldenrodyellow;
+  border: 1px solid khaki;
+}
+
 .instruction ul {
-  padding: 8px 32px;
+  padding: 1.5rem 3rem;
 }
 
 .instruction h3,

@@ -148,88 +148,90 @@ export default function TestTime() {
   }
 
   return isLoading === false ? (
-    <div className="test-sheet">
-      <div className="biodata-testing">
-        <h4 className="header-testing">Tes {testType}</h4>
-        <div className="testing-status">
-          <p>{showFormattedDateID(date)}</p>
-          <div className="icon-close-test">
-            <GrClose
-              onClick={(event) => {
-                event.preventDefault();
-                navigate("/test");
-              }}
-            />
-          </div>
-        </div>
-        <table className="table-biodata">
-          <tbody>
-            <tr>
-              <td>Nama </td>
-              <td>: {fullName}</td>
-            </tr>
-            <tr>
-              <td>Umur </td>
-              <td>: {age}</td>
-            </tr>
-            <tr>
-              <td>Jenis Kelamin </td>
-              <td>: {gender}</td>
-            </tr>
-            <tr>
-              <td>Perangkat (Monitor / Gawai) </td>
-              <td>: {device}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      {valueList?.map((data) => (
-        <div className="row-sheet" key={data.row}>
-          <div className="row-start-box">
-            <div
-              className="start-row"
-              key={data.first}
-              style={{ backgroundColor: data.first.color }}
-            >
-              <p className="row-point-explainer">Awal</p>
-            </div>
-          </div>
-          <ReactSortable
-            className="row-box"
-            group={{ name: "valueByRow", put: false }}
-            animation={200}
-            ghostClass="ghostbox"
-            list={data.value}
-            setList={(newState) => handleListChange(data.row, newState)}
-          >
-            {data.value.map((item) => (
-              <div
-                className="row-value"
-                key={item.color}
-                style={{ backgroundColor: item.color }}
+    <div className="test-section">
+      <div className="test-sheet">
+        <div className="biodata-testing">
+          <h4 className="header-testing">Tes {testType}</h4>
+          <div className="testing-status">
+            <p>{showFormattedDateID(date)}</p>
+            <div className="icon-close-test">
+              <GrClose
+                onClick={(event) => {
+                  event.preventDefault();
+                  navigate("/test");
+                }}
               />
-            ))}
-          </ReactSortable>
-          <div className="row-end-box">
-            <div
-              className="end-row"
-              key={data.last}
-              style={{ backgroundColor: data.last.color }}
-            >
-              <p className="row-point-explainer">Akhir</p>
             </div>
           </div>
+          <table className="table-biodata">
+            <tbody>
+              <tr>
+                <td>Nama </td>
+                <td>: {fullName}</td>
+              </tr>
+              <tr>
+                <td>Umur </td>
+                <td>: {age}</td>
+              </tr>
+              <tr>
+                <td>Jenis Kelamin </td>
+                <td>: {gender}</td>
+              </tr>
+              <tr>
+                <td>Perangkat (Monitor / Gawai) </td>
+                <td>: {device}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      ))}
-      <button
-        type="submit"
-        onClick={(event) => {
-          event.preventDefault();
-          onSubmitArray();
-        }}
-      >
-        Selesai
-      </button>
+        {valueList?.map((data) => (
+          <div className="row-sheet" key={data.row}>
+            <div className="row-start-box">
+              <div
+                className="start-row"
+                key={data.first}
+                style={{ backgroundColor: data.first.color }}
+              >
+                <p className="row-point-explainer">Awal</p>
+              </div>
+            </div>
+            <ReactSortable
+              className="row-box"
+              group={{ name: "valueByRow", put: false }}
+              animation={200}
+              ghostClass="ghostbox"
+              list={data.value}
+              setList={(newState) => handleListChange(data.row, newState)}
+            >
+              {data.value.map((item) => (
+                <div
+                  className="row-value"
+                  key={item.color}
+                  style={{ backgroundColor: item.color }}
+                />
+              ))}
+            </ReactSortable>
+            <div className="row-end-box">
+              <div
+                className="end-row"
+                key={data.last}
+                style={{ backgroundColor: data.last.color }}
+              >
+                <p className="row-point-explainer">Akhir</p>
+              </div>
+            </div>
+          </div>
+        ))}
+        <button
+          type="submit"
+          onClick={(event) => {
+            event.preventDefault();
+            onSubmitArray();
+          }}
+        >
+          Selesai
+        </button>
+      </div>
     </div>
   ) : (
     <div className="util-box">
