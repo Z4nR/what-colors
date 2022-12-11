@@ -81,7 +81,7 @@ export default function JoinRoomModal({ closeModal }) {
               <input
                 id="age"
                 type="number"
-                placeholder="Masukkan Usia Anda Min. 18 Tahun"
+                placeholder="Masukkan Usia Anda (Min. 18 Tahun)"
                 autoComplete="off"
                 {...register("age", { required: true })}
               />

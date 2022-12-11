@@ -64,9 +64,10 @@ export default function IndividualModal({ closeModal }) {
             <input
               id="age"
               type="number"
-              placeholder="Masukkan Usia Anda Min. 18 Tahun"
+              placeholder="Masukkan Usia Anda (Min. 18 Tahun)"
               autoComplete="off"
               min="18"
+              max="70"
               {...register("age", { required: true })}
             />
             {errors.age && <p style={{ color: "red" }}>Harap Isi Usia Anda</p>}
