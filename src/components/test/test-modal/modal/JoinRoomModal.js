@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { FiHome } from "react-icons/fi";
+import { GrClose } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 import LoadingPage from "../../../../pages/utils/LoadingPage";
 import { getRoomData } from "../../../../utils/data-api";
@@ -55,7 +55,7 @@ export default function JoinRoomModal({ closeModal }) {
       <div className="header-input-data">
         <h3>Data Peserta Tes</h3>
         <div className="icon-close">
-          <FiHome onClick={closeModal} />
+          <GrClose onClick={closeModal} />
         </div>
       </div>
       {isLoading === false ? (

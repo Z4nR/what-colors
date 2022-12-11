@@ -1,5 +1,5 @@
 import React from "react";
-import { FiHome } from "react-icons/fi";
+import { GrUser, GrLinkedin, GrGithub, GrMail } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -24,16 +24,16 @@ export default function Footer() {
       <nav className="foot-nav">
         <ul>
           <li>
-            <Link to="/">{<FiHome />}</Link>
+            <Link to="/">{<GrMail />}</Link>
           </li>
           <li>
-            <Link to="/test">{<FiHome />}</Link>
+            <Link to="/test">{<GrGithub />}</Link>
           </li>
           <li>
-            <Link to="/article">{<FiHome />}</Link>
+            <Link to="/article">{<GrLinkedin />}</Link>
           </li>
           <li>
-            <Link to="/about">{<FiHome />}</Link>
+            <Link to="/about">{<GrUser />}</Link>
           </li>
         </ul>
       </nav>

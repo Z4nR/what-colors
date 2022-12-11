@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FiHome } from "react-icons/fi";
 import { useMediaQuery } from "react-responsive";
+import {
+  GrDocumentTest,
+  GrHome,
+  GrArticle,
+  GrCircleInformation,
+} from "react-icons/gr";
 
 export default function AppNav() {
   const isDesktop = useMediaQuery({
@@ -12,16 +17,18 @@ export default function AppNav() {
     <nav className="app-nav">
       <ul>
         <li>
-          <Link to="/">{isDesktop ? "Beranda" : <FiHome />}</Link>
+          <Link to="/">{isDesktop ? "Beranda" : <GrHome />}</Link>
         </li>
         <li>
-          <Link to="/test">{isDesktop ? "Tes" : <FiHome />}</Link>
+          <Link to="/test">{isDesktop ? "Tes" : <GrDocumentTest />}</Link>
         </li>
         <li>
-          <Link to="/article">{isDesktop ? "Artikel" : <FiHome />}</Link>
+          <Link to="/article">{isDesktop ? "Artikel" : <GrArticle />}</Link>
         </li>
         <li>
-          <Link to="/about">{isDesktop ? "Tentang" : <FiHome />}</Link>
+          <Link to="/about">
+            {isDesktop ? "Tentang" : <GrCircleInformation />}
+          </Link>
         </li>
       </ul>
     </nav>

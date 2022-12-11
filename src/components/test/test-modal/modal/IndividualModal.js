@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { FiHome } from "react-icons/fi";
+import { GrClose } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 import { createArray, testType } from "../../../../utils/data-local";
 
@@ -41,7 +41,7 @@ export default function IndividualModal({ closeModal }) {
       <div className="header-input-data">
         <h3>Data Pribadi</h3>
         <div className="icon-close">
-          <FiHome onClick={closeModal} />
+          <GrClose onClick={closeModal} />
         </div>
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FiHome } from "react-icons/fi";
+import { GrClose } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 import { ReactSortable } from "react-sortablejs";
 import { addClientData, addUserData, getRoomData } from "../../utils/data-api";
@@ -154,7 +154,7 @@ export default function TestTime() {
         <div className="testing-status">
           <p>{showFormattedDateID(date)}</p>
           <div className="icon-close-test">
-            <FiHome
+            <GrClose
               onClick={(event) => {
                 event.preventDefault();
                 navigate("/test");
