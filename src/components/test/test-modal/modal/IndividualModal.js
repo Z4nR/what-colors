@@ -66,7 +66,7 @@ export default function IndividualModal({ closeModal }) {
               type="number"
               placeholder="Masukkan Usia Anda (Min. 18 Tahun)"
               autoComplete="off"
-              min="18"
+              min="12"
               max="70"
               {...register("age", { required: true })}
             />
