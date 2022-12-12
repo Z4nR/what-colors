@@ -23,7 +23,9 @@ export default function ArticlePage() {
           tahun terakhir) dan terverifikasi datanya.
         </p>
       </div>
-      <ArticleList articles={article} />
+      <div className="article-list_box">
+        <ArticleList articles={article} />
+      </div>
     </section>
   ) : (
     <div className="util-box">
