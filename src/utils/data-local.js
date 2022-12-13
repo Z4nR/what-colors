@@ -18,22 +18,22 @@ const testType = [
 
 const colorBlindRange = {
   type85: {
-    red: { min: 1, max: 5 },
-    blue: { min: 20, max: 35 },
-    green: { min: 50, max: 77 },
+    blue: { min: 2 && 42, max: 5 && 50 },
+    green: { min: 11 && 52, max: 20 && 57 },
+    red: { min: 14 && 59, max: 22 && 66 },
   },
 
   type40: {
-    red: { min: 1, max: 5 },
-    blue: { min: 10, max: 15 },
-    green: { min: 20, max: 25 },
+    blue: { min: 1 && 17, max: 3 && 20 },
+    green: { min: 5 && 24, max: 8 && 28 },
+    red: { min: 6 && 21, max: 10 && 23 },
   },
 };
 
 const colorBlindName = {
-  red: "Merah",
-  green: " Hijau",
-  blue: "Biru",
+  blue: "Tritan",
+  green: "Deutan",
+  red: "Protan",
 };
 
 function createArray(type) {

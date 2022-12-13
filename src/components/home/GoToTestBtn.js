@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function GoToTestButton(params) {
+export default function GoToTestButton() {
   const navigate = useNavigate();
 
   return (
