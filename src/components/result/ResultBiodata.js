@@ -38,8 +38,12 @@ export default function ResultBiodata({ data }) {
       <div className="result">
         <div className="biodata_item" style={{ backgroundColor: "#f080804d" }}>
           <h3>
-            Yahhhhhh, {data?.fullName} hasilmu masih belum memuaskan nih. Kamu
-            juga terindikasi buta warna
+            Yahhhhhh, {data?.fullName} hasil perhitungan skor kesalahanmu
+            sebesar{" "}
+            <span>
+              <b>{data?.totalErrorScore}</b>
+            </span>{" "}
+            masih belum memuaskan nih. Kamu juga terindikasi buta warna
           </h3>
           <h2>{data?.colorBlindType}</h2>
           <h3>

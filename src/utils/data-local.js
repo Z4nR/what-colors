@@ -18,15 +18,33 @@ const testType = [
 
 const colorBlindRange = {
   type85: {
-    blue: { min: 2 && 42, max: 5 && 50 },
-    green: { min: 11 && 52, max: 20 && 57 },
-    red: { min: 14 && 59, max: 22 && 66 },
+    blue: {
+      Lower: { min: 42, max: 50 },
+      Upper: { min: 2, max: 5 },
+    },
+    green: {
+      Lower: { min: 52, max: 57 },
+      Upper: { min: 11, max: 20 },
+    },
+    red: {
+      Lower: { min: 59, max: 66 },
+      Upper: { min: 14, max: 22 },
+    },
   },
 
   type40: {
-    blue: { min: 1 && 17, max: 3 && 20 },
-    green: { min: 5 && 24, max: 8 && 28 },
-    red: { min: 6 && 21, max: 10 && 23 },
+    blue: {
+      Lower: { min: 17, max: 20 },
+      Upper: { min: 1, max: 3 },
+    },
+    green: {
+      Lower: { min: 24, max: 28 },
+      Upper: { min: 5, max: 8 },
+    },
+    red: {
+      Lower: { min: 21, max: 23 },
+      Upper: { min: 6, max: 10 },
+    },
   },
 };
 
