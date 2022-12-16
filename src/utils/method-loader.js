@@ -124,13 +124,20 @@ const colorBlindType = (type, resultArray) => {
     const position = index + 1;
     if (value === false) {
       Object.keys(testRule).forEach((color) => {
-        const rule = testRule[color];
-        if (position >= rule.min && position <= rule.max) {
-          blindType[color] = true;
-        }
+        const typeColor = testRule[color];
+        console.log(typeColor);
+        Object.keys(typeColor).forEach((type) => {
+          const rule = typeColor[type];
+          console.log(rule);
+          if (position >= rule.min && position <= rule.max) {
+            blindType[color] = true;
+          }
+        });
       });
     }
   });
+
+  console.log(blindType);
 
   const result = Object.keys(blindType).map((color) => colorBlindName[color]);
   return result.join(", ");
