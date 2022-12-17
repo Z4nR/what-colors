@@ -120,17 +120,17 @@ const methodCalculation = (result) => {
 const colorBlindType = (type, resultArray) => {
   const testRule = colorBlindRange[type];
   const blindType = {};
+  let falseCounter = {};
   resultArray.forEach((value, index) => {
     const position = index + 1;
     if (value === false) {
       Object.keys(testRule).forEach((color) => {
         const typeColor = testRule[color];
-        console.log(typeColor);
         Object.keys(typeColor).forEach((type) => {
           const rule = typeColor[type];
-          console.log(rule);
           if (position >= rule.min && position <= rule.max) {
             blindType[color] = true;
+            falseCounter[value]++;
           }
         });
       });
