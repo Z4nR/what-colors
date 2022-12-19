@@ -1,4 +1,4 @@
-const BASE_URL = "https://fm100-backend.cyclic.app/v1/";
+const BASE_URL = "https://fm100-backend.cyclic.app/v1";
 
 async function addUserData({
   date,
