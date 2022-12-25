@@ -146,8 +146,6 @@ const colorBlindType = (type, resultArray) => {
     }
   }
 
-  console.log(blindType);
-
   const result = colorBlindName[blindType];
   return result;
 };

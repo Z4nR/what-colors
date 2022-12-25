@@ -38,7 +38,7 @@ export default function TestTime() {
     } else {
       setLoading(false);
     }
-  }, []);
+  }, [isClient]);
 
   const idGroup = getGroupData?._id;
 
