@@ -24,15 +24,21 @@ export default function TestTime() {
   useEffect(() => {
     const dataInput = localStorage.getItem("data");
     setGetData(JSON.parse(dataInput));
-
-    const idGroup = localStorage.getItem("idGroup");
-    getRoomData(idGroup).then((data) => {
-      setLoading(false);
-      setGroupData(data.data);
-    });
   }, []);
 
   const isClient = getData?.isClient;
+
+  useEffect(() => {
+    if (isClient === true) {
+      const idGroup = localStorage.getItem("idGroup");
+      getRoomData(idGroup).then((data) => {
+        setLoading(false);
+        setGroupData(data.data);
+      });
+    } else {
+      setLoading(false);
+    }
+  }, []);
 
   const idGroup = getGroupData?._id;
 

@@ -119,41 +119,37 @@ const methodCalculation = (result) => {
 
 const colorBlindType = (type, resultArray) => {
   const testRule = colorBlindRange[type];
-  const blindType = {};
-  let falseCounter = 0;
-  resultArray.forEach((value) => {
-    console.log(value);
-    Object.keys(testRule).forEach((color) => {
-      const typeColor = testRule[color];
-      for (let i = 0; i < value.length; i++) {
-        if (value[i] === false) {
-          if (typeColor.Lower.min <= i && i <= typeColor.Lower.max) {
-            falseCounter++;
-          }
-        }
-      }
-    });
-  });
-
-  resultArray.forEach((value, index) => {
-    const position = index + 1;
-    if (value === false) {
-      Object.keys(testRule).forEach((color) => {
-        const typeColor = testRule[color];
-        Object.keys(typeColor).forEach((type) => {
-          const rule = typeColor[type];
-          if (position >= rule.min && position <= rule.max) {
-            blindType[color] = true;
-          }
-        });
-      });
+  const resultColor = {};
+  Object.keys(testRule).forEach((color) => {
+    const selectedColor = testRule[color];
+    let falseLower = 0;
+    for (let i = selectedColor.Lower.min; i <= selectedColor.Lower.max; i++) {
+      if (!resultArray[i]) falseLower++;
     }
+
+    let falseUpper = 0;
+    for (let i = selectedColor.Upper.min; i <= selectedColor.Upper.max; i++) {
+      if (!resultArray[i]) falseUpper++;
+    }
+
+    const totalFalse = falseLower + falseUpper;
+
+    resultColor[color] = totalFalse;
   });
 
-  console.log(falseCounter);
+  let maxFalse = 0;
+  let blindType;
+  for (let prop in resultColor) {
+    if (resultColor[prop] > maxFalse) {
+      maxFalse = resultColor[prop];
+      blindType = prop;
+    }
+  }
 
-  const result = Object.keys(blindType).map((color) => colorBlindName[color]);
-  return result.join(", ");
+  console.log(blindType);
+
+  const result = colorBlindName[blindType];
+  return result;
 };
 
 const colorBlind = (t, result) => {
