@@ -9,7 +9,7 @@ export default function RoomJoinTest({ openModal }) {
   const ID = 3;
 
   const navigate = useNavigate();
-  const idGroup = localStorage.getItem("idGroup");
+  const roomInitial = localStorage.getItem("roomInitial");
 
   const isMobile = useMediaQuery({
     query: "(max-width: 350px)",
@@ -26,7 +26,7 @@ export default function RoomJoinTest({ openModal }) {
     verifyCode(data.code).then((data) => {
       setLoading(false);
       data.data === true
-        ? navigate(`/dashboard/${idGroup}/admin`)
+        ? navigate(`/dashboard/${roomInitial}/admin`)
         : openModal(ID);
     });
   }

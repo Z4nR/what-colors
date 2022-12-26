@@ -1,36 +1,38 @@
 import React, { useEffect, useState } from "react";
-import { CSVLink } from "react-csv";
+import DashboardExport from "../components/admin/DashboardExport";
+import DashboardHeader from "../components/admin/DashboardHeader";
+import DashboardTable from "../components/admin/DashboardTable";
 import { getClientsData, getRoomData } from "../utils/data-api";
 import LoadingPage from "./utils/LoadingPage";
 
 export default function DashboardGroup() {
   const [isLoading, setLoading] = useState(true);
-  const [groupData, setGroupData] = useState(null);
-  const [clientData, setClientData] = useState(null);
-  const [csvData, setCsvData] = useState(null);
+  const [group, setGroup] = useState(null);
+  const [client, setClient] = useState(null);
+  const [csv, setCsv] = useState(null);
 
   useEffect(() => {
     const idGroup = localStorage.getItem("idGroup");
 
     getRoomData(idGroup).then((data) => {
-      setGroupData(data.data);
+      setGroup(data.data);
       setLoading(false);
     });
 
     setInterval(() => {
       getClientsData(idGroup).then((data) => {
-        setClientData(data.data);
+        setClient(data.data);
       });
     }, 10000);
   }, []);
 
   useEffect(() => {
-    if (clientData && !!clientData.length) {
-      const comparisonId = Array(clientData[0].comparisonResults.length)
+    if (client && !!client.length) {
+      const comparisonId = Array(client[0].comparisonResults.length)
         .fill(null)
         .map((_, id) => `C${id + 1}`);
 
-      const discriminantId = Array(clientData[0].discriminantResults.length)
+      const discriminantId = Array(client[0].discriminantResults.length)
         .fill(null)
         .map((_, id) => `D${id + 1}`);
 
@@ -44,7 +46,7 @@ export default function DashboardGroup() {
         ...discriminantId,
       ];
 
-      const csvData = clientData?.map((c) => {
+      const csvData = client?.map((c) => {
         const name = c.fullName;
         const age = c.age;
         const device = c.device;
@@ -72,55 +74,17 @@ export default function DashboardGroup() {
 
       const finalData = [header, ...csvData];
 
-      setCsvData(finalData);
+      setCsv(finalData);
     }
-  }, [clientData]);
+  }, [client]);
 
   return (
     <section>
       {isLoading === false ? (
         <div className="admin-page">
-          <div className="admin-header">
-            <h2>Dashboard Admin</h2>
-            <h3>
-              {groupData?.roomName} ({groupData?.roomInitial})
-            </h3>
-          </div>
-          <div className="table-client">
-            <table>
-              <thead>
-                <tr>
-                  <th>Nama</th>
-                  <th>Status</th>
-                  <th>Jumlah Skor Eror</th>
-                  <th>Perangkat</th>
-                </tr>
-              </thead>
-              <tbody>
-                {clientData?.map((client) => (
-                  <tr className="cap-data" key={client._id}>
-                    <td>{client.fullName}</td>
-                    <td>{client.status}</td>
-                    <td>{client.totalErrorScore}</td>
-                    <td>{client.device}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="csv-btn-box">
-            {csvData !== null ? (
-              <CSVLink
-                data={csvData}
-                separator={";"}
-                filename={"group-data.csv"}
-              >
-                <button className="csv-btn">Export Data</button>
-              </CSVLink>
-            ) : (
-              <p>Link Tidak Tersedia</p>
-            )}
-          </div>
+          <DashboardHeader header={group} />
+          <DashboardTable client={client} />
+          <DashboardExport csv={csv} />
         </div>
       ) : (
         <div className="util-box">
