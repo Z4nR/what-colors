@@ -46,6 +46,22 @@ section {
 }
 
 /*Home Page*/
+.resume-body {
+  padding: 4px 1rem;
+}
+
+.resume-odd,
+.resume-even {
+  padding: 1rem;
+  width: 50%;
+  text-align: justify;
+}
+
+.even {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .go-to-test {
   padding: 16px 0;
   text-align: center;

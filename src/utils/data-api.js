@@ -113,18 +113,24 @@ async function getRoomData(idGroup) {
 
 async function verifyCode(code) {
   const response = await fetch(`${BASE_URL}/verify-code/${code}`);
-  const responseJson = await response.json();
 
-  const isAdmin = responseJson.code.find((c) => c.key === code)._id === "01";
+  const repsonseText = await response.text();
 
-  localStorage.setItem("idGroup", responseJson._id);
+  if (!repsonseText) {
+    alert("Kode Tidak Ditemukan");
+  } else {
+    const responseJson = JSON.parse(repsonseText);
 
-  if (response.status !== 201) {
-    alert(response.message);
-    return { error: true, data: null };
+    const isAdmin = responseJson.code.find((c) => c.key === code)._id === "01";
+    localStorage.setItem("idGroup", responseJson._id);
+
+    if (response.status !== 201) {
+      alert(response.message);
+      return { error: true, data: null };
+    }
+
+    return { error: false, data: isAdmin };
   }
-
-  return { error: false, data: isAdmin };
 }
 
 async function deleteRoom(idGroup) {
