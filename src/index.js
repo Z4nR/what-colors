@@ -7,7 +7,7 @@ import "./styles/main.css";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/what-colors">
     <ColorApp />
   </BrowserRouter>
 );
