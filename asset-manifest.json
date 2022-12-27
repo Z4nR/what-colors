@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/what-colors/static/css/main.2574d6ad.css",
-    "main.js": "/what-colors/static/js/main.59d67535.js",
+    "main.css": "/what-colors/static/css/main.31afba7d.css",
+    "main.js": "/what-colors/static/js/main.fd96f226.js",
     "static/media/Add User-cuate.svg": "/what-colors/static/media/Add User-cuate.40279a5f6c3dbc188d4f.svg",
     "static/media/Community-pana.svg": "/what-colors/static/media/Community-pana.5ab72189ab96a8072a5b.svg",
     "static/media/People search-bro.svg": "/what-colors/static/media/People search-bro.f58a2ad6dbe9d61edea4.svg",
@@ -11,14 +11,14 @@
     "static/media/Messenger-amico.svg": "/what-colors/static/media/Messenger-amico.2d981984a433d3ba4e46.svg",
     "static/media/group.svg": "/what-colors/static/media/group.6903551147febbf2c52a.svg",
     "static/media/join.svg": "/what-colors/static/media/join.72a7e07cdae6b46cdd12.svg",
-    "static/media/Wedges-3s-200px.svg": "/what-colors/static/media/Wedges-3s-200px.b33d09f627b31f371124.svg",
+    "static/media/Wedges-3s-200px.svg": "/what-colors/static/media/Wedges-3s-200px.362d21f191a389cee8ee.svg",
     "static/media/individual.svg": "/what-colors/static/media/individual.79d1552770ae0f99ac08.svg",
     "index.html": "/what-colors/index.html",
-    "main.2574d6ad.css.map": "/what-colors/static/css/main.2574d6ad.css.map",
-    "main.59d67535.js.map": "/what-colors/static/js/main.59d67535.js.map"
+    "main.31afba7d.css.map": "/what-colors/static/css/main.31afba7d.css.map",
+    "main.fd96f226.js.map": "/what-colors/static/js/main.fd96f226.js.map"
   },
   "entrypoints": [
-    "static/css/main.2574d6ad.css",
-    "static/js/main.59d67535.js"
+    "static/css/main.31afba7d.css",
+    "static/js/main.fd96f226.js"
   ]
 }
