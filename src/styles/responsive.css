@@ -277,13 +277,6 @@
   }
 }
 
-@media screen and (max-width: 560px) {
-  /*Test Page*/
-  .instruction-box {
-    display: none;
-  }
-}
-
 @media screen and (max-width: 599px) {
   /*App Header*/
   .color-app_header {
