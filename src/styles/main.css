@@ -15,16 +15,17 @@ body {
   background: white;
 }
 
-section {
-  margin: 8px auto;
-}
-
 /*App Header*/
 .color-app_header {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   background-color: white;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
 .color-app_header h2 {
@@ -42,7 +43,7 @@ section {
   text-decoration: none;
 }
 .app-nav ul li a:not(:hover) {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 /*Home Page*/

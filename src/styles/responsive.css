@@ -1,7 +1,7 @@
 @media screen and (max-width: 300px) {
   /*Header*/
   .app-nav ul li {
-    padding: 15px;
+    padding: 15px 1.3rem;
   }
   .app-nav ul li a svg,
   .foot-nav ul li a svg {
@@ -90,7 +90,7 @@
 @media screen and (min-width: 301px) {
   /*Header*/
   .app-nav ul li {
-    padding: 19px;
+    padding: 0.7em 1.3rem;
   }
   .app-nav ul li a svg {
     font-size: 28px;
@@ -278,6 +278,9 @@
 }
 
 @media screen and (max-width: 599px) {
+  section {
+    margin: 7rem auto 1em;
+  }
   /*App Header*/
   .color-app_header {
     flex-direction: column;
@@ -322,9 +325,16 @@
     font-size: 0.85rem;
     line-height: 1.5rem;
   }
+  /*Dashboard*/
+  .table-client thead {
+    font-size: 0.9rem;
+  }
 }
 
 @media screen and (min-width: 600px) {
+  section {
+    margin: 4rem auto 1em;
+  }
   /*App Header*/
   .color-app_header {
     flex-direction: row;
@@ -412,6 +422,12 @@
   }
 }
 
+@media screen and (max-width: 749px) {
+  .table-client {
+    height: 50vh;
+  }
+}
+
 @media screen and (min-width: 750px) {
   /*App Header*/
   .color-app_header h2 {
@@ -426,6 +442,10 @@
   /*Home Page*/
   .go-to-test h2 {
     font-size: 24px;
+  }
+  /*Dashboard*/
+  .table-client {
+    height: 65vh;
   }
 }
 
@@ -517,9 +537,6 @@
   }
   .table-data tbody {
     max-height: 85vh;
-  }
-  .table-client {
-    height: 65vh;
   }
   .table-client tbody {
     height: 60vh;

@@ -5,6 +5,8 @@ import DashboardTable from "../components/admin/DashboardTable";
 import { getClientsData, getRoomData } from "../utils/data-api";
 import LoadingPage from "./utils/LoadingPage";
 
+let interval;
+
 export default function DashboardGroup() {
   const [isLoading, setLoading] = useState(true);
   const [group, setGroup] = useState(null);
@@ -19,11 +21,15 @@ export default function DashboardGroup() {
       setLoading(false);
     });
 
-    setInterval(() => {
+    interval = setInterval(() => {
       getClientsData(idGroup).then((data) => {
         setClient(data.data);
       });
     }, 10000);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   useEffect(() => {
