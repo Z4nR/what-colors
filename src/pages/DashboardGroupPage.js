@@ -43,6 +43,7 @@ export default function DashboardGroup() {
         .map((_, id) => `D${id + 1}`);
 
       const header = [
+        "Time",
         "Name",
         "Age",
         "Device",
@@ -53,6 +54,7 @@ export default function DashboardGroup() {
       ];
 
       const csvData = client?.map((c) => {
+        const date = c.date;
         const name = c.fullName;
         const age = c.age;
         const device = c.device;
@@ -66,6 +68,7 @@ export default function DashboardGroup() {
         );
 
         const newArray = [
+          date,
           name,
           age,
           device,
