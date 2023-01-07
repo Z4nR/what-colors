@@ -1,0 +1,18 @@
+.resume-section {
+  display: flex;
+}
+
+.resume-text {
+  width: 100%;
+  padding: 1rem;
+}
+
+.resume-image {
+  max-width: 500px;
+}
+
+.image-section {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 25px;
+}
