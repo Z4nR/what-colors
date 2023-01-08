@@ -234,17 +234,17 @@ body {
 
 .individual-test {
   border-color: lightcoral;
-  background-image: url(../../public/asset/illustration/Add\ color-bro.svg);
+  background-image: url(../asset/illustration/Add\ color-bro.svg);
 }
 
 .massal-test {
   border-color: lightblue;
-  background-image: url(../../public/asset/illustration/Community-pana.svg);
+  background-image: url(../asset/illustration/Community-pana.svg);
 }
 
 .room-join {
   border-color: khaki;
-  background-image: url(../../public/asset/illustration/Add\ User-cuate.svg);
+  background-image: url(../asset/illustration/Add\ User-cuate.svg);
 }
 
 .individual-btn:hover {
@@ -319,19 +319,19 @@ body {
 .individual {
   width: 32px;
   background-repeat: no-repeat;
-  background-image: url("../../public/asset/icons/individual.svg");
+  background-image: url(../asset/icons/individual.svg);
 }
 
 .group {
   width: 32px;
   background-repeat: no-repeat;
-  background-image: url("../../public/asset/icons/group.svg");
+  background-image: url(..//asset/icons/group.svg);
 }
 
 .join {
   width: 32px;
   background-repeat: no-repeat;
-  background-image: url("../../public/asset/icons/join.svg");
+  background-image: url(../asset/icons/join.svg);
 }
 
 /*Article*/

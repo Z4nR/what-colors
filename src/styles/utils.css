@@ -34,35 +34,35 @@
 
 /*Result*/
 .image-result {
-  background-image: url(../../public/asset/illustration/People\ search-bro.svg);
+  background-image: url(../asset/illustration/People\ search-bro.svg);
   background-repeat: no-repeat;
   background-position-x: center;
 }
 
 /*Email Sended*/
 .image-sending {
-  background-image: url(../../public/asset/illustration/Messenger-amico.svg);
+  background-image: url(../asset/illustration/Messenger-amico.svg);
   background-repeat: no-repeat;
   background-position-x: center;
 }
 
 /*Thanks*/
 .image-thanks {
-  background-image: url(../../public/asset/illustration/Done-rafiki.svg);
+  background-image: url(../asset/illustration/Done-rafiki.svg);
   background-repeat: no-repeat;
   background-position-x: center;
 }
 
 /*Slow Inet*/
 .image-slow-inet {
-  background-image: url(../../public/asset/illustration/No\ connection-pana.svg);
+  background-image: url(../asset/illustration/No\ connection-pana.svg);
   background-repeat: no-repeat;
   background-position-x: center;
 }
 
 /*Loading*/
 .loading {
-  background-image: url(../../public/asset/illustration/Wedges-3s-200px.svg);
+  background-image: url(../asset/illustration/Wedges-3s-200px.svg);
   background-repeat: no-repeat;
   background-position-x: center;
   min-height: 280px;
