@@ -1,13 +1,18 @@
 .resume-section {
+  margin: 0 auto;
+  margin-bottom: 4rem;
   display: flex;
+  max-width: 90%;
 }
 
 .resume-text {
+  flex: 0 0 50%;
   width: 100%;
   padding: 1rem;
 }
 
 .resume-image {
+  flex: 0 0 50%;
   max-width: 500px;
 }
 
@@ -15,4 +20,11 @@
   width: 100%;
   padding: 1rem;
   border-radius: 25px;
+}
+
+.cap-img {
+  background-image: url(../asset/img/capdesign.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: 250%;
 }
