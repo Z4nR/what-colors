@@ -2,18 +2,42 @@
   margin: 0 auto;
   margin-bottom: 4rem;
   display: flex;
-  max-width: 90%;
+  max-width: 80%;
+}
+
+.even-section {
+  flex-direction: row-reverse;
 }
 
 .resume-text {
+  margin: 0 auto;
   flex: 0 0 50%;
   width: 100%;
   padding: 1rem;
 }
 
+.resume-text h1 {
+  padding: 2rem;
+  font-size: 3rem;
+  font-weight: 500 !important;
+  color: #252525 !important;
+  line-height: 1.33;
+  letter-spacing: -.5px;
+}
+
+.resume-text h4 {
+  padding: .5rem 2rem;
+  font-size: 1.5rem;
+  font-weight: lighter !important;
+  color: #5a5959 !important;
+  line-height: 1.33;
+  letter-spacing: -.5px;
+}
+
 .resume-image {
+  margin: 0 auto;
   flex: 0 0 50%;
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .image-section {
@@ -23,8 +47,9 @@
 }
 
 .cap-img {
+  height: 80vh;
   background-image: url(../asset/img/capdesign.svg);
   background-repeat: no-repeat;
   background-position-x: center;
-  background-size: 250%;
+  background-size: contain;
 }

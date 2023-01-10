@@ -23,10 +23,15 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  display: flex;
-  align-items: center;
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.color-app_header-item {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  align-items: center;
 }
 
 .color-app_header h2 {

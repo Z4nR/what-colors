@@ -20,8 +20,10 @@ export default function ColorApp() {
   return (
     <div className="color-app">
       <header className="color-app_header">
-        <h2>WhatColors?</h2>
-        <AppNav />
+        <div className="color-app_header-item">
+          <h2>WhatColors?</h2>
+          <AppNav />
+        </div>
       </header>
       <main>
         <Routes>

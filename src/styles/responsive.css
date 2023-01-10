@@ -1,63 +1,78 @@
 @media screen and (max-width: 300px) {
+
   /*Header*/
   .app-nav ul li {
     padding: 15px 1.3rem;
   }
+
   .app-nav ul li a svg,
   .foot-nav ul li a svg {
     font-size: 24px;
   }
+
   /*Home Page*/
   .go-to-test h2 {
     font-size: 16px;
     padding: 0 10px;
   }
+
   .go-to-test button {
     margin-top: 16px;
     color: rgb(48, 156, 192);
     background-color: transparent;
   }
+
   /*Test Page*/
   .individual,
   .group,
   .join {
     height: 32px;
   }
+
   .choose-box h2 {
     font-weight: 200;
     font-size: 16px;
   }
+
   /*Test Sheet*/
   .biodata-testing table {
     font-size: 14px;
   }
+
   .start-row,
   .end-row,
   .row-value {
     height: 25px;
     width: 25px;
   }
+
   .row-point-explainer {
     font-size: 50%;
   }
+
   .start-row,
   .end-row {
     padding-top: 7px;
   }
+
   /*Dashboard*/
   .admin-header h2 {
     font-size: 18px;
   }
+
   .admin-header h3 {
     font-size: 16px;
   }
+
   .table-client {
     font-size: 14px;
   }
+
   /*Article*/
   .article-item h3 {
     font-size: 0.8rem;
   }
+
   .article-item h4,
   .article-item p {
     font-size: 0.7rem;
@@ -69,18 +84,22 @@
     font-size: 18px;
     flex: 1;
   }
+
   .util-box h2 {
     padding: 14px;
     font-size: 18px;
     flex: 1;
   }
+
   .util-box h4 {
     font-size: 14px;
   }
+
   .util-box u {
     font-weight: 500;
     font-size: 17px;
   }
+
   /*Footer*/
   .foot-desc {
     padding: 0;
@@ -88,23 +107,28 @@
 }
 
 @media screen and (min-width: 301px) {
+
   /*Header*/
   .app-nav ul li {
-    padding: 0.7em 1.3rem;
+    padding: 0.7em 1.7rem;
   }
+
   .app-nav ul li a svg {
     font-size: 28px;
   }
+
   /*Home Page*/
   .go-to-test h2 {
     font-size: 20px;
     padding: 0 16px;
   }
+
   .go-to-test button {
     width: 145px;
     padding: 8px;
     background-color: lightblue;
   }
+
   /*Test Sheet*/
   .start-row,
   .end-row,
@@ -112,13 +136,16 @@
     height: 28px;
     width: 28px;
   }
+
   .row-point-explainer {
     font-size: 60%;
   }
+
   .start-row,
   .end-row {
     padding-top: 7px;
   }
+
   /*Footer*/
   .foot-nav ul li a svg {
     font-size: 28px;
@@ -126,6 +153,7 @@
 }
 
 @media screen and (min-width: 301px) and (max-width: 850px) {
+
   /*Footer*/
   .foot-nav ul li {
     padding: 0 10px;
@@ -139,6 +167,7 @@
 }
 
 @media screen and (min-width: 301px) and (max-width: 350px) {
+
   .individual,
   .group,
   .join {
@@ -147,28 +176,34 @@
 }
 
 @media screen and (min-width: 301px) and (max-width: 450px) {
+
   /*Test Page*/
   .choose-box h2 {
     font-weight: 400;
     font-size: 20px;
   }
+
   /*Utils*/
   .util-box h1 {
     padding: 20px;
     font-size: 20px;
     flex: 1;
   }
+
   .util-box h2 {
     padding: 14px;
     font-size: 20px;
     flex: 1;
   }
+
   .util-box h4 {
     font-size: 16px;
   }
+
   .util-box u {
     font-size: 20px;
   }
+
   /*Article*/
   .article-item {
     font-size: small;
@@ -176,39 +211,48 @@
 }
 
 @media screen and (max-width: 350px) {
+
   /*Test Page*/
   .choose-test {
     grid-template-columns: 1fr;
     grid-column-gap: 5px;
     grid-row-gap: 15px;
   }
+
   .announcement h3 {
     font-size: medium;
   }
+
   .announcement h5 {
     font-size: 0.75rem;
   }
+
   /*Modal*/
   .initial-test-box {
     flex-direction: column;
   }
+
   .roominitial {
     margin-top: 10px;
   }
+
   .initial-test input#tesrange {
     padding: 8px 0;
     width: 100%;
   }
+
   /*Footer*/
   .foot-nav ul li {
     padding: 0 8px;
   }
+
   .foot_desc {
     display: none;
   }
 }
 
 @media screen and (min-width: 351px) {
+
   /*Modal*/
   .initial-test input#tesrange {
     padding: 8px 0;
@@ -217,18 +261,22 @@
 }
 
 @media screen and (max-width: 450px) {
+
   /*Test Page*/
   .test-type {
     height: 200px;
   }
+
   /*Modal*/
   .icon-delete {
     font-size: 24px;
   }
+
   /*About*/
   .about-item h3 {
     text-align: justify;
   }
+
   /*Utils*/
   .image-result {
     background-size: cover;
@@ -236,32 +284,39 @@
 }
 
 @media screen and (min-width: 450px) {
+
   /*Utils*/
   .util-box h1 {
     padding: 28px;
     font-size: 26px;
     flex: 1;
   }
+
   .util-box h2 {
     padding: 16px;
     font-size: 26px;
     flex: 1;
   }
+
   .util-box h4 {
     font-size: 18px;
   }
+
   .util-box u {
     font-weight: 550;
     font-size: 20px;
   }
+
   /*Article*/
   .article-item h3 {
     font-size: 0.95em;
   }
+
   .article-item h4,
   .article-item p {
     font-size: 0.85em;
   }
+
   /*About*/
   .about-item h3 {
     text-align: center;
@@ -269,6 +324,7 @@
 }
 
 @media screen and (max-width: 490px) {
+
   /*Utils*/
   .image-result,
   .image-congrats,
@@ -281,50 +337,62 @@
   section {
     margin: 7rem auto 1em;
   }
+
   /*App Header*/
-  .color-app_header {
+  .color-app_header-item {
     flex-direction: column;
   }
+
   /*Test Page*/
   .instruction h3 {
     font-weight: 550;
     text-align: center;
     font-size: 16px;
   }
+
   .instruction ul li {
     font-size: 14px;
   }
+
   .individual-test {
     background-position-y: -100px;
   }
+
   /*Modal*/
   .input-data-box {
     flex-direction: column;
   }
+
   .input-data {
     margin: 6px 0;
   }
+
   /*Result*/
   .result {
     border-radius: 15px;
     padding: 8px;
   }
+
   /*Article*/
   .article_list {
     grid-template-columns: 1fr;
   }
+
   .page-title p {
     font-size: 0.8rem;
     line-height: 1.2rem;
   }
+
   /*About*/
   .page-title h2 {
     font-size: larger;
   }
+
   .about-item h3 {
     font-size: 0.85rem;
     line-height: 1.5rem;
   }
+
   /*Dashboard*/
   .table-client thead {
     font-size: 0.9rem;
@@ -335,45 +403,56 @@
   section {
     margin: 4rem auto 1em;
   }
+
   /*App Header*/
   .color-app_header {
     flex-direction: row;
   }
+
   .color-app_header h2 {
     font-size: 24px;
   }
+
   .app-nav ul li {
     padding: 10px;
   }
+
   .app-nav ul li a svg {
     font-size: 24px;
   }
+
   /*Home Page*/
   .go-to-test button {
     width: 250px;
     padding: 12px;
   }
+
   /*Test Page*/
   .choose-test {
     grid-template-columns: 1fr 1fr 1fr;
     max-width: 900px;
   }
+
   .announcement h5,
   .announcement h4 {
     font-size: medium;
   }
+
   /*Modal*/
   .modal-center {
     max-width: 900px;
     margin: 1.75rem auto;
   }
+
   .input-data-box {
     flex-direction: row;
   }
+
   .input-data,
   .verify-code-box {
     padding: 8px;
   }
+
   /*Test Sheet*/
   .start-row,
   .end-row,
@@ -381,30 +460,37 @@
     height: 30px;
     width: 30px;
   }
+
   .row-point-explainer {
     font-size: 60%;
   }
+
   .start-row,
   .end-row {
     padding-top: 7px;
   }
+
   /*Article*/
   .article_list {
     grid-template-columns: 1fr 1fr;
   }
+
   .page-title p {
     font-size: 0.85rem;
     line-height: 1.3rem;
   }
+
   /*About*/
   .about-item h3 {
     font-size: 0.95rem;
     line-height: 1.8rem;
   }
+
   /*Footer*/
   .footer {
     justify-content: space-between;
   }
+
   .foot-nav ul li {
     padding-left: 2rem;
   }
@@ -429,20 +515,25 @@
 }
 
 @media screen and (min-width: 750px) {
+
   /*App Header*/
   .color-app_header h2 {
     font-size: 32px;
   }
+
   .app-nav ul li {
     padding: 16px;
   }
+
   .app-nav ul li a svg {
     font-size: 28px;
   }
+
   /*Home Page*/
   .go-to-test h2 {
     font-size: 24px;
   }
+
   /*Dashboard*/
   .table-client {
     height: 65vh;
@@ -450,6 +541,7 @@
 }
 
 @media screen and (max-width: 775px) {
+
   /*Result*/
   .result {
     margin-top: 8px;
@@ -458,6 +550,7 @@
 }
 
 @media screen and (min-width: 775px) {
+
   /*Test Sheet*/
   .start-row,
   .end-row,
@@ -465,13 +558,16 @@
     height: 40px;
     width: 40px;
   }
+
   .start-row,
   .end-row {
     padding-top: 14px;
   }
+
   .row-point-explainer {
     font-size: 75%;
   }
+
   /*Result*/
   .result {
     border-radius: 15px;
@@ -486,18 +582,21 @@
 }
 
 @media screen and (max-width: 905px) {
+
   /*Footer*/
   .footer {
     flex-direction: column-reverse;
     justify-content: center;
     padding-top: 1rem;
   }
+
   .foot_copyright {
     text-align: center;
   }
 }
 
 @media screen and (min-width: 851px) {
+
   /*Article*/
   .article_list {
     grid-template-columns: 1fr 1fr 1fr;
@@ -505,6 +604,7 @@
 }
 
 @media screen and (max-width: 999px) {
+
   /*Result*/
   .result {
     flex-direction: column;
@@ -513,15 +613,19 @@
   .info-result {
     height: 100%;
   }
+
   .table-data {
     height: 65vh;
   }
+
   .table-data tbody {
     height: 60vh;
   }
 }
 
 @media screen and (min-width: 1000px) {
+
+  /*Test*/
   .start-row,
   .end-row,
   .row-value {
@@ -529,15 +633,19 @@
     width: 45px;
   }
 
+  /*Result*/
   .info-result {
     height: auto;
   }
+
   .table-data {
     height: 90vh;
   }
+
   .table-data tbody {
     max-height: 85vh;
   }
+
   .table-client tbody {
     height: 60vh;
   }
