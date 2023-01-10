@@ -542,6 +542,19 @@
 
 @media screen and (max-width: 775px) {
 
+  /*Home Page*/
+  .odd-section {
+    flex-direction: column;
+  }
+
+  .even-section {
+    flex-direction: column-reverse;
+  }
+
+  .image-section {
+    padding: 1rem;
+  }
+
   /*Result*/
   .result {
     margin-top: 8px;
@@ -550,6 +563,27 @@
 }
 
 @media screen and (min-width: 775px) {
+
+  /*Home Page*/
+  .resume-section {
+    max-width: 80%;
+    margin: 0 auto;
+    margin-bottom: 8%;
+  }
+
+  .resume-text h1 {
+    padding: 3.5vw 2rem 0;
+    font-size: 3vw;
+    line-height: 1.33;
+    letter-spacing: -.5px;
+  }
+
+  .resume-text h4 {
+    padding: 2.5vw 2rem 0;
+    font-size: 1.5vw;
+    line-height: 1.33;
+    letter-spacing: -.5px;
+  }
 
   /*Test Sheet*/
   .start-row,

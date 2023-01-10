@@ -1,37 +1,28 @@
 .resume-section {
-  margin: 0 auto;
-  margin-bottom: 4rem;
   display: flex;
-  max-width: 80%;
-}
-
-.even-section {
-  flex-direction: row-reverse;
 }
 
 .resume-text {
   margin: 0 auto;
   flex: 0 0 50%;
   width: 100%;
-  padding: 1rem;
 }
 
 .resume-text h1 {
-  padding: 2rem;
-  font-size: 3rem;
+  width: 87%;
   font-weight: 500 !important;
   color: #252525 !important;
-  line-height: 1.33;
-  letter-spacing: -.5px;
 }
 
 .resume-text h4 {
-  padding: .5rem 2rem;
-  font-size: 1.5rem;
+  width: 87%;
   font-weight: lighter !important;
   color: #5a5959 !important;
-  line-height: 1.33;
-  letter-spacing: -.5px;
+}
+
+.even-text h1,
+.even-text h4 {
+  margin-left: auto;
 }
 
 .resume-image {
@@ -42,7 +33,6 @@
 
 .image-section {
   width: 100%;
-  padding: 1rem;
   border-radius: 25px;
 }
 
