@@ -5,8 +5,10 @@ import Resume from "../components/home/Resume";
 export default function HomePage() {
   return (
     <section>
-      <Resume />
-      <GoToTestButton />
+      <div className="section">
+        <Resume />
+        <GoToTestButton />
+      </div>
     </section>
   );
 }

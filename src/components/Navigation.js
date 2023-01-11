@@ -10,7 +10,7 @@ import {
 
 export default function AppNav() {
   const isDesktop = useMediaQuery({
-    query: "(min-width: 381px)",
+    query: "(min-width: 400px)",
   });
 
   return (

@@ -9,13 +9,11 @@
 }
 
 .resume-text h1 {
-  width: 87%;
   font-weight: 500 !important;
   color: #252525 !important;
 }
 
 .resume-text h4 {
-  width: 87%;
   font-weight: lighter !important;
   color: #5a5959 !important;
 }
@@ -28,18 +26,16 @@
 .resume-image {
   margin: 0 auto;
   flex: 0 0 50%;
-  max-width: 600px;
 }
 
 .image-section {
   width: 100%;
-  border-radius: 25px;
+  height: auto;
 }
 
 .cap-img {
-  height: 80vh;
-  background-image: url(../asset/img/capdesign.svg);
+  background-image: url(../asset/illustration/blobanimation.svg);
   background-repeat: no-repeat;
   background-position-x: center;
-  background-size: contain;
+  background-size: 100%;
 }

@@ -364,7 +364,7 @@ const fm40 = [
       { number: 35, status: "removable", color: "#9f7f98" },
       { number: 36, status: "removable", color: "#a9798b" },
       { number: 37, status: "removable", color: "#ae7787" },
-      { number: 38, status: "removable", color: "#b1757f" },
+      { number: 38, status: "removable", color: "#b175i7f" },
       { number: 39, status: "removable", color: "#b3757a" },
       { number: 40, status: "last", color: "#b37673" },
     ],

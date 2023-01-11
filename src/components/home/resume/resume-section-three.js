@@ -7,7 +7,11 @@ export default function SectionThree() {
         <h1>Info</h1>
       </div>
       <div className="resume-image">
-        <div className="image-section cap-img" />
+        <img
+          className="image-section cap-img"
+          src={require("../../../asset/img/capdesign.png")}
+          alt="Kind of Color Blind"
+        />
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 
   /*Header*/
   .app-nav ul li {
-    padding: 15px 1.3rem;
+    padding: 15px 6vw;
   }
 
   .app-nav ul li a svg,
@@ -110,7 +110,7 @@
 
   /*Header*/
   .app-nav ul li {
-    padding: 0.7em 1.7rem;
+    padding: 0.7em 5vw;
   }
 
   .app-nav ul li a svg {
@@ -334,8 +334,8 @@
 }
 
 @media screen and (max-width: 599px) {
-  section {
-    margin: 7rem auto 1em;
+  .section {
+    margin: 6rem auto 1em;
   }
 
   /*App Header*/
@@ -400,7 +400,7 @@
 }
 
 @media screen and (min-width: 600px) {
-  section {
+  .section {
     margin: 4rem auto 1em;
   }
 
@@ -543,6 +543,12 @@
 @media screen and (max-width: 775px) {
 
   /*Home Page*/
+  .odd-section,
+  .even-section {
+    margin-bottom: 5%;
+    text-align: center;
+  }
+
   .odd-section {
     flex-direction: column;
   }
@@ -551,8 +557,23 @@
     flex-direction: column-reverse;
   }
 
-  .image-section {
+  .resume-text {
+    padding: 0 1rem;
+  }
+
+  .blind-desc {
+    max-width: 500px;
     padding: 1rem;
+    border-radius: 25px;
+  }
+
+  .eye-structure {
+    padding: 1rem;
+    max-width: 500px;
+  }
+
+  .cap-img {
+    max-width: 400px;
   }
 
   /*Result*/
@@ -568,21 +589,33 @@
   .resume-section {
     max-width: 80%;
     margin: 0 auto;
-    margin-bottom: 8%;
+    margin-bottom: 4%;
+  }
+
+  .resume-text h1,
+  .resume-text h4 {
+    width: 87%;
+    line-height: 1.33;
+    letter-spacing: -.5px;
   }
 
   .resume-text h1 {
     padding: 3.5vw 2rem 0;
     font-size: 3vw;
-    line-height: 1.33;
-    letter-spacing: -.5px;
   }
 
   .resume-text h4 {
     padding: 2.5vw 2rem 0;
     font-size: 1.5vw;
-    line-height: 1.33;
-    letter-spacing: -.5px;
+  }
+
+  .resume-image {
+    max-width: 600px;
+  }
+
+  .image-section {
+    padding: 1rem;
+    border-radius: 25px;
   }
 
   /*Test Sheet*/

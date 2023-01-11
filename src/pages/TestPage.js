@@ -18,10 +18,12 @@ export default function TestPage() {
 
   return (
     <section>
-      {isModalShowed && <ModalBox closeModal={closeModal} id={isIDModal} />}
-      <div className="test-page">
-        <AnnouncementTest />
-        <ChooseTest openModal={openModal} />
+      <div className="section">
+        {isModalShowed && <ModalBox closeModal={closeModal} id={isIDModal} />}
+        <div className="test-page">
+          <AnnouncementTest />
+          <ChooseTest openModal={openModal} />
+        </div>
       </div>
     </section>
   );

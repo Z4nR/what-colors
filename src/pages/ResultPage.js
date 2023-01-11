@@ -19,8 +19,10 @@ export default function ResultPage() {
 
   return isLoading === false ? (
     <section>
-      <ResultBiodata data={data} />
-      <ResultData data={data} />
+      <div className="section">
+        <ResultBiodata data={data} />
+        <ResultData data={data} />
+      </div>
     </section>
   ) : (
     <div className="util-box">
