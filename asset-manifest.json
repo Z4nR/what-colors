@@ -1,24 +1,28 @@
 {
   "files": {
-    "main.css": "/what-colors/static/css/main.73d0bfc7.css",
-    "main.js": "/what-colors/static/js/main.8305c3f4.js",
+    "main.css": "/what-colors/static/css/main.d25807d5.css",
+    "main.js": "/what-colors/static/js/main.36f13765.js",
     "static/media/Add User-cuate.svg": "/what-colors/static/media/Add User-cuate.40279a5f6c3dbc188d4f.svg",
+    "static/media/eyestructure.png": "/what-colors/static/media/eyestructure.b3add4b90c86e1dddf94.png",
     "static/media/Community-pana.svg": "/what-colors/static/media/Community-pana.5ab72189ab96a8072a5b.svg",
+    "static/media/colourblind.webp": "/what-colors/static/media/colourblind.f717131016bb0560dc92.webp",
+    "static/media/capdesign.png": "/what-colors/static/media/capdesign.abf4d77650c83b77ac8f.png",
     "static/media/People search-bro.svg": "/what-colors/static/media/People search-bro.f58a2ad6dbe9d61edea4.svg",
     "static/media/Done-rafiki.svg": "/what-colors/static/media/Done-rafiki.8e3c8adfb9ab713aea75.svg",
     "static/media/No connection-pana.svg": "/what-colors/static/media/No connection-pana.24ac3851e0e81caaccb4.svg",
     "static/media/Add color-bro.svg": "/what-colors/static/media/Add color-bro.e22bc415c2a80540515e.svg",
     "static/media/Messenger-amico.svg": "/what-colors/static/media/Messenger-amico.2d981984a433d3ba4e46.svg",
+    "static/media/blobanimation.svg": "/what-colors/static/media/blobanimation.6b3d62a2c9b2a1a7e754.svg",
     "static/media/group.svg": "/what-colors/static/media/group.6903551147febbf2c52a.svg",
     "static/media/join.svg": "/what-colors/static/media/join.72a7e07cdae6b46cdd12.svg",
     "static/media/Wedges-3s-200px.svg": "/what-colors/static/media/Wedges-3s-200px.362d21f191a389cee8ee.svg",
     "static/media/individual.svg": "/what-colors/static/media/individual.79d1552770ae0f99ac08.svg",
     "index.html": "/what-colors/index.html",
-    "main.73d0bfc7.css.map": "/what-colors/static/css/main.73d0bfc7.css.map",
-    "main.8305c3f4.js.map": "/what-colors/static/js/main.8305c3f4.js.map"
+    "main.d25807d5.css.map": "/what-colors/static/css/main.d25807d5.css.map",
+    "main.36f13765.js.map": "/what-colors/static/js/main.36f13765.js.map"
   },
   "entrypoints": [
-    "static/css/main.73d0bfc7.css",
-    "static/js/main.8305c3f4.js"
+    "static/css/main.d25807d5.css",
+    "static/js/main.36f13765.js"
   ]
 }
