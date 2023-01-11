@@ -5,11 +5,12 @@ export default function SectionThree() {
     <div className="resume-section odd-section">
       <div className="resume-text">
         <h1>Info</h1>
+        <h4>Info</h4>
       </div>
       <div className="resume-image">
         <img
-          className="image-section cap-img"
-          src={require("../../../asset/img/capdesign.png")}
+          className="image-section"
+          src={require("../../../asset/img/Ophthalmologist-amico.png")}
           alt="Kind of Color Blind"
         />
       </div>
