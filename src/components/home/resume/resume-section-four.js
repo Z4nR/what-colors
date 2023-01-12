@@ -11,8 +11,20 @@ export default function SectionFour() {
         />
       </div>
       <div className="resume-text even-text">
-        <h1>Info</h1>
-        <h4>Info</h4>
+        <h1>
+          Cara Kerja Metode <b>Farnsworth-Munsell</b>
+        </h1>
+        <h4 style={{ marginTop: ".5rem", textAlign: "justify" }}>
+          Tujuan metode ini ialah mengurutkan warna sesuai dengan tingkatan
+          gradasi warna yang ada. Metode ini menggunakan kepingan yang terdapat
+          bagian warna ditengahnya sebagai media tes buta warna.
+        </h4>
+        <h4
+          style={{ marginTop: "1rem", paddingTop: "0", textAlign: "justify" }}
+        >
+          Metode Farnsworth-Munsell memiliki dua tipe metode yang populer, yaitu{" "}
+          <b>Farnsworth-Munsell 100-Hue</b> dan <b>Farnsworth-Munsell D-15</b>
+        </h4>
       </div>
     </div>
   );

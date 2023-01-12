@@ -43,6 +43,10 @@
   flex: 1;
 }
 
+.test-time {
+  padding-top: 1rem;
+}
+
 .test-sheet button {
   margin: 8px auto 0 auto;
   text-align: center;

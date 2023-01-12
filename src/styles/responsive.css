@@ -545,20 +545,22 @@
   /*Home Page*/
   .odd-section,
   .even-section {
-    margin-bottom: 5%;
+    margin-bottom: 10%;
     text-align: center;
   }
 
-  .odd-section {
-    flex-direction: column;
-  }
-
+  .odd-section,
   .even-section {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   .resume-text {
     padding: 0 1rem;
+  }
+
+  .resume-text h4 {
+    margin: 0 auto;
+    width: 87%;
   }
 
   .blind-desc {
@@ -572,8 +574,12 @@
     max-width: 500px;
   }
 
+  .ophthal-img {
+    max-width: 350px;
+  }
+
   .cap-img {
-    max-width: 400px;
+    max-width: 350px;
   }
 
   /*Result*/
@@ -590,6 +596,11 @@
     max-width: 80%;
     margin: 0 auto;
     margin-bottom: 4%;
+  }
+
+  .even-text h1,
+  .even-text h4 {
+    margin-left: auto;
   }
 
   .resume-text h1,

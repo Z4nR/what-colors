@@ -49,6 +49,10 @@ body {
   text-decoration: none;
 }
 
+.app-nav ul li a:focus {
+  color: #2289af;
+}
+
 .app-nav ul li a:not(:hover) {
   opacity: 0.8;
 }
@@ -90,6 +94,7 @@ body {
 /*Test Page*/
 .test-page {
   margin: 0 auto;
+  padding-top: 1rem;
   max-width: 1000px;
 }
 
@@ -340,6 +345,10 @@ body {
 }
 
 /*Article*/
+.article {
+  padding-top: 1rem;
+}
+
 .page-title {
   padding: 8px;
   text-align: center;
@@ -368,6 +377,7 @@ body {
 /*About*/
 .about-page {
   margin: 0 16px;
+  padding-top: 1rem;
 }
 
 .about-item {

@@ -12,8 +12,10 @@ export default function TestSheet() {
   return (
     <section>
       <div className="section">
-        {isInstructionShowed && <InstructionTest closeModal={closeModal} />}
-        <TestTime />
+        <div className="test-time">
+          {isInstructionShowed && <InstructionTest closeModal={closeModal} />}
+          <TestTime />
+        </div>
       </div>
     </section>
   );
